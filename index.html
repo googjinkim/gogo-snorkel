@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A4%BF</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F7F6;
+    --panel:#D7E9F7;
+    --panel-line:#B9D3EA;
+    --panel-text:#14405E;
+    --panel-text-dim:#4C7597;
+    --accent:#137D8C;
+    --accent-strong:#0B5661;
+    --text:#152229;
+    --text-mute:#5C6E74;
+    --line:#DCE6E4;
+    --card:#FFFFFF;
+    --good:#1E8E5A;
+    --mid:#C98A12;
+    --warn:#D65C43;
+    --radius:10px;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Noto Sans KR",-apple-system,sans-serif;
+    min-height:100vh;
+  }
+  ::selection{background:var(--accent);color:#fff;}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .mono{font-family:"IBM Plex Mono",monospace;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:var(--panel);
+    border-bottom:1px solid var(--panel-line);
+    display:flex;align-items:center;gap:18px;
+    padding:14px 20px;
+  }
+  .brand{
+    display:flex;align-items:baseline;gap:8px;
+    font-family:"Space Grotesk",sans-serif;
+    color:var(--panel-text);font-weight:700;font-size:19px;
+    white-space:nowrap;cursor:pointer;
+    background:none;border:none;padding:0;
+  }
+  .brand span{
+    font-family:"Noto Sans KR",sans-serif;
+    font-weight:400;font-size:12px;color:var(--panel-text-dim);
+  }
+  .search-form{
+    flex:1;display:flex;max-width:560px;
+    background:#FFFFFF;border:1px solid var(--panel-line);
+    border-radius:999px;overflow:hidden;
+  }
+  .search-form input{
+    flex:1;border:none;background:transparent;color:var(--panel-text);
+    padding:10px 16px;font-size:14px;font-family:inherit;
+  }
+  .search-form input::placeholder{color:var(--panel-text-dim);}
+  .search-form input:focus{outline:none;}
+  .search-form button{
+    border:none;background:var(--accent);color:#fff;
+    padding:0 20px;font-size:13px;font-weight:500;cursor:pointer;
+  }
+  .search-form button:hover{background:var(--accent-strong);}
+
+  /* ---------- layout ---------- */
+  .layout{display:flex;align-items:flex-start;}
+
+  aside{
+    width:172px;flex:none;
+    background:var(--panel);color:var(--panel-text);
+    min-height:calc(100vh - 57px);
+    padding:18px 0;
+    position:sticky;top:57px;
+    display:flex;flex-direction:column;
+  }
+  .side-group-header{
+    width:100%;display:flex;align-items:center;justify-content:space-between;
+    padding:9px 12px 9px 20px;font-size:13px;font-weight:500;
+    color:var(--panel-text);letter-spacing:.02em;
+    background:none;border:none;cursor:pointer;font-family:inherit;
+  }
+  .region-count-chip{
+    background:var(--panel-text);color:var(--panel);
+    font-size:11px;padding:4px 10px;border-radius:999px;
+    flex:none;transition:opacity .2s ease;
+  }
+  .side-group-header.collapsed .region-count-chip{opacity:.6;}
+  .region-group{
+    overflow:hidden;max-height:400px;transition:max-height .25s ease;
+  }
+  .region-group.collapsed{max-height:0;}
+  .side-item{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:9px 20px;font-size:14px;cursor:pointer;
+    border-left:3px solid transparent;
+    color:var(--panel-text);
+  }
+  .side-item:hover{background:#C3DEF1;}
+  .side-item.active{
+    border-left-color:var(--accent);
+    background:#C3DEF1;
+    font-weight:500;color:var(--panel-text);
+  }
+  .side-item small{color:var(--panel-text-dim);font-size:11px;}
+
+  .side-photo{
+    flex:1;min-height:140px;position:relative;overflow:hidden;
+    background:var(--panel);
+  }
+  .side-photo img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    position:absolute;inset:0;
+    opacity:0;transition:opacity .5s ease;
+  }
+  .side-photo img.loaded{opacity:1;}
+  .side-photo::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:72px;z-index:1;
+    background:linear-gradient(to bottom,
+      var(--panel) 0%, var(--panel) 15%, transparent 100%);
+  }
+
+  main{flex:1;min-width:0;padding:22px 26px 60px;}
+
+  .page-title{
+    display:flex;align-items:baseline;gap:10px;margin-bottom:4px;flex-wrap:wrap;
+  }
+  .page-title h1{
+    font-size:20px;margin:0;font-weight:700;
+  }
+  .page-title .count{color:var(--text-mute);font-size:13px;}
+  .page-sub{color:var(--text-mute);font-size:13px;margin:0 0 18px;}
+
+  .legend{
+    display:flex;gap:14px;flex-wrap:wrap;color:var(--text-mute);
+    font-size:12px;margin-bottom:18px;
+  }
+
+  /* ---------- location row ---------- */
+  .location{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin-bottom:14px;
+    overflow:hidden;
+  }
+  .location-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:13px 18px;border-bottom:1px solid var(--line);
+    gap:10px;flex-wrap:wrap;
+  }
+  .location-name{font-size:15px;font-weight:700;}
+  .location-area{
+    font-size:11px;color:var(--accent-strong);
+    background:#E6F3F2;padding:2px 9px;border-radius:999px;margin-left:8px;
+  }
+  .no-khoa-tag{
+    font-size:11px;color:var(--text-mute);
+  }
+  .detail-btn{
+    border:1px solid var(--accent);color:var(--accent-strong);
+    background:#fff;border-radius:7px;padding:6px 14px;
+    font-size:12.5px;cursor:pointer;font-weight:500;
+  }
+  .detail-btn:hover{background:var(--accent);color:#fff;}
+
+  .day-block{padding:12px 18px;border-bottom:1px solid var(--line);}
+  .day-block:last-child{border-bottom:none;}
+  .day-label{font-size:12px;color:var(--text-mute);margin-bottom:8px;font-weight:500;}
+
+  .slots{display:flex;gap:8px;flex-wrap:wrap;}
+  .slot{
+    flex:1 1 108px;min-width:104px;
+    border:1px solid var(--line);border-radius:8px;
+    padding:8px 10px;
+  }
+  .slot .t{font-size:12px;color:var(--text-mute);margin-bottom:4px;}
+  .slot .row1{display:flex;align-items:center;justify-content:space-between;}
+  .slot .score{font-size:16px;font-weight:600;}
+  .score.good, td .score.good{color:var(--good);}
+  .score.mid, td .score.mid{color:var(--mid);}
+  .score.warn, td .score.warn{color:var(--warn);}
+  .slot .metrics{
+    margin-top:4px;font-size:11.5px;color:var(--text-mute);
+    display:flex;gap:8px;
+  }
+  .slot.empty{color:var(--text-mute);font-size:12px;display:flex;align-items:center;justify-content:center;}
+
+  /* ---------- detail view ---------- */
+  .back-link{
+    display:inline-flex;align-items:center;gap:6px;
+    color:var(--accent-strong);font-size:13px;cursor:pointer;
+    margin-bottom:14px;background:none;border:none;padding:0;font-weight:500;
+  }
+  .back-link:hover{text-decoration:underline;}
+
+  .hour-day{margin-bottom:20px;}
+  .hour-day h2{font-size:14px;margin:0 0 8px;color:var(--text-mute);font-weight:500;}
+  table.hours{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+  table.hours th{
+    text-align:left;font-size:11px;color:var(--text-mute);font-weight:500;
+    padding:8px 10px;border-bottom:1px solid var(--line);background:#FAFCFB;
+  }
+  table.hours td{
+    padding:7px 10px;border-bottom:1px solid var(--line);font-size:13px;
+  }
+  table.hours tr:last-child td{border-bottom:none;}
+  .reason-cell{color:var(--text-mute);font-size:12px;}
+
+  /* ---------- states ---------- */
+  .empty-state{
+    padding:50px 20px;text-align:center;color:var(--text-mute);
+    border:1px dashed var(--line);border-radius:var(--radius);
+  }
+  .loading{padding:40px 20px;color:var(--text-mute);font-size:13px;}
+
+  /* ---------- mobile: hamburger + off-canvas sidebar ---------- */
+  .menu-toggle{
+    display:none;background:none;border:none;color:var(--panel-text);
+    font-size:20px;line-height:1;cursor:pointer;padding:4px 6px;
+  }
+  .side-panel-head{
+    display:none;align-items:center;justify-content:space-between;
+    padding:0 20px 14px;color:var(--panel-text);font-weight:700;font-size:15px;
+  }
+  .side-panel-head button{
+    background:none;border:none;color:var(--panel-text-dim);
+    font-size:18px;cursor:pointer;padding:4px;
+  }
+  .sidebar-overlay{
+    display:none;position:fixed;inset:0;background:rgba(6,20,28,.55);z-index:55;
+  }
+  .sidebar-overlay.show{display:block;}
+
+  /* ---------- mobile: summary list ---------- */
+  .summary-row{
+    display:flex;align-items:center;gap:10px;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:13px 16px;margin-bottom:8px;cursor:pointer;
+  }
+  .summary-row:active{background:#F3FAF9;}
+  .summary-info{display:flex;flex-direction:column;gap:5px;min-width:0;flex:1;}
+  .summary-info .location-area{align-self:flex-start;margin-left:0;}
+  .summary-slot{
+    display:flex;flex-direction:column;align-items:center;flex:none;padding:0 4px;
+  }
+  .summary-slot .label{font-size:10px;color:var(--text-mute);}
+  .summary-slot .time{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--text-mute);}
+  .summary-score{display:flex;align-items:center;gap:8px;flex:none;}
+  .summary-score .score{font-size:16px;font-weight:600;}
+  .summary-score .chev{color:var(--text-mute);font-size:18px;}
+  .summary-wave{
+    font-size:12px;color:var(--text-mute);background:#EEF4F3;
+    padding:3px 7px;border-radius:6px;
+  }
+
+  @media (max-width:720px){
+    .menu-toggle{display:inline-flex;align-items:center;}
+    .side-panel-head{display:flex;}
+
+    aside{
+      position:fixed;top:0;left:0;bottom:0;
+      width:230px;min-height:100vh;
+      padding:20px 0;
+      transform:translateX(-100%);
+      transition:transform .22s ease;
+      z-index:60;overflow-y:auto;
+    }
+    aside.open{transform:translateX(0);box-shadow:4px 0 24px rgba(0,0,0,.35);}
+
+    .layout{flex-direction:column;}
+    main{padding:16px;}
+    .brand span{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <button class="menu-toggle" id="menuToggle" aria-label="지역 메뉴 열기">☰</button>
+  <button class="brand" id="brandBtn" title="홈으로">🤿 Let's Snorkel<span>동해안 스노클 컨디션</span></button>
+  <form class="search-form" id="searchForm">
+    <input type="text" id="searchInput" placeholder="포인트/지역 이름으로 검색 (예: 남애, 속초, 울진)" autocomplete="off">
+    <button type="submit">검색</button>
+  </form>
+</header>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="layout">
+  <aside>
+    <div class="side-panel-head"><span>메뉴</span><button id="sidebarClose" aria-label="닫기">✕</button></div>
+    <div class="side-item active" data-region="__ALL__">전체 <small id="allCount"></small></div>
+    <button class="side-group-header collapsed" id="eastSeaToggle" aria-expanded="false">
+      <span>동해 바다</span><span class="region-count-chip" id="regionCountChip"></span>
+    </button>
+    <div class="region-group collapsed" id="regionList">
+      <div class="side-item" data-region="gosung">고성</div>
+      <div class="side-item" data-region="sokcho">속초</div>
+      <div class="side-item" data-region="yangyang">양양</div>
+      <div class="side-item" data-region="gangneung">강릉</div>
+      <div class="side-item" data-region="donghae">동해</div>
+      <div class="side-item" data-region="samcheok">삼척</div>
+      <div class="side-item" data-region="uljin">울진</div>
+    </div>
+    <div class="side-photo"><img src="assets/diving.jpg" alt=""></div>
+  </aside>
+
+  <main id="main">
+    <div class="loading">불러오는 중…</div>
+  </main>
+</div>
+
+<script>
+  /* =========================================================
+   * 데이터 로드: 원격 Apps Script API 대신 로컬 /data/scored.json
+   * 하나만 fetch해서 4개 뷰(오늘/검색/지역/상세)를 전부 클라이언트에서 계산한다.
+   * ========================================================= */
+  var SCORED_DATA = null;
+
+  function loadScoredData(onReady){
+    if (SCORED_DATA) { onReady(); return; }
+    fetch("./data/scored.json")
+      .then(function(res){
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function(data){
+        SCORED_DATA = data;
+        onReady();
+      })
+      .catch(function(err){
+        console.error(err);
+        document.getElementById("main").innerHTML =
+          emptyStateHtml("데이터를 불러오지 못했습니다. 잠시 후 다시 시도해주세요. (" + err.message + ")");
+      });
+  }
+
+  var INITIAL_LOCATION_ID = new URLSearchParams(window.location.search).get("id") || "";
+
+  var state = { view: "home", regionId: "__ALL__" };
+
+  /* ---------- 지역 상수 (7개, 사이드바 data-region 값 → area명) ---------- */
+  var REGION_ORDER = ["gosung", "sokcho", "yangyang", "gangneung", "donghae", "samcheok", "uljin"];
+  var REGION_NAMES = {
+    gosung: "고성",
+    sokcho: "속초",
+    yangyang: "양양",
+    gangneung: "강릉",
+    donghae: "동해",
+    samcheok: "삼척",
+    uljin: "울진"
+  };
+
+  function esc(s){
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+    });
+  }
+
+  function setActiveSide(regionId){
+    document.querySelectorAll(".side-item").forEach(function(el){
+      el.classList.toggle("active", el.getAttribute("data-region") === regionId);
+    });
+  }
+
+  function scoreClass(score){
+    if (score === null || typeof score === "undefined") return "";
+    if (score >= 80) return "good";
+    if (score >= 65) return "mid";
+    return "warn";
+  }
+
+  function isMobileView(){
+    return window.matchMedia("(max-width:720px)").matches;
+  }
+
+  function bestBlockOf(blocks){
+    var withScore = (blocks || []).filter(function(b){
+      return b.score !== null && typeof b.score !== "undefined";
+    });
+    if (!withScore.length) return null;
+    return withScore.slice().sort(function(a, b){ return b.score - a.score; })[0];
+  }
+
+  /* =========================================================
+   * 아이콘 헬퍼 (원본 35_recommend_engine.gs scoreIconV2/weatherIconV2와 동일)
+   * ========================================================= */
+  function scoreIcon(score){
+    if (score === null || typeof score === "undefined") return "⚪";
+    if (score >= 90) return "🟢";
+    if (score >= 80) return "🔵";
+    if (score >= 65) return "🟡";
+    if (score >= 50) return "🟠";
+    return "🔴";
+  }
+
+  function weatherIcon(code){
+    var n = Number(code);
+    if (n === 0) return "☀️";
+    if (n === 1 || n === 2) return "🌤";
+    if (n === 3) return "☁️";
+    if (n === 45 || n === 48) return "🌫";
+    if ([51, 53, 55, 56, 57, 80, 81, 82].indexOf(n) !== -1) return "🌦";
+    if ([61, 63, 65, 66, 67].indexOf(n) !== -1) return "🌧";
+    if ([71, 73, 75, 77].indexOf(n) !== -1) return "❄️";
+    if ([95, 96, 99].indexOf(n) !== -1) return "⛈";
+    return "🌤";
+  }
+
+  /* =========================================================
+   * 날짜/시간 유틸 (scored.json의 "yyyy-MM-dd HH:mm" 문자열을
+   * 로컬 시각 기준 Date로 다룬다)
+   * ========================================================= */
+  var WEEKDAY_KO = ["일", "월", "화", "수", "목", "금", "토"];
+
+  function parseTime(str){
+    return new Date(String(str).replace(" ", "T"));
+  }
+
+  function pad2(n){
+    return n < 10 ? "0" + n : String(n);
+  }
+
+  function formatDateLabel(date){
+    return pad2(date.getMonth() + 1) + "/" + pad2(date.getDate()) + "(" + WEEKDAY_KO[date.getDay()] + ")";
+  }
+
+  function avg(values){
+    if (!values.length) return null;
+    var sum = values.reduce(function(a, b){ return a + b; }, 0);
+    return sum / values.length;
+  }
+
+  function mostCommon(values){
+    var counts = {};
+    values.forEach(function(v){
+      if (v === null || typeof v === "undefined") return;
+      counts[v] = (counts[v] || 0) + 1;
+    });
+    var keys = Object.keys(counts).map(Number).sort(function(a, b){ return a - b; });
+    if (!keys.length) return null;
+    keys.sort(function(a, b){ return counts[b] - counts[a]; });
+    return keys[0];
+  }
+
+  function getTodayRange(){
+    var now = new Date();
+    var start = new Date(now);
+    start.setHours(0, 0, 0, 0);
+    var end = new Date(start);
+    end.setDate(end.getDate() + 1);
+    return { start: start, end: end };
+  }
+
+  // 이번 주: 월요일 00:00 ~ 다음 월요일 00:00 (로컬 시각 기준)
+  function getThisWeekRange(){
+    var now = new Date();
+    var day = now.getDay();
+    var diffToMonday = (day === 0) ? 6 : day - 1;
+    var start = new Date(now);
+    start.setHours(0, 0, 0, 0);
+    start.setDate(start.getDate() - diffToMonday);
+    var end = new Date(start);
+    end.setDate(end.getDate() + 7);
+    return { start: start, end: end };
+  }
+
+  function shortNameOf(point){
+    var name = point.name || point.id || "";
+    var prefix = point.area || "";
+    if (prefix && name.indexOf(prefix + " ") === 0) {
+      return name.slice(prefix.length + 1);
+    }
+    return name;
+  }
+
+  /* =========================================================
+   * 4시간 블록 그룹핑 (원본 groupRowsByLocationDateTimeBlockV2 + blockToJsonV2_ 이식)
+   * 입력: 특정 포인트의 hourly 배열 일부(날짜 범위 필터링된 것)
+   * ========================================================= */
+  function groupIntoBlocks(hourlyRows){
+    var map = {};
+
+    hourlyRows.forEach(function(h){
+      var t = parseTime(h.time);
+      var blockStartHour = Math.floor(t.getHours() / 4) * 4;
+      var start = new Date(t);
+      start.setHours(blockStartHour, 0, 0, 0);
+      var end = new Date(start);
+      end.setHours(start.getHours() + 4);
+
+      var key = start.getTime();
+      if (!map[key]) {
+        map[key] = { start: start, end: end, scores: [], waves: [], temps: [], weatherCodes: [] };
+      }
+
+      if (h.score !== null && typeof h.score !== "undefined") map[key].scores.push(h.score);
+      if (h.forecastWave !== null && typeof h.forecastWave !== "undefined") map[key].waves.push(h.forecastWave);
+      if (h.waterTemp !== null && typeof h.waterTemp !== "undefined") map[key].temps.push(h.waterTemp);
+      if (h.weatherCode !== null && typeof h.weatherCode !== "undefined") map[key].weatherCodes.push(h.weatherCode);
+    });
+
+    return Object.keys(map)
+      .map(function(key){ return map[key]; })
+      .sort(function(a, b){ return a.start - b.start; })
+      .map(function(g){
+        var avgScore = avg(g.scores);
+        var avgWave = avg(g.waves);
+        var avgTemp = avg(g.temps);
+        var weatherCode = mostCommon(g.weatherCodes);
+
+        return {
+          startHour: pad2(g.start.getHours()),
+          endHour: pad2(g.end.getHours()),
+          dateLabel: formatDateLabel(g.start),
+          startTimeIso: g.start.toISOString(),
+          score: avgScore === null ? null : Math.round(avgScore),
+          wave: avgWave === null ? null : Number(avgWave.toFixed(2)),
+          temp: avgTemp === null ? null : Number(avgTemp.toFixed(1)),
+          weatherCode: weatherCode,
+          scoreIcon: scoreIcon(avgScore),
+          weatherIcon: weatherIcon(weatherCode)
+        };
+      });
+  }
+
+  function filterHourlyByRange(hourly, range){
+    return hourly.filter(function(h){
+      var t = parseTime(h.time);
+      return t >= range.start && t < range.end;
+    });
+  }
+
+  function groupBlocksByDate(blocks){
+    var byDate = {};
+    var order = [];
+    blocks.forEach(function(b){
+      if (!byDate[b.dateLabel]) {
+        byDate[b.dateLabel] = [];
+        order.push(b.dateLabel);
+      }
+      byDate[b.dateLabel].push(b);
+    });
+    return order.map(function(dateLabel){
+      return { dateLabel: dateLabel, blocks: byDate[dateLabel] };
+    });
+  }
+
+  /* =========================================================
+   * 4개 뷰: action=today/search/region/detail 대체
+   * ========================================================= */
+  function buildTodayView(){
+    var range = getTodayRange();
+    var now = new Date();
+
+    var locations = SCORED_DATA.points.map(function(point){
+      var todayHourly = filterHourlyByRange(point.hourly, range);
+      return {
+        id: point.id,
+        name: point.name,
+        shortName: shortNameOf(point),
+        area: point.area,
+        blocks: groupIntoBlocks(todayHourly)
+      };
+    });
+
+    return {
+      todayLabel: formatDateLabel(now),
+      locations: locations
+    };
+  }
+
+  function buildWeekDataForLocation(pointId){
+    var point = SCORED_DATA.points.find(function(p){ return p.id === pointId; });
+    if (!point) return null;
+
+    var range = getThisWeekRange();
+    var weekHourly = filterHourlyByRange(point.hourly, range);
+    var blocks = groupIntoBlocks(weekHourly);
+
+    return {
+      id: point.id,
+      name: point.name,
+      shortName: shortNameOf(point),
+      area: point.area,
+      hasKhoaMapping: Boolean(point.hasKhoaMapping),
+      days: groupBlocksByDate(blocks)
+    };
+  }
+
+  // 검색어/이름을 비교할 때 공백 차이를 무시하기 위한 정규화
+  function normalizeForSearch(value){
+    return String(value || "").toLowerCase().replace(/\s+/g, "");
+  }
+
+  function buildSearchResults(query){
+    var q = normalizeForSearch(query);
+    if (!q) return { query: "", results: [] };
+
+    var matched = SCORED_DATA.points.filter(function(point){
+      return normalizeForSearch(point.name).indexOf(q) !== -1 ||
+        normalizeForSearch(point.area).indexOf(q) !== -1 ||
+        normalizeForSearch(point.id).indexOf(q) !== -1;
+    });
+
+    return {
+      query: String(query || "").trim(),
+      results: matched.map(function(point){ return buildWeekDataForLocation(point.id); })
+    };
+  }
+
+  function buildRegionResults(regionId){
+    var matched = SCORED_DATA.points.filter(function(point){ return point.area === regionId; });
+
+    return {
+      regionId: regionId,
+      regionName: regionId,
+      results: matched.map(function(point){ return buildWeekDataForLocation(point.id); })
+    };
+  }
+
+  function buildHourlyDetail(pointId){
+    var point = SCORED_DATA.points.find(function(p){ return p.id === pointId; });
+    if (!point) return null;
+
+    var range = getThisWeekRange();
+    var weekHourly = filterHourlyByRange(point.hourly, range).slice().sort(function(a, b){
+      return parseTime(a.time) - parseTime(b.time);
+    });
+
+    var byDate = {};
+    var order = [];
+    weekHourly.forEach(function(h){
+      var t = parseTime(h.time);
+      var dateLabel = formatDateLabel(t);
+      if (!byDate[dateLabel]) {
+        byDate[dateLabel] = [];
+        order.push(dateLabel);
+      }
+      byDate[dateLabel].push({
+        time: h.time.slice(11, 16),
+        dateLabel: dateLabel,
+        score: h.score === null || typeof h.score === "undefined" ? null : h.score,
+        grade: h.grade || "",
+        recommendation: h.recommendation || "",
+        reason: h.reason || "",
+        wave: h.forecastWave === null || typeof h.forecastWave === "undefined" ? null : h.forecastWave,
+        swell: h.swellWave === null || typeof h.swellWave === "undefined" ? null : h.swellWave,
+        temp: h.waterTemp === null || typeof h.waterTemp === "undefined" ? null : h.waterTemp,
+        observedStation: "",
+        observedWave: h.observedWave === null || typeof h.observedWave === "undefined" ? null : h.observedWave,
+        observedMaxWave: h.maxObservedWave === null || typeof h.maxObservedWave === "undefined" ? null : h.maxObservedWave,
+        diff: null,
+        weatherCode: h.weatherCode,
+        weatherIcon: weatherIcon(h.weatherCode),
+        scoreIcon: scoreIcon(h.score),
+        dataStatus: point.hasKhoaMapping ? "예보+실측" : "예보만"
+      });
+    });
+
+    return {
+      id: point.id,
+      name: point.name,
+      shortName: shortNameOf(point),
+      area: point.area,
+      hasKhoaMapping: Boolean(point.hasKhoaMapping),
+      days: order.map(function(dateLabel){
+        return { dateLabel: dateLabel, hours: byDate[dateLabel] };
+      })
+    };
+  }
+
+  /* ---------- 모바일 사이드바 (햄버거) ---------- */
+  var asideEl = document.querySelector("aside");
+  var menuToggleBtn = document.getElementById("menuToggle");
+  var sidebarOverlayEl = document.getElementById("sidebarOverlay");
+  var sidebarCloseBtn = document.getElementById("sidebarClose");
+
+  function openSidebar(){
+    asideEl.classList.add("open");
+    sidebarOverlayEl.classList.add("show");
+  }
+  function closeSidebar(){
+    asideEl.classList.remove("open");
+    sidebarOverlayEl.classList.remove("show");
+  }
+  menuToggleBtn.addEventListener("click", openSidebar);
+  sidebarOverlayEl.addEventListener("click", closeSidebar);
+  sidebarCloseBtn.addEventListener("click", closeSidebar);
+
+  /* ---------- init: sidebar ---------- */
+  function initSidebar(){
+    document.querySelectorAll(".side-item").forEach(function(el){
+      el.addEventListener("click", function(){
+        var regionId = el.getAttribute("data-region");
+        document.getElementById("searchInput").value = "";
+        setActiveSide(regionId);
+        closeSidebar();
+        if (regionId === "__ALL__") {
+          renderHome();
+        } else {
+          loadRegion(regionId);
+        }
+      });
+    });
+
+    var groupHeader = document.getElementById("eastSeaToggle");
+    var regionGroup = document.getElementById("regionList");
+    var regionCount = regionGroup.querySelectorAll(".side-item").length;
+    document.getElementById("regionCountChip").textContent = "지역 " + regionCount;
+
+    groupHeader.addEventListener("click", function(){
+      var collapsed = regionGroup.classList.toggle("collapsed");
+      groupHeader.classList.toggle("collapsed", collapsed);
+      groupHeader.setAttribute("aria-expanded", String(!collapsed));
+    });
+  }
+
+  /* ---------- 사이드바 사진: 로드 완료 후 부드럽게 페이드인 ---------- */
+  (function(){
+    var photo = document.querySelector(".side-photo img");
+    if (!photo) return;
+    if (photo.complete) {
+      photo.classList.add("loaded");
+    } else {
+      photo.addEventListener("load", function(){ photo.classList.add("loaded"); });
+    }
+  })();
+
+  document.getElementById("brandBtn").addEventListener("click", function(){
+    document.getElementById("searchInput").value = "";
+    setActiveSide("__ALL__");
+    renderHome();
+  });
+
+  document.getElementById("searchForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var q = document.getElementById("searchInput").value.trim();
+    if (!q) return;
+    setActiveSide("__NONE__");
+    loadSearch(q);
+  });
+
+  /* ---------- home (오늘) ---------- */
+  var lastHomeData = null;
+
+  function renderHome(){
+    state.view = "home";
+    document.getElementById("main").innerHTML = '<div class="loading">오늘 데이터를 불러오는 중…</div>';
+    loadScoredData(function(){
+      lastHomeData = buildTodayView();
+      drawHome();
+    });
+  }
+
+  function drawHome(){
+    var data = lastHomeData;
+    if (!data) return;
+    state.view = "home";
+
+    var html = '<div class="page-title"><h1>오늘의 동해안 바다 상황</h1>' +
+      '<span class="count">' + esc(data.todayLabel) + ' · ' + data.locations.length + '개 포인트</span></div>' +
+      legendHtml();
+
+    if (!data.locations.length) {
+      document.getElementById("main").innerHTML = html + emptyStateHtml("표시할 데이터가 없습니다.");
+      return;
+    }
+
+    if (isMobileView()) {
+      html += data.locations.map(function(loc){
+        return summaryRowHtml(loc, bestBlockOf(loc.blocks));
+      }).join("");
+      document.getElementById("main").innerHTML = html;
+      bindSummaryRows("home");
+    } else {
+      html += data.locations.map(function(loc){ return locationRowHtml(loc, false); }).join("");
+      document.getElementById("main").innerHTML = html;
+      bindDetailButtons(drawHome);
+    }
+  }
+
+  /* ---------- search / region (이번주) ---------- */
+  var lastResultsData = null;
+
+  function renderResultsPage(title, sub, results){
+    lastResultsData = { title: title, sub: sub, results: results };
+    state.view = "results";
+    drawResults();
+  }
+
+  function drawResults(){
+    var data = lastResultsData;
+    if (!data) return;
+    state.view = "results";
+
+    var html = '<div class="page-title"><h1>' + esc(data.title) + '</h1>' +
+      '<span class="count">' + data.results.length + '개 포인트</span></div>' +
+      (data.sub ? '<p class="page-sub">' + esc(data.sub) + '</p>' : "") +
+      legendHtml();
+
+    if (!data.results.length) {
+      html += emptyStateHtml("일치하는 바다 포인트가 없습니다. 지역명이나 포인트 이름으로 다시 검색해보세요.");
+      document.getElementById("main").innerHTML = html;
+      return;
+    }
+
+    if (isMobileView()) {
+      html += data.results.map(function(loc){
+        var todayBlocks = (loc.days && loc.days.length) ? loc.days[0].blocks : [];
+        return summaryRowHtml(loc, bestBlockOf(todayBlocks));
+      }).join("");
+      document.getElementById("main").innerHTML = html;
+      bindSummaryRows("results");
+    } else {
+      html += data.results.map(function(loc){ return locationRowHtml(loc, true); }).join("");
+      document.getElementById("main").innerHTML = html;
+      bindDetailButtons(drawResults);
+    }
+  }
+
+  function loadSearch(query){
+    document.getElementById("main").innerHTML = '<div class="loading">검색 중…</div>';
+    loadScoredData(function(){
+      var data = buildSearchResults(query);
+      renderResultsPage('"' + query + '" 검색 결과', "이번 주 데이터 (오늘 포함, 4시간 단위)", data.results);
+    });
+  }
+
+  function loadRegion(regionId){
+    document.getElementById("main").innerHTML = '<div class="loading">불러오는 중…</div>';
+    loadScoredData(function(){
+      var regionName = REGION_NAMES[regionId] || regionId;
+      var data = buildRegionResults(regionName);
+      renderResultsPage(regionName, "이번 주 데이터 (오늘 포함, 4시간 단위)", data.results);
+    });
+  }
+
+  /* ---------- 모바일 요약 → 확장(오늘/이번주 블록) ---------- */
+  function bindSummaryRows(kind){
+    document.querySelectorAll(".summary-row").forEach(function(row){
+      row.addEventListener("click", function(){
+        var id = row.getAttribute("data-id");
+        var loc;
+        if (kind === "home") {
+          loc = (lastHomeData.locations || []).find(function(l){ return l.id === id; });
+        } else {
+          loc = (lastResultsData.results || []).find(function(l){ return l.id === id; });
+        }
+        if (loc) renderLocationExpanded(loc, kind);
+      });
+    });
+  }
+
+  function renderLocationExpanded(loc, kind){
+    state.view = "expanded";
+    var backLabel = kind === "home" ? "오늘 목록으로" : "목록으로";
+    var html = '<button class="back-link" id="backBtn">← ' + backLabel + '</button>' +
+      locationRowHtml(loc, kind === "results");
+    document.getElementById("main").innerHTML = html;
+    bindDetailButtons(function(){ renderLocationExpanded(loc, kind); });
+    document.getElementById("backBtn").addEventListener("click", function(){
+      if (kind === "home") { drawHome(); } else { drawResults(); }
+    });
+  }
+
+  /* ---------- 자세히 보기 (1시간 단위) ---------- */
+  function loadDetail(locationId, returnFn){
+    state.view = "detail";
+    document.getElementById("main").innerHTML = '<div class="loading">상세 데이터를 불러오는 중…</div>';
+    loadScoredData(function(){
+      var data = buildHourlyDetail(locationId);
+      if (!data) {
+        document.getElementById("main").innerHTML = emptyStateHtml("해당 포인트를 찾을 수 없습니다.");
+        return;
+      }
+      var html = '<button class="back-link" id="backBtn">← 목록으로</button>' +
+        '<div class="page-title"><h1>' + esc(data.name) + '</h1>' +
+        '<span class="count">1시간 단위 · 이번 주</span></div>';
+
+      if (!data.hasKhoaMapping) {
+        html += '<p class="page-sub">이 포인트는 인근 KHOA 실측 관측소가 없어 예보(Open-Meteo) 데이터만 제공됩니다.</p>';
+      }
+
+      data.days.forEach(function(day){
+        html += '<div class="hour-day"><h2>' + esc(day.dateLabel) + '</h2>' +
+          '<table class="hours"><thead><tr>' +
+          '<th>시간</th><th>점수</th><th>파고</th><th>너울</th><th>수온</th><th>날씨</th><th>코멘트</th>' +
+          '</tr></thead><tbody>' +
+          day.hours.map(function(h){
+            return '<tr>' +
+              '<td class="mono">' + esc(h.time) + '</td>' +
+              '<td>' + h.scoreIcon + ' <span class="mono score ' + scoreClass(h.score) + '">' + (h.score === null ? "-" : h.score) + '</span></td>' +
+              '<td class="mono">' + (h.wave === null ? "-" : h.wave + "m") + '</td>' +
+              '<td class="mono">' + (h.swell === null ? "-" : h.swell + "m") + '</td>' +
+              '<td class="mono">' + (h.temp === null ? "-" : h.temp + "℃") + '</td>' +
+              '<td>' + h.weatherIcon + '</td>' +
+              '<td class="reason-cell">' + esc(h.reason) + '</td>' +
+              '</tr>';
+          }).join("") +
+          '</tbody></table></div>';
+      });
+
+      document.getElementById("main").innerHTML = html;
+      document.getElementById("backBtn").addEventListener("click", function(){
+        if (returnFn) { returnFn(); } else { renderHome(); }
+      });
+    });
+  }
+
+  function bindDetailButtons(returnFn){
+    document.querySelectorAll("[data-detail-id]").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        loadDetail(btn.getAttribute("data-detail-id"), returnFn);
+      });
+    });
+  }
+
+  /* ---------- 화면 크기 전환 시 홈/목록 화면 다시 그리기 ---------- */
+  var resizeTimer = null;
+  window.addEventListener("resize", function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      if (state.view === "home") drawHome();
+      if (state.view === "results") drawResults();
+    }, 200);
+  });
+
+  /* ---------- html builders ---------- */
+  function legendHtml(){
+    return '<div class="legend">' +
+      '<span>🟢 최고(90+)</span><span>🔵 좋음(80+)</span><span>🟡 보통(65+)</span>' +
+      '<span>🟠 주의(50+)</span><span>🔴 비추천</span></div>';
+  }
+
+  function emptyStateHtml(msg){
+    return '<div class="empty-state">' + esc(msg) + '</div>';
+  }
+
+  function summaryRowHtml(loc, best){
+    var scoreCls = best ? scoreClass(best.score) : "";
+    var scoreText = best ? (best.scoreIcon + ' ' + best.score) : "-";
+    var weather = best ? best.weatherIcon : "";
+    var waveText = (best && best.wave !== null && typeof best.wave !== "undefined")
+      ? ('↗' + best.wave + 'm') : "";
+    var bestSlotChipHtml = best
+      ? ('<div class="summary-slot"><span class="label">오늘 최고</span>' +
+         '<span class="time">' + best.startHour + '~' + best.endHour + '시</span></div>')
+      : "";
+
+    return '<div class="summary-row" data-id="' + esc(loc.id) + '">' +
+      '<div class="summary-info">' +
+      '<span class="location-name">' + esc(loc.name) + '</span>' +
+      '<span class="location-area">' + esc(loc.area) +
+      (loc.hasKhoaMapping === false ? ' · 예보 전용' : '') + '</span>' +
+      '</div>' +
+      bestSlotChipHtml +
+      '<div class="summary-score">' +
+      '<span class="score ' + scoreCls + '">' + scoreText + '</span>' +
+      (waveText ? '<span class="summary-wave mono">' + waveText + '</span>' : '') +
+      '<span>' + weather + '</span>' +
+      '<span class="chev">›</span>' +
+      '</div></div>';
+  }
+
+  function slotHtml(b){
+    return '<div class="slot">' +
+      '<div class="t">' + esc(b.dateLabel ? b.dateLabel + " " : "") + b.startHour + '~' + b.endHour + '시</div>' +
+      '<div class="row1"><span class="score ' + scoreClass(b.score) + '">' + b.scoreIcon + ' ' + (b.score === null ? "-" : b.score) + '</span>' +
+      '<span>' + b.weatherIcon + '</span></div>' +
+      '<div class="metrics mono"><span>↗' + (b.wave === null ? "-" : b.wave) + 'm</span>' +
+      '<span>💧' + (b.temp === null ? "-" : b.temp) + '℃</span></div>' +
+      '</div>';
+  }
+
+  function locationRowHtml(loc, showDays){
+    var head = '<div class="location-head">' +
+      '<div><span class="location-name">' + esc(loc.name) + '</span>' +
+      '<span class="location-area">' + esc(loc.area) + '</span>' +
+      (loc.hasKhoaMapping === false ? ' <span class="no-khoa-tag">· 예보 전용</span>' : "") +
+      '</div>' +
+      '<button class="detail-btn" data-detail-id="' + esc(loc.id) + '">자세히 보기</button>' +
+      '</div>';
+
+    var body;
+    if (showDays) {
+      if (!loc.days || !loc.days.length) {
+        body = '<div class="day-block"><div class="day-label">데이터 없음</div></div>';
+      } else {
+        body = loc.days.map(function(day){
+          return '<div class="day-block">' +
+            '<div class="day-label">' + esc(day.dateLabel) + '</div>' +
+            '<div class="slots">' + day.blocks.map(slotHtml).join("") + '</div>' +
+            '</div>';
+        }).join("");
+      }
+    } else {
+      var blocks = loc.blocks || [];
+      body = '<div class="day-block"><div class="slots">' +
+        (blocks.length ? blocks.map(slotHtml).join("") : '<div class="slot empty">오늘 데이터 없음</div>') +
+        '</div></div>';
+    }
+
+    return '<div class="location">' + head + body + '</div>';
+  }
+
+  /* ---------- boot ---------- */
+  initSidebar();
+  if (INITIAL_LOCATION_ID) {
+    loadDetail(INITIAL_LOCATION_ID);
+  } else {
+    renderHome();
+  }
+</script>
+</body>
+</html>
