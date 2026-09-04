@@ -4,5 +4,5 @@ npm-debug.log*
 .env.*
 *.log
 .DS_Store
-data/*.json
-!data/.gitkeep
+data/openmeteo-raw.json
+data/khoa-raw.json
