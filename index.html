@@ -207,6 +207,14 @@
   }
   .back-link:hover{text-decoration:underline;}
 
+  .week-tabs{display:flex;gap:8px;margin-bottom:16px;}
+  .week-tab{
+    border:1px solid var(--panel-line);background:var(--card);color:var(--text-mute);
+    border-radius:999px;padding:6px 16px;font-size:12.5px;font-weight:500;cursor:pointer;
+  }
+  .week-tab:hover{background:#EEF4F3;}
+  .week-tab.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+
   .hour-day{margin-bottom:20px;}
   .hour-day h2{font-size:14px;margin:0 0 8px;color:var(--text-mute);font-weight:500;}
   table.hours{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
@@ -633,25 +641,26 @@
     };
   }
 
+  // 해당 포인트의 hourly 전체(scored.json에 있는 8일치 그대로)를 날짜별로 묶은 뒤,
+  // 각 날짜가 이번주/다음주 캘린더 주 중 어디에 속하는지로 분류한다.
   function buildHourlyDetail(pointId){
     var point = SCORED_DATA.points.find(function(p){ return p.id === pointId; });
     if (!point) return null;
 
-    var range = getThisWeekRange();
-    var weekHourly = filterHourlyByRange(point.hourly, range).slice().sort(function(a, b){
+    var hourly = point.hourly.slice().sort(function(a, b){
       return parseTime(a.time) - parseTime(b.time);
     });
 
     var byDate = {};
     var order = [];
-    weekHourly.forEach(function(h){
+    hourly.forEach(function(h){
       var t = parseTime(h.time);
       var dateLabel = formatDateLabel(t);
       if (!byDate[dateLabel]) {
-        byDate[dateLabel] = [];
+        byDate[dateLabel] = { date: new Date(t.getFullYear(), t.getMonth(), t.getDate()), hours: [] };
         order.push(dateLabel);
       }
-      byDate[dateLabel].push({
+      byDate[dateLabel].hours.push({
         time: h.time.slice(11, 16),
         dateLabel: dateLabel,
         score: h.score === null || typeof h.score === "undefined" ? null : h.score,
@@ -672,15 +681,36 @@
       });
     });
 
+    var currentRange = getThisWeekRange();
+    var nextStart = new Date(currentRange.end);
+    var nextEnd = new Date(nextStart);
+    nextEnd.setDate(nextEnd.getDate() + 7);
+    var nextRange = { start: nextStart, end: nextEnd };
+
+    var currentDays = [];
+    var nextDays = [];
+    order.forEach(function(dateLabel){
+      var group = byDate[dateLabel];
+      if (group.date >= currentRange.start && group.date < currentRange.end) {
+        currentDays.push({ dateLabel: dateLabel, hours: group.hours });
+      } else if (group.date >= nextRange.start && group.date < nextRange.end) {
+        nextDays.push({ dateLabel: dateLabel, hours: group.hours });
+      }
+      // 두 범위 밖 날짜는(있을 수 없지만 방어적으로) 무시한다.
+    });
+
+    var weeks = [{ weekKey: "current", weekLabel: "이번주", days: currentDays }];
+    if (nextDays.length) {
+      weeks.push({ weekKey: "next", weekLabel: "다음주", days: nextDays });
+    }
+
     return {
       id: point.id,
       name: point.name,
       shortName: shortNameOf(point),
       area: point.area,
       hasKhoaMapping: Boolean(point.hasKhoaMapping),
-      days: order.map(function(dateLabel){
-        return { dateLabel: dateLabel, hours: byDate[dateLabel] };
-      })
+      weeks: weeks
     };
   }
 
@@ -888,36 +918,58 @@
         document.getElementById("main").innerHTML = emptyStateHtml("해당 포인트를 찾을 수 없습니다.");
         return;
       }
-      var html = '<button class="back-link" id="backBtn">← 목록으로</button>' +
-        '<div class="page-title"><h1>' + esc(data.name) + '</h1>' +
-        '<span class="count">1시간 단위 · 이번 주</span></div>';
+      renderDetailView(data, 0, returnFn);
+    });
+  }
 
-      if (!data.hasKhoaMapping) {
-        html += '<p class="page-sub">이 포인트는 인근 KHOA 실측 관측소가 없어 예보(Open-Meteo) 데이터만 제공됩니다.</p>';
-      }
+  function renderDetailView(data, activeWeekIndex, returnFn){
+    var html = '<button class="back-link" id="backBtn">← 목록으로</button>' +
+      '<div class="page-title"><h1>' + esc(data.name) + '</h1>' +
+      '<span class="count">1시간 단위</span></div>';
 
-      data.days.forEach(function(day){
-        html += '<div class="hour-day"><h2>' + esc(day.dateLabel) + '</h2>' +
-          '<table class="hours"><thead><tr>' +
-          '<th>시간</th><th>점수</th><th>파고</th><th>너울</th><th>수온</th><th>날씨</th><th>코멘트</th>' +
-          '</tr></thead><tbody>' +
-          day.hours.map(function(h){
-            return '<tr>' +
-              '<td class="mono">' + esc(h.time) + '</td>' +
-              '<td>' + h.scoreIcon + ' <span class="mono score ' + scoreClass(h.score) + '">' + (h.score === null ? "-" : h.score) + '</span></td>' +
-              '<td class="mono">' + (h.wave === null ? "-" : h.wave + "m") + '</td>' +
-              '<td class="mono">' + (h.swell === null ? "-" : h.swell + "m") + '</td>' +
-              '<td class="mono">' + (h.temp === null ? "-" : h.temp + "℃") + '</td>' +
-              '<td>' + h.weatherIcon + '</td>' +
-              '<td class="reason-cell">' + esc(h.reason) + '</td>' +
-              '</tr>';
-          }).join("") +
-          '</tbody></table></div>';
-      });
+    if (!data.hasKhoaMapping) {
+      html += '<p class="page-sub">이 포인트는 인근 KHOA 실측 관측소가 없어 예보(Open-Meteo) 데이터만 제공됩니다.</p>';
+    }
 
-      document.getElementById("main").innerHTML = html;
-      document.getElementById("backBtn").addEventListener("click", function(){
-        if (returnFn) { returnFn(); } else { renderHome(); }
+    if (data.weeks.length > 1) {
+      html += '<div class="week-tabs">' +
+        data.weeks.map(function(w, i){
+          return '<button class="week-tab' + (i === activeWeekIndex ? ' active' : '') +
+            '" data-week-index="' + i + '">' + esc(w.weekLabel) + '</button>';
+        }).join("") +
+        '</div>';
+    }
+
+    var activeWeek = data.weeks[activeWeekIndex] || data.weeks[0];
+
+    activeWeek.days.forEach(function(day){
+      html += '<div class="hour-day"><h2>' + esc(day.dateLabel) + '</h2>' +
+        '<table class="hours"><thead><tr>' +
+        '<th>시간</th><th>점수</th><th>파고</th><th>너울</th><th>수온</th><th>날씨</th><th>코멘트</th>' +
+        '</tr></thead><tbody>' +
+        day.hours.map(function(h){
+          return '<tr>' +
+            '<td class="mono">' + esc(h.time) + '</td>' +
+            '<td>' + h.scoreIcon + ' <span class="mono score ' + scoreClass(h.score) + '">' + (h.score === null ? "-" : h.score) + '</span></td>' +
+            '<td class="mono">' + (h.wave === null ? "-" : h.wave + "m") + '</td>' +
+            '<td class="mono">' + (h.swell === null ? "-" : h.swell + "m") + '</td>' +
+            '<td class="mono">' + (h.temp === null ? "-" : h.temp + "℃") + '</td>' +
+            '<td>' + h.weatherIcon + '</td>' +
+            '<td class="reason-cell">' + esc(h.reason) + '</td>' +
+            '</tr>';
+        }).join("") +
+        '</tbody></table></div>';
+    });
+
+    document.getElementById("main").innerHTML = html;
+
+    document.getElementById("backBtn").addEventListener("click", function(){
+      if (returnFn) { returnFn(); } else { renderHome(); }
+    });
+
+    document.querySelectorAll(".week-tab").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        renderDetailView(data, Number(btn.getAttribute("data-week-index")), returnFn);
       });
     });
   }

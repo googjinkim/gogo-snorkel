@@ -19,12 +19,17 @@ const MARINE_HOURLY = [
 
 const OUTPUT_PATH = path.join(__dirname, "..", "data", "openmeteo-raw.json");
 
+// 8일치: Open-Meteo Marine API의 실제 파고 예보 신뢰 구간(~9.4일)을 벗어나지
+// 않는 선. 이보다 늘리면 forecastWave 등 파고 관련 필드가 null로 채워지는
+// 시간대가 생긴다 (수온/날씨코드는 더 오래 유지되지만 파고가 핵심 지표).
+const FORECAST_DAYS = 8;
+
 function marineUrl(lat, lon) {
-  return `https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lon}&hourly=${MARINE_HOURLY}&timezone=Asia%2FSeoul&forecast_days=8`;
+  return `https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lon}&hourly=${MARINE_HOURLY}&timezone=Asia%2FSeoul&forecast_days=${FORECAST_DAYS}`;
 }
 
 function weatherUrl(lat, lon) {
-  return `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=weather_code&timezone=Asia%2FSeoul&forecast_days=8`;
+  return `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=weather_code&timezone=Asia%2FSeoul&forecast_days=${FORECAST_DAYS}`;
 }
 
 /** Open-Meteo의 "yyyy-MM-ddTHH:mm" 형식을 "yyyy-MM-dd HH:mm"으로 정규화한다. */
