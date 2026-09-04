@@ -1,0 +1,17 @@
+{
+  "name": "ocean-insight",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ocean Insight data collection and scoring pipeline (GitHub Actions based)",
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "collect:openmeteo": "node scripts/collect-openmeteo.js",
+    "collect:khoa": "node scripts/collect-khoa.js",
+    "build:score": "node scripts/build-score.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

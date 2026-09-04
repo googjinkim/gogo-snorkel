@@ -1,0 +1,35 @@
+name: Ocean Data Collect & Score
+
+# TODO(다음 단계): cron 스케줄 추가 예정. 현재는 수동 실행만 지원.
+on:
+  workflow_dispatch:
+
+jobs:
+  collect-and-score:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Collect Open-Meteo data
+        run: npm run collect:openmeteo
+
+      - name: Collect KHOA data
+        run: npm run collect:khoa
+        env:
+          # KHOA_SERVICE_KEY는 절대 코드에 하드코딩하지 않는다.
+          # scripts/collect-khoa.js에서는 process.env.KHOA_SERVICE_KEY로만 참조한다.
+          KHOA_SERVICE_KEY: ${{ secrets.KHOA_SERVICE_KEY }}
+
+      - name: Build score
+        run: npm run build:score
+
+      # TODO(다음 단계): /data/scored.json 커밋 & 푸시 스텝 추가 예정
