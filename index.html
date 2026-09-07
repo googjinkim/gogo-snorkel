@@ -286,17 +286,16 @@
       transform:translateX(-100%);
       transition:transform .22s ease;
       z-index:60;overflow-y:auto;
+      pointer-events:none;
     }
-    aside.open{transform:translateX(0);box-shadow:4px 0 24px rgba(0,0,0,.35);}
+    aside.open{transform:translateX(0);box-shadow:4px 0 24px rgba(0,0,0,.35);pointer-events:auto;}
 
     .layout{flex-direction:column;}
     main{padding:16px;}
     .brand span{display:none;}
 
-    .reason-cell{
-      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-      max-width:110px;
-    }
+    table.hours th{white-space:nowrap;padding:6px 6px;font-size:10px;}
+    table.hours td{padding:6px 6px;font-size:12px;}
   }
 </style>
 </head>
@@ -958,19 +957,10 @@
     activeWeek.days.forEach(function(day){
       html += '<div class="hour-day"><h2>' + esc(day.dateLabel) + '</h2>' +
         '<table class="hours"><thead><tr>' +
-        '<th>시간</th><th>점수</th><th>파고</th><th>너울</th><th>수온</th><th>날씨</th><th>코멘트</th>' +
+        '<th>시간</th><th>점수</th><th>파고</th><th>너울</th><th>수온</th><th>날씨</th>' +
+        (mobile ? '' : '<th>코멘트</th>') +
         '</tr></thead><tbody>' +
         day.hours.map(function(h){
-          var reasonText = h.reason;
-          var reasonAttr = "";
-          if (mobile) {
-            var reasonParts = String(h.reason || "").split(", ");
-            reasonText = reasonParts[0] || "";
-            if (reasonParts.length > 1) {
-              reasonText += " 외 " + (reasonParts.length - 1) + "건";
-            }
-            reasonAttr = ' title="' + esc(h.reason) + '"';
-          }
           return '<tr>' +
             '<td class="mono">' + esc(h.time) + '</td>' +
             '<td>' + h.scoreIcon + ' <span class="mono score ' + scoreClass(h.score) + '">' + (h.score === null ? "-" : h.score) + '</span></td>' +
@@ -978,7 +968,7 @@
             '<td class="mono">' + (h.swell === null ? "-" : h.swell + "m") + '</td>' +
             '<td class="mono">' + (h.temp === null ? "-" : h.temp + "℃") + '</td>' +
             '<td>' + h.weatherIcon + '</td>' +
-            '<td class="reason-cell"' + reasonAttr + '>' + esc(reasonText) + '</td>' +
+            (mobile ? '' : '<td class="reason-cell">' + esc(h.reason) + '</td>') +
             '</tr>';
         }).join("") +
         '</tbody></table></div>';
@@ -1096,6 +1086,9 @@
   }
 
   /* ---------- boot ---------- */
+  if (isMobileView()) {
+    document.getElementById("searchInput").setAttribute("placeholder", "포인트/지역 검색");
+  }
   initSidebar();
   if (INITIAL_LOCATION_ID) {
     loadDetail(INITIAL_LOCATION_ID);
