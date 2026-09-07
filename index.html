@@ -173,7 +173,7 @@
   .detail-btn{
     border:1px solid var(--accent);color:var(--accent-strong);
     background:#fff;border-radius:7px;padding:6px 14px;
-    font-size:12.5px;cursor:pointer;font-weight:500;
+    font-size:12.5px;cursor:pointer;font-weight:500;white-space:nowrap;
   }
   .detail-btn:hover{background:var(--accent);color:#fff;}
 
@@ -217,6 +217,7 @@
 
   .hour-day{margin-bottom:20px;}
   .hour-day h2{font-size:14px;margin:0 0 8px;color:var(--text-mute);font-weight:500;}
+  .day-best{font-size:13px;font-weight:400;color:var(--text-mute);margin-left:8px;}
   table.hours{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
   table.hours th{
     text-align:left;font-size:11px;color:var(--text-mute);font-weight:500;
@@ -944,6 +945,19 @@
     });
   }
 
+  // 점수가 높은 순(동점이면 이른 시간 순)으로 상위 n개의 "HH:mm" 시간을 뽑는다.
+  function topScoreTimes(hours, n){
+    return hours
+      .map(function(h, idx){ return { time: h.time, score: h.score, idx: idx }; })
+      .filter(function(h){ return h.score !== null && typeof h.score !== "undefined"; })
+      .sort(function(a, b){
+        if (b.score !== a.score) return b.score - a.score;
+        return a.idx - b.idx;
+      })
+      .slice(0, n)
+      .map(function(h){ return h.time; });
+  }
+
   function renderDetailView(data, activeWeekIndex, returnFn){
     var html = '<button class="back-link" id="backBtn">← 목록으로</button>' +
       '<div class="page-title"><h1>' + esc(data.name) + '</h1>' +
@@ -966,7 +980,12 @@
     var mobile = isMobileView();
 
     activeWeek.days.forEach(function(day){
-      html += '<div class="hour-day"><h2>' + esc(day.dateLabel) + '</h2>' +
+      var bestTimes = topScoreTimes(day.hours, 3);
+      var bestHtml = bestTimes.length
+        ? '<span class="day-best">베스트 ' + bestTimes.map(esc).join('·') + '</span>'
+        : '';
+
+      html += '<div class="hour-day"><h2>' + esc(day.dateLabel) + bestHtml + '</h2>' +
         '<table class="hours"><thead><tr>' +
         '<th>시간</th><th>점수</th><th>파고</th><th>너울</th><th>수온</th><th>날씨</th>' +
         (mobile ? '' : '<th>코멘트</th>') +
@@ -1071,7 +1090,7 @@
       '<span class="location-area">' + esc(loc.area) + '</span>' +
       (loc.hasKhoaMapping === false ? ' <span class="no-khoa-tag">· 예보 전용</span>' : "") +
       '</div>' +
-      '<button class="detail-btn" data-detail-id="' + esc(loc.id) + '">자세히 보기</button>' +
+      '<button class="detail-btn" data-detail-id="' + esc(loc.id) + '">이번주 자세히</button>' +
       '</div>';
 
     var body;
