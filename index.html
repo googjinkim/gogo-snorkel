@@ -291,11 +291,20 @@
     aside.open{transform:translateX(0);box-shadow:4px 0 24px rgba(0,0,0,.35);pointer-events:auto;}
 
     .layout{flex-direction:column;}
-    main{padding:16px;}
+    main{padding:16px 8px;}
     .brand span{display:none;}
 
-    table.hours th{white-space:nowrap;padding:6px 6px;font-size:10px;}
-    table.hours td{padding:6px 6px;font-size:12px;}
+    .search-form input{text-align:center;}
+
+    table.hours{table-layout:fixed;}
+    table.hours th{white-space:nowrap;padding:6px 4px;font-size:10px;}
+    table.hours td{padding:6px 4px;font-size:12px;}
+    table.hours th:nth-child(1),table.hours td:nth-child(1){width:15%;}
+    table.hours th:nth-child(2),table.hours td:nth-child(2){width:17%;}
+    table.hours th:nth-child(3),table.hours td:nth-child(3){width:18%;}
+    table.hours th:nth-child(4),table.hours td:nth-child(4){width:18%;}
+    table.hours th:nth-child(5),table.hours td:nth-child(5){width:18%;}
+    table.hours th:nth-child(6),table.hours td:nth-child(6){width:14%;}
   }
 </style>
 </head>
