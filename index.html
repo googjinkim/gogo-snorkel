@@ -28,6 +28,7 @@
     --tier-orange:#C8631A;
     --fill-warning:#E8A317;
     --radius:10px;
+    --header-height:71px;
   }
 
   *{box-sizing:border-box;}
@@ -87,15 +88,15 @@
   aside{
     width:172px;flex:none;
     background:var(--panel);color:var(--panel-text);
-    min-height:calc(100vh - 71px);
+    min-height:calc(100vh - var(--header-height));
     padding:18px 0;
-    position:sticky;top:71px;
+    position:sticky;top:var(--header-height);
     display:flex;flex-direction:column;
   }
 
   @media (min-width:721px){
     aside{
-      max-height:calc(100vh - 71px);
+      max-height:calc(100vh - var(--header-height));
       overflow-y:auto;
       z-index:10;
     }
@@ -166,7 +167,7 @@
   }
 
   .list-sticky{
-    position:sticky;top:71px;z-index:15;
+    position:sticky;top:var(--header-height);z-index:15;
     background:var(--bg);
     padding:12px 0 14px;
     box-shadow:0 6px 10px -8px rgba(20,64,94,.25);
@@ -232,7 +233,7 @@
   .back-link:hover{text-decoration:underline;}
 
   .detail-sticky{
-    position:sticky;top:71px;z-index:15;
+    position:sticky;top:var(--header-height);z-index:15;
     background:var(--bg);
     padding:12px 0 14px;
     box-shadow:0 6px 10px -8px rgba(20,64,94,.25);
@@ -1026,8 +1027,8 @@
   }
 
   function renderDetailView(data, activeWeekIndex, returnFn){
-    var html = '<button class="back-link" id="backBtn">← 목록으로</button>' +
-      '<div class="detail-sticky">' +
+    var html = '<div class="detail-sticky">' +
+      '<button class="back-link" id="backBtn">← 목록으로</button>' +
       '<div class="page-title"><h1>' + esc(data.name) + '</h1>' +
       '<span class="count">1시간 단위</span></div>';
 
@@ -1104,11 +1105,29 @@
     });
   }
 
+  /* ---------- 헤더 실제 높이 측정 → --header-height CSS 변수 반영 ----------
+   * sticky 요소(aside, .list-sticky, .detail-sticky)가 하드코딩된 px 값
+   * 대신 이 변수를 참조하므로, 헤더 높이가 폰트 로딩/리사이즈로 바뀌어도
+   * 항상 실제 렌더링 높이와 어긋나지 않는다. */
+  function updateHeaderHeightVar(){
+    var header = document.querySelector("header");
+    if (!header) return;
+    var height = header.getBoundingClientRect().height;
+    if (height > 0) {
+      document.documentElement.style.setProperty("--header-height", height + "px");
+    }
+  }
+  updateHeaderHeightVar();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updateHeaderHeightVar);
+  }
+
   /* ---------- 화면 크기 전환 시 홈/목록 화면 다시 그리기 ---------- */
   var resizeTimer = null;
   window.addEventListener("resize", function(){
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function(){
+      updateHeaderHeightVar();
       if (state.view === "home") drawHome();
       if (state.view === "results") drawResults();
     }, 200);
