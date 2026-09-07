@@ -154,6 +154,14 @@
     font-size:12px;margin-bottom:18px;
   }
 
+  .home-sticky{
+    position:sticky;top:57px;z-index:15;
+    background:var(--bg);
+    padding:12px 0 14px;
+    box-shadow:0 6px 10px -8px rgba(20,64,94,.25);
+  }
+  .home-sticky > *:last-child{margin-bottom:0;}
+
   /* ---------- location row ---------- */
   .location{
     background:var(--card);
@@ -852,9 +860,11 @@
     if (!data) return;
     state.view = "home";
 
-    var html = '<div class="page-title"><h1>오늘의 동해안 바다 상황</h1>' +
+    var html = '<div class="home-sticky">' +
+      '<div class="page-title"><h1>오늘의 동해안 바다 상황</h1>' +
       '<span class="count">' + esc(data.todayLabel) + ' · ' + data.locations.length + '개 포인트</span></div>' +
-      legendHtml();
+      legendHtml() +
+      '</div>';
 
     if (!data.locations.length) {
       document.getElementById("main").innerHTML = html + emptyStateHtml("표시할 데이터가 없습니다.");
