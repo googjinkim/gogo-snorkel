@@ -292,6 +292,11 @@
     .layout{flex-direction:column;}
     main{padding:16px;}
     .brand span{display:none;}
+
+    .reason-cell{
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      max-width:110px;
+    }
   }
 </style>
 </head>
@@ -745,6 +750,7 @@
         } else {
           loadRegion(regionId);
         }
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       });
     });
 
@@ -775,6 +781,7 @@
     document.getElementById("searchInput").value = "";
     setActiveSide("__ALL__");
     renderHome();
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   });
 
   document.getElementById("searchForm").addEventListener("submit", function(e){
@@ -783,6 +790,7 @@
     if (!q) return;
     setActiveSide("__NONE__");
     loadSearch(q);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   });
 
   /* ---------- home (오늘) ---------- */
@@ -891,7 +899,10 @@
         } else {
           loc = (lastResultsData.results || []).find(function(l){ return l.id === id; });
         }
-        if (loc) renderLocationExpanded(loc, kind);
+        if (loc) {
+          renderLocationExpanded(loc, kind);
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        }
       });
     });
   }
@@ -905,6 +916,7 @@
     bindDetailButtons(function(){ renderLocationExpanded(loc, kind); });
     document.getElementById("backBtn").addEventListener("click", function(){
       if (kind === "home") { drawHome(); } else { drawResults(); }
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     });
   }
 
@@ -941,6 +953,7 @@
     }
 
     var activeWeek = data.weeks[activeWeekIndex] || data.weeks[0];
+    var mobile = isMobileView();
 
     activeWeek.days.forEach(function(day){
       html += '<div class="hour-day"><h2>' + esc(day.dateLabel) + '</h2>' +
@@ -948,6 +961,16 @@
         '<th>시간</th><th>점수</th><th>파고</th><th>너울</th><th>수온</th><th>날씨</th><th>코멘트</th>' +
         '</tr></thead><tbody>' +
         day.hours.map(function(h){
+          var reasonText = h.reason;
+          var reasonAttr = "";
+          if (mobile) {
+            var reasonParts = String(h.reason || "").split(", ");
+            reasonText = reasonParts[0] || "";
+            if (reasonParts.length > 1) {
+              reasonText += " 외 " + (reasonParts.length - 1) + "건";
+            }
+            reasonAttr = ' title="' + esc(h.reason) + '"';
+          }
           return '<tr>' +
             '<td class="mono">' + esc(h.time) + '</td>' +
             '<td>' + h.scoreIcon + ' <span class="mono score ' + scoreClass(h.score) + '">' + (h.score === null ? "-" : h.score) + '</span></td>' +
@@ -955,7 +978,7 @@
             '<td class="mono">' + (h.swell === null ? "-" : h.swell + "m") + '</td>' +
             '<td class="mono">' + (h.temp === null ? "-" : h.temp + "℃") + '</td>' +
             '<td>' + h.weatherIcon + '</td>' +
-            '<td class="reason-cell">' + esc(h.reason) + '</td>' +
+            '<td class="reason-cell"' + reasonAttr + '>' + esc(reasonText) + '</td>' +
             '</tr>';
         }).join("") +
         '</tbody></table></div>';
@@ -965,6 +988,7 @@
 
     document.getElementById("backBtn").addEventListener("click", function(){
       if (returnFn) { returnFn(); } else { renderHome(); }
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     });
 
     document.querySelectorAll(".week-tab").forEach(function(btn){
@@ -978,6 +1002,7 @@
     document.querySelectorAll("[data-detail-id]").forEach(function(btn){
       btn.addEventListener("click", function(){
         loadDetail(btn.getAttribute("data-detail-id"), returnFn);
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       });
     });
   }
