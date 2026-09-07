@@ -154,13 +154,13 @@
     font-size:12px;margin-bottom:18px;
   }
 
-  .home-sticky{
+  .list-sticky{
     position:sticky;top:57px;z-index:15;
     background:var(--bg);
     padding:12px 0 14px;
     box-shadow:0 6px 10px -8px rgba(20,64,94,.25);
   }
-  .home-sticky > *:last-child{margin-bottom:0;}
+  .list-sticky > *:last-child{margin-bottom:0;}
 
   /* ---------- location row ---------- */
   .location{
@@ -860,7 +860,7 @@
     if (!data) return;
     state.view = "home";
 
-    var html = '<div class="home-sticky">' +
+    var html = '<div class="list-sticky">' +
       '<div class="page-title"><h1>오늘의 동해안 바다 상황</h1>' +
       '<span class="count">' + esc(data.todayLabel) + ' · ' + data.locations.length + '개 포인트</span></div>' +
       legendHtml() +
@@ -898,10 +898,12 @@
     if (!data) return;
     state.view = "results";
 
-    var html = '<div class="page-title"><h1>' + esc(data.title) + '</h1>' +
+    var html = '<div class="list-sticky">' +
+      '<div class="page-title"><h1>' + esc(data.title) + '</h1>' +
       '<span class="count">' + data.results.length + '개 포인트</span></div>' +
       (data.sub ? '<p class="page-sub">' + esc(data.sub) + '</p>' : "") +
-      legendHtml();
+      legendHtml() +
+      '</div>';
 
     if (!data.results.length) {
       html += emptyStateHtml("일치하는 바다 포인트가 없습니다. 지역명이나 포인트 이름으로 다시 검색해보세요.");
