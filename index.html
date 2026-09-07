@@ -212,6 +212,14 @@
   }
   .back-link:hover{text-decoration:underline;}
 
+  .detail-sticky{
+    position:sticky;top:57px;z-index:15;
+    background:var(--bg);
+    padding:12px 0 14px;
+    box-shadow:0 6px 10px -8px rgba(20,64,94,.25);
+  }
+  .detail-sticky > *:last-child{margin-bottom:0;}
+
   .week-tabs{display:flex;gap:8px;margin-bottom:16px;}
   .week-tab{
     border:1px solid var(--panel-line);background:var(--card);color:var(--text-mute);
@@ -996,6 +1004,7 @@
 
   function renderDetailView(data, activeWeekIndex, returnFn){
     var html = '<button class="back-link" id="backBtn">← 목록으로</button>' +
+      '<div class="detail-sticky">' +
       '<div class="page-title"><h1>' + esc(data.name) + '</h1>' +
       '<span class="count">1시간 단위</span></div>';
 
@@ -1011,6 +1020,8 @@
         }).join("") +
         '</div>';
     }
+
+    html += '</div>';
 
     var activeWeek = data.weeks[activeWeekIndex] || data.weeks[0];
     var mobile = isMobileView();
