@@ -183,9 +183,9 @@
     overflow:hidden;
   }
   .location-head{
-    display:flex;align-items:center;justify-content:space-between;
+    display:flex;align-items:center;justify-content:flex-start;
     padding:13px 18px;border-bottom:1px solid var(--line);
-    gap:10px;flex-wrap:wrap;
+    flex-wrap:wrap;
   }
   .location-name{font-size:15px;font-weight:700;}
   .location-area{
@@ -199,7 +199,10 @@
     border:1px solid var(--accent);color:var(--accent-strong);
     background:#fff;border-radius:7px;padding:6px 14px;
     font-size:12.5px;cursor:pointer;font-weight:500;white-space:nowrap;
+    margin-left:16px;
+    display:inline-flex;align-items:center;gap:4px;
   }
+  .detail-btn i{font-size:14px;}
   .detail-btn:hover{background:var(--accent);color:#fff;}
 
   .day-block{padding:12px 18px;border-bottom:1px solid var(--line);}
@@ -346,6 +349,10 @@
     main{padding:16px 8px;}
     .brand-sub{display:none;}
     .brand-text{display:none;}
+
+    .location-head{justify-content:space-between;}
+    .detail-btn{margin-left:0;}
+    .detail-btn i{display:none;}
 
     .search-form input{text-align:center;min-width:0;}
     .search-form button{min-width:0;}
@@ -1186,7 +1193,7 @@
       '<span class="location-area">' + esc(loc.area) + '</span>' +
       (loc.hasKhoaMapping === false ? ' <span class="no-khoa-tag">· 예보 전용</span>' : "") +
       '</div>' +
-      '<button class="detail-btn" data-detail-id="' + esc(loc.id) + '">이번주 자세히</button>' +
+      '<button class="detail-btn" data-detail-id="' + esc(loc.id) + '">이번주 자세히<i class="ti ti-chevron-right" aria-hidden="true"></i></button>' +
       '</div>';
 
     var body;
