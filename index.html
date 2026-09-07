@@ -18,6 +18,7 @@
     --accent-strong:#0B5661;
     --text:#152229;
     --text-mute:#5C6E74;
+    --text-secondary:#5C6E74;
     --line:#DCE6E4;
     --card:#FFFFFF;
     --good:#1E8E5A;
@@ -220,8 +221,13 @@
   .week-tab.active{background:var(--accent);border-color:var(--accent);color:#fff;}
 
   .hour-day{margin-bottom:20px;}
-  .hour-day h2{font-size:14px;margin:0 0 8px;color:var(--text-mute);font-weight:500;}
-  .day-best{display:inline-flex;align-items:flex-end;gap:6px;margin-left:8px;vertical-align:middle;}
+  .hour-day h2{
+    display:flex;align-items:flex-end;flex-wrap:wrap;gap:8px;
+    min-height:36px;
+    font-size:14px;margin:0 0 8px;color:var(--text-mute);font-weight:500;
+  }
+  .day-best-label{font-size:13px;font-weight:400;color:var(--text-secondary);}
+  .day-best{display:flex;align-items:flex-end;gap:6px;}
   .time-badge-wrap{display:flex;flex-direction:column;align-items:center;gap:2px;}
   .crown-icon{font-size:13px;color:var(--fill-warning);line-height:1;}
   .crown-icon.hidden{visibility:hidden;}
@@ -1012,7 +1018,8 @@
     activeWeek.days.forEach(function(day){
       var bestEntries = topScoreTimes(day.hours, 3);
       var bestHtml = bestEntries.length
-        ? '<span class="day-best">' + bestEntries.map(function(entry, i){
+        ? '<span class="day-best-label">베스트</span>' +
+          '<span class="day-best">' + bestEntries.map(function(entry, i){
             var crownClass = i === 0 ? 'crown-icon' : 'crown-icon hidden';
             return '<span class="time-badge-wrap">' +
               '<i class="ti ti-crown ' + crownClass + '" aria-hidden="true"></i>' +
