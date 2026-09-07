@@ -6,6 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A4%BF</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.46.0/dist/tabler-icons.min.css">
 <style>
   :root{
     --bg:#F3F7F6;
@@ -22,6 +23,9 @@
     --good:#1E8E5A;
     --mid:#C98A12;
     --warn:#D65C43;
+    --tier-blue:#1C6FAE;
+    --tier-orange:#C8631A;
+    --fill-warning:#E8A317;
     --radius:10px;
   }
 
@@ -217,7 +221,20 @@
 
   .hour-day{margin-bottom:20px;}
   .hour-day h2{font-size:14px;margin:0 0 8px;color:var(--text-mute);font-weight:500;}
-  .day-best{font-size:13px;font-weight:400;color:var(--text-mute);margin-left:8px;}
+  .day-best{display:inline-flex;align-items:flex-end;gap:6px;margin-left:8px;vertical-align:middle;}
+  .time-badge-wrap{display:flex;flex-direction:column;align-items:center;gap:2px;}
+  .crown-icon{font-size:13px;color:var(--fill-warning);line-height:1;}
+  .crown-icon.hidden{visibility:hidden;}
+  .time-badge{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;font-weight:600;line-height:1.4;
+    padding:2px 8px;border-radius:999px;
+  }
+  .time-badge.tier-90{background:#E3F3EA;color:var(--good);}
+  .time-badge.tier-80{background:#E3EEF7;color:var(--tier-blue);}
+  .time-badge.tier-65{background:#FBF0DC;color:var(--mid);}
+  .time-badge.tier-50{background:#FBE9DC;color:var(--tier-orange);}
+  .time-badge.tier-low{background:#FBE3DE;color:var(--warn);}
   table.hours{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
   table.hours th{
     text-align:left;font-size:11px;color:var(--text-mute);font-weight:500;
@@ -945,17 +962,30 @@
     });
   }
 
-  // 점수가 높은 순(동점이면 이른 시간 순)으로 상위 n개의 "HH:mm" 시간을 뽑는다.
+  // 점수가 높은 순 -> 동점이면 forecastWave 낮은(잔잔한) 순(null은 최하위) ->
+  // 그래도 동점이면 이른 시간 순으로 상위 n개 { time, score } 항목을 뽑는다.
   function topScoreTimes(hours, n){
     return hours
-      .map(function(h, idx){ return { time: h.time, score: h.score, idx: idx }; })
+      .map(function(h, idx){ return { time: h.time, score: h.score, wave: h.wave, idx: idx }; })
       .filter(function(h){ return h.score !== null && typeof h.score !== "undefined"; })
       .sort(function(a, b){
         if (b.score !== a.score) return b.score - a.score;
+        var aWave = (a.wave === null || typeof a.wave === "undefined") ? Infinity : a.wave;
+        var bWave = (b.wave === null || typeof b.wave === "undefined") ? Infinity : b.wave;
+        if (aWave !== bWave) return aWave - bWave;
         return a.idx - b.idx;
       })
-      .slice(0, n)
-      .map(function(h){ return h.time; });
+      .slice(0, n);
+  }
+
+  // scoreIcon()과 동일한 구간으로 배지 색상 클래스를 정한다.
+  function scoreTierClass(score){
+    if (score === null || typeof score === "undefined") return "tier-low";
+    if (score >= 90) return "tier-90";
+    if (score >= 80) return "tier-80";
+    if (score >= 65) return "tier-65";
+    if (score >= 50) return "tier-50";
+    return "tier-low";
   }
 
   function renderDetailView(data, activeWeekIndex, returnFn){
@@ -980,9 +1010,15 @@
     var mobile = isMobileView();
 
     activeWeek.days.forEach(function(day){
-      var bestTimes = topScoreTimes(day.hours, 3);
-      var bestHtml = bestTimes.length
-        ? '<span class="day-best">베스트 ' + bestTimes.map(esc).join('·') + '</span>'
+      var bestEntries = topScoreTimes(day.hours, 3);
+      var bestHtml = bestEntries.length
+        ? '<span class="day-best">' + bestEntries.map(function(entry, i){
+            var crownClass = i === 0 ? 'crown-icon' : 'crown-icon hidden';
+            return '<span class="time-badge-wrap">' +
+              '<i class="ti ti-crown ' + crownClass + '" aria-hidden="true"></i>' +
+              '<span class="time-badge ' + scoreTierClass(entry.score) + '">' + esc(entry.time) + '</span>' +
+              '</span>';
+          }).join('') + '</span>'
         : '';
 
       html += '<div class="hour-day"><h2>' + esc(day.dateLabel) + bestHtml + '</h2>' +
