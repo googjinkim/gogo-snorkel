@@ -342,15 +342,16 @@ function printEnrichedCandidate(entry, idx) {
  */
 function mapToRestroomEntry(item, distanceKm, geocode) {
   const name = guessField(item, ["RSTRM_NM"]);
-  const openHourType = item.OPN_HR ?? null;
-  const openHourDetail = item.OPN_HR_DTL ?? "";
-  const openHours = openHourType ? (openHourDetail ? `${openHourType} (${openHourDetail})` : openHourType) : null;
+  const openHourTypeRaw = item.OPN_HR ?? null;
+  const openHourDetailRaw = item.OPN_HR_DTL ?? null;
   const emergencyBellRaw = item.EMRGNCBLL_INSTL_YN ?? null;
   return {
     name,
     roadAddr: item[ADDR_FIELDS[1]] ?? null,
     lotAddr: item[ADDR_FIELDS[0]] ?? null,
-    openHours,
+    // 원본 API 필드 그대로 보존 (가공은 build-score.js에서 표시 시점에 처리).
+    openHourType: openHourTypeRaw && String(openHourTypeRaw).trim() ? openHourTypeRaw : null,
+    openHourDetail: openHourDetailRaw && String(openHourDetailRaw).trim() ? openHourDetailRaw : null,
     hasEmergencyBell: emergencyBellRaw === null ? null : /^y/i.test(String(emergencyBellRaw)),
     distanceKm: distanceKm === null || distanceKm === undefined ? null : Number(distanceKm.toFixed(2)),
     lat: geocode ? geocode.lat : null,
@@ -407,6 +408,8 @@ function writeRestroomsFile(pointEntries) {
   lines.push("// 이 파일을 다시 채워야 한다.");
   lines.push("// API 자체는 좌표를 제공하지 않지만, 지오코딩(카카오 주소 검색) 단계에서 얻은");
   lines.push("// 좌표(lat/lon)를 프런트엔드 지도 표시용으로 함께 저장했다.");
+  lines.push("// openHourType/openHourDetail은 API 원본 필드(OPN_HR/OPN_HR_DTL) 그대로다 —");
+  lines.push("// 표시용 문자열 가공(예: \"24시간 운영\")은 build-score.js에서 처리한다.");
   lines.push("");
   lines.push("const RESTROOMS = {");
   Object.entries(pointEntries).forEach(([pointId, entries]) => {
@@ -420,7 +423,8 @@ function writeRestroomsFile(pointEntries) {
       lines.push(`      name: ${JSON.stringify(entry.name)},`);
       lines.push(`      roadAddr: ${JSON.stringify(entry.roadAddr)},`);
       lines.push(`      lotAddr: ${JSON.stringify(entry.lotAddr)},`);
-      lines.push(`      openHours: ${JSON.stringify(entry.openHours)},`);
+      lines.push(`      openHourType: ${JSON.stringify(entry.openHourType)},`);
+      lines.push(`      openHourDetail: ${JSON.stringify(entry.openHourDetail)},`);
       lines.push(`      hasEmergencyBell: ${JSON.stringify(entry.hasEmergencyBell)},`);
       lines.push(`      distanceKm: ${JSON.stringify(entry.distanceKm)},`);
       lines.push(`      lat: ${JSON.stringify(entry.lat)},`);

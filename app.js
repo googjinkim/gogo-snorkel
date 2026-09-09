@@ -655,12 +655,16 @@
     var addr = restroom.roadAddr || restroom.lotAddr || "";
     var distText = (restroom.distanceKm === null || typeof restroom.distanceKm === "undefined")
       ? "" : restroom.distanceKm.toFixed(2) + "km";
+    var hoursHtml = restroom.openHours
+      ? '<span class="restroom-hours">🕐 ' + esc(restroom.openHours) + '</span>'
+      : "";
     return '<div class="restroom-card">' +
       '<div class="restroom-info">' +
       '<span class="restroom-icon" aria-hidden="true">🚻</span>' +
       '<div class="restroom-text">' +
       '<span class="restroom-name">' + esc(restroom.name || "인근 화장실") + '</span>' +
       '<span class="restroom-addr">' + esc(addr) + (distText ? ' · ' + distText : '') + '</span>' +
+      hoursHtml +
       '</div></div>' +
       '<button class="restroom-map-btn" id="restroomMapBtn' + idx + '" type="button">지도 보기</button>' +
       '<div class="restroom-map" id="restroomMap' + idx + '" hidden></div>' +

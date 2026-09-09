@@ -35,6 +35,20 @@ function indexKhoaByPointAndMinute(khoaRaw) {
 }
 
 /**
+ * lib/restrooms.js의 원본 필드(openHourType/openHourDetail, 행정안전부 API의
+ * OPN_HR/OPN_HR_DTL 그대로)를 화면 표시용 문자열로 가공한다. 원본 값을 최대한
+ * 그대로 쓰고(임의 가공 최소화), 상시/정시(세부시간 있음) 외의 경우는 표시하지
+ * 않는다(null이면 프런트엔드가 운영시간 줄 자체를 생략한다).
+ */
+function formatOpenHours(restroom) {
+  const type = restroom.openHourType;
+  const detail = restroom.openHourDetail;
+  if (type === "상시") return "24시간 운영";
+  if (type === "정시" && detail) return detail;
+  return null;
+}
+
+/**
  * raw 데이터를 읽어 점수/등급/추천 여부를 계산하고 /data/scored.json으로 저장한다.
  * @returns {Promise<void>}
  */
@@ -87,7 +101,16 @@ async function buildScore() {
       name: point.name,
       area: point.area,
       hasKhoaMapping: point.hasKhoaMapping,
-      restrooms: RESTROOMS[point.id] || [],
+      restrooms: (RESTROOMS[point.id] || []).map((restroom) => ({
+        name: restroom.name,
+        roadAddr: restroom.roadAddr,
+        lotAddr: restroom.lotAddr,
+        openHours: formatOpenHours(restroom),
+        hasEmergencyBell: restroom.hasEmergencyBell,
+        distanceKm: restroom.distanceKm,
+        lat: restroom.lat,
+        lon: restroom.lon,
+      })),
       hourly,
     };
   });
