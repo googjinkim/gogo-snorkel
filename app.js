@@ -474,8 +474,7 @@
     var html = '<div class="list-sticky">' +
       '<div class="page-title"><h1>오늘의 동해안 바다 상황</h1>' +
       '<span class="count">' + esc(data.todayLabel) + ' · ' + data.locations.length + '개 포인트</span></div>' +
-      legendHtml() +
-      '<p class="restroom-notice">화장실 정보는 각 포인트의 자세히 보기에서 확인 가능</p>' +
+      legendHtml(true) +
       '</div>';
 
     if (!data.locations.length) {
@@ -824,10 +823,12 @@
   });
 
   /* ---------- html builders ---------- */
-  function legendHtml(){
+  function legendHtml(withRestroomBadge){
     return '<div class="legend">' +
       '<span>🟢 최고(90+)</span><span>🔵 좋음(80+)</span><span>🟡 보통(65+)</span>' +
-      '<span>🟠 주의(50+)</span><span>🔴 비추천</span></div>';
+      '<span>🟠 주의(50+)</span><span>🔴 비추천</span>' +
+      (withRestroomBadge ? '<span class="legend-restroom-badge">🚻 화장실 정보는 자세히 보기에서</span>' : '') +
+      '</div>';
   }
 
   function emptyStateHtml(msg){

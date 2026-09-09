@@ -168,7 +168,10 @@
     font-size:12px;margin-bottom:18px;
   }
 
-  .restroom-notice{font-size:13px;color:var(--text-secondary);margin:0;}
+  .legend-restroom-badge{
+    background:#E6F3F2;color:var(--accent-strong);
+    border-radius:999px;padding:3px 10px;font-weight:700;
+  }
 
   .list-sticky{
     position:sticky;top:var(--header-height);z-index:15;
@@ -248,7 +251,7 @@
   .detail-sticky > *:last-child{margin-bottom:0;}
 
   .restroom-cards{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px;}
-  .restroom-cards .restroom-card{flex:1 1 280px;margin-bottom:0;}
+  .restroom-cards .restroom-card{flex:1 1 280px;min-width:0;margin-bottom:0;}
   .restroom-card{
     display:flex;align-items:center;gap:12px;flex-wrap:wrap;
     background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
@@ -375,7 +378,7 @@
     }
     aside.open{transform:translateX(0);box-shadow:4px 0 24px rgba(0,0,0,.35);pointer-events:auto;}
 
-    .layout{flex-direction:column;}
+    .layout{flex-direction:column;align-items:stretch;}
     main{padding:16px 8px;}
     .brand-sub{display:none;}
     .brand-text{display:none;}
