@@ -40,8 +40,6 @@ const AREA_ADMIN_NAMES = {
 };
 
 const MAX_CANDIDATES_PER_POINT = 3;
-// 가장 가까운 후보의 거리 + 이 값(km) 이내에 다른 후보가 있으면 2번째 후보로도 채택한다.
-const NEARBY_THRESHOLD_KM = 0.5;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -358,76 +356,33 @@ function mapToRestroomEntry(item, distanceKm, geocode) {
   };
 }
 
-/**
- * 이름+주소가 완전히 같은 중복 레코드를 제거한다(행정안전부 원본 데이터셋에
- * 동일 화장실이 중복 등록된 경우가 실제로 있다 — 예: 속초해변(남문)). 거리순
- * 정렬은 이미 끝난 뒤이므로 먼저 나온(더 가까운) 항목을 남긴다.
- */
-function dedupeEnriched(enriched) {
-  const seen = new Set();
-  const result = [];
-  for (const entry of enriched) {
-    const name = guessField(entry.item, ["RSTRM_NM"]) || "";
-    const addr = entry.item[ADDR_FIELDS[1]] || entry.item[ADDR_FIELDS[0]] || "";
-    const key = `${name}|${addr}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    result.push(entry);
-  }
-  return result;
-}
-
-/**
- * 거리순으로 정렬된 enriched 후보 목록에서 최종 저장할 항목(최대 2건)을 고른다.
- * 1순위는 항상 가장 가까운 후보. 2순위는 1순위 거리 + NEARBY_THRESHOLD_KM 이내에
- * 있는 다음으로 가까운 후보가 있을 때만 포함한다(없으면 1건짜리 배열).
- */
-function pickFinalEntries(enriched) {
-  if (!enriched.length) return [];
-  const nearest = enriched[0];
-  const result = [nearest];
-  if (nearest.distanceKm !== null && enriched.length > 1) {
-    const second = enriched[1];
-    if (second.distanceKm !== null && second.distanceKm - nearest.distanceKm <= NEARBY_THRESHOLD_KM) {
-      result.push(second);
-    }
-  }
-  return result;
-}
-
 function writeRestroomsFile(pointEntries) {
   const lines = [];
   lines.push("// TODO: 자동 매칭 결과 (사람 검토/확정 전).");
   lines.push("// scripts/find-restrooms.js가 행정안전부 공중화장실정보 API 응답을 행정구역명+");
   lines.push("// 이름 키워드로 1차 필터링한 뒤, 카카오 주소 검색 API로 지오코딩해서 포인트와의");
-  lines.push("// 실제 거리(distanceKm) 기준으로 가장 가까운 후보를 배열 1번째로 채운 임시 결과다.");
-  lines.push("// 가장 가까운 후보의 거리 + " + NEARBY_THRESHOLD_KM + "km 이내에 다른 후보가 있으면");
-  lines.push("// 배열 2번째로 함께 채워진다(없으면 배열 길이 1). 각 포인트마다 콘솔에 출력된");
-  lines.push("// 후보(최대 3건, 거리 포함)를 사람이 직접 검토해서 최종 화장실을 확정한 뒤");
-  lines.push("// 이 파일을 다시 채워야 한다.");
+  lines.push("// 실제 거리(distanceKm) 기준으로 가장 가까운 후보를 골라 채운 임시 결과다.");
+  lines.push("// 각 포인트마다 콘솔에 출력된 후보(최대 3건, 거리 포함)를 사람이 직접 검토해서");
+  lines.push("// 최종 화장실을 확정한 뒤 이 파일을 다시 채워야 한다.");
   lines.push("// API 자체는 좌표를 제공하지 않지만, 지오코딩(카카오 주소 검색) 단계에서 얻은");
   lines.push("// 좌표(lat/lon)를 프런트엔드 지도 표시용으로 함께 저장했다.");
   lines.push("");
   lines.push("const RESTROOMS = {");
-  Object.entries(pointEntries).forEach(([pointId, entries]) => {
-    if (!entries || !entries.length) {
-      lines.push(`  ${pointId}: [],`);
+  Object.entries(pointEntries).forEach(([pointId, entry]) => {
+    if (!entry) {
+      lines.push(`  // ${pointId}: 후보 없음`);
       return;
     }
-    lines.push(`  ${pointId}: [`);
-    entries.forEach((entry) => {
-      lines.push("    {");
-      lines.push(`      name: ${JSON.stringify(entry.name)},`);
-      lines.push(`      roadAddr: ${JSON.stringify(entry.roadAddr)},`);
-      lines.push(`      lotAddr: ${JSON.stringify(entry.lotAddr)},`);
-      lines.push(`      openHours: ${JSON.stringify(entry.openHours)},`);
-      lines.push(`      hasEmergencyBell: ${JSON.stringify(entry.hasEmergencyBell)},`);
-      lines.push(`      distanceKm: ${JSON.stringify(entry.distanceKm)},`);
-      lines.push(`      lat: ${JSON.stringify(entry.lat)},`);
-      lines.push(`      lon: ${JSON.stringify(entry.lon)},`);
-      lines.push("    },");
-    });
-    lines.push("  ],");
+    lines.push(`  ${pointId}: {`);
+    lines.push(`    name: ${JSON.stringify(entry.name)},`);
+    lines.push(`    roadAddr: ${JSON.stringify(entry.roadAddr)},`);
+    lines.push(`    lotAddr: ${JSON.stringify(entry.lotAddr)},`);
+    lines.push(`    openHours: ${JSON.stringify(entry.openHours)},`);
+    lines.push(`    hasEmergencyBell: ${JSON.stringify(entry.hasEmergencyBell)},`);
+    lines.push(`    distanceKm: ${JSON.stringify(entry.distanceKm)},`);
+    lines.push(`    lat: ${JSON.stringify(entry.lat)},`);
+    lines.push(`    lon: ${JSON.stringify(entry.lon)},`);
+    lines.push("  },");
   });
   lines.push("};");
   lines.push("");
@@ -487,14 +442,14 @@ async function findRestrooms() {
     console.log(`\n▶ ${point.id} (${point.name})`);
     if (areaCandidates.length === 0) {
       console.log(`    후보 없음 (${AREA_ADMIN_NAMES[point.area] || point.area} 화장실 데이터 없음)`);
-      pointEntries[point.id] = [];
+      pointEntries[point.id] = null;
       continue;
     }
 
     const { mode, candidates, matchedBy } = pickCandidatesForPoint(point, areaCandidates);
     if (candidates.length === 0) {
       console.log("    후보 없음");
-      pointEntries[point.id] = [];
+      pointEntries[point.id] = null;
       continue;
     }
     console.log(`    매칭 방식: ${matchedBy}`);
@@ -502,19 +457,11 @@ async function findRestrooms() {
     // mode "full": 핵심어로 좁히지 못해 지역 전체 후보를 전부 지오코딩한 뒤
     // 거리순 정렬해서 상위 몇 건만 남긴다 (임의로 앞 몇 건만 뽑지 않는다).
     const enrichedAll = await enrichCandidatesWithDistance(kakaoKey, point, candidates);
-    const enrichedSliced = mode === "full" ? enrichedAll.slice(0, MAX_CANDIDATES_PER_POINT) : enrichedAll;
-    const enriched = dedupeEnriched(enrichedSliced);
+    const enriched = mode === "full" ? enrichedAll.slice(0, MAX_CANDIDATES_PER_POINT) : enrichedAll;
     enriched.forEach(printEnrichedCandidate);
 
-    const finalPicks = pickFinalEntries(enriched);
-    if (finalPicks.length > 1) {
-      console.log(
-        `    → 2순위 후보도 1순위 거리 + ${NEARBY_THRESHOLD_KM}km 이내라 함께 채택 (배열 2건)`
-      );
-    }
-    pointEntries[point.id] = finalPicks.map((entry) =>
-      mapToRestroomEntry(entry.item, entry.distanceKm, entry.geocode)
-    );
+    const nearest = enriched[0];
+    pointEntries[point.id] = mapToRestroomEntry(nearest.item, nearest.distanceKm, nearest.geocode);
   }
 
   writeRestroomsFile(pointEntries);
