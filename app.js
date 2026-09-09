@@ -282,7 +282,7 @@
 
   function buildSearchResults(query){
     var q = normalizeForSearch(query);
-    if (!q) return { query: "", results: [] };
+    if (!q) return { query: "", results: [], beaches: [] };
 
     var matched = SCORED_DATA.points.filter(function(point){
       return normalizeForSearch(point.name).indexOf(q) !== -1 ||
@@ -290,9 +290,21 @@
         normalizeForSearch(point.id).indexOf(q) !== -1;
     });
 
+    var beachData = SCORED_DATA.beachRestrooms || {};
+    var matchedBeaches = [];
+    Object.keys(beachData).forEach(function(areaName){
+      (beachData[areaName] || []).forEach(function(beach){
+        if (normalizeForSearch(beach.beachName).indexOf(q) !== -1 ||
+            normalizeForSearch(beach.area).indexOf(q) !== -1) {
+          matchedBeaches.push(beach);
+        }
+      });
+    });
+
     return {
       query: String(query || "").trim(),
-      results: matched.map(function(point){ return buildWeekDataForLocation(point.id); })
+      results: matched.map(function(point){ return buildWeekDataForLocation(point.id); }),
+      beaches: matchedBeaches
     };
   }
 
@@ -500,8 +512,8 @@
   /* ---------- search / region (이번주) ---------- */
   var lastResultsData = null;
 
-  function renderResultsPage(title, sub, results){
-    lastResultsData = { title: title, sub: sub, results: results };
+  function renderResultsPage(title, sub, results, beaches){
+    lastResultsData = { title: title, sub: sub, results: results, beaches: beaches || [] };
     state.view = "results";
     drawResults();
   }
@@ -511,30 +523,44 @@
     if (!data) return;
     state.view = "results";
 
+    var beaches = data.beaches || [];
+
     var html = '<div class="list-sticky">' +
       '<div class="page-title"><h1>' + esc(data.title) + '</h1>' +
-      '<span class="count">' + data.results.length + '개 포인트</span></div>' +
+      '<span class="count">' + data.results.length + '개 포인트' +
+      (beaches.length ? ' · 화장실 ' + beaches.length + '곳' : '') + '</span></div>' +
       (data.sub ? '<p class="page-sub">' + esc(data.sub) + '</p>' : "") +
       legendHtml() +
       '</div>';
 
-    if (!data.results.length) {
+    if (!data.results.length && !beaches.length) {
       html += emptyStateHtml("일치하는 바다 포인트가 없습니다. 지역명이나 포인트 이름으로 다시 검색해보세요.");
       document.getElementById("main").innerHTML = html;
       return;
     }
 
-    if (isMobileView()) {
-      html += data.results.map(function(loc){
-        var todayBlocks = (loc.days && loc.days.length) ? loc.days[0].blocks : [];
-        return summaryRowHtml(loc, bestBlockOf(todayBlocks));
-      }).join("");
-      document.getElementById("main").innerHTML = html;
-      bindSummaryRows("results");
-    } else {
-      html += data.results.map(function(loc){ return locationRowHtml(loc, true); }).join("");
-      document.getElementById("main").innerHTML = html;
-      bindDetailButtons(drawResults);
+    if (data.results.length) {
+      if (isMobileView()) {
+        html += data.results.map(function(loc){
+          var todayBlocks = (loc.days && loc.days.length) ? loc.days[0].blocks : [];
+          return summaryRowHtml(loc, bestBlockOf(todayBlocks));
+        }).join("");
+      } else {
+        html += data.results.map(function(loc){ return locationRowHtml(loc, true); }).join("");
+      }
+    }
+
+    if (beaches.length) {
+      html += '<div class="search-restroom-section">' +
+        '<h2 class="search-restroom-title">🚻 화장실 정보</h2>' +
+        beaches.map(beachBlockHtml).join("") +
+        '</div>';
+    }
+
+    document.getElementById("main").innerHTML = html;
+
+    if (data.results.length) {
+      if (isMobileView()) { bindSummaryRows("results"); } else { bindDetailButtons(drawResults); }
     }
   }
 
@@ -542,7 +568,7 @@
     document.getElementById("main").innerHTML = '<div class="loading">검색 중…</div>';
     loadScoredData(function(){
       var data = buildSearchResults(query);
-      renderResultsPage('"' + query + '" 검색 결과', "이번 주 데이터 (오늘 포함, 4시간 단위)", data.results);
+      renderResultsPage('"' + query + '" 검색 결과', "이번 주 데이터 (오늘 포함, 4시간 단위)", data.results, data.beaches);
     });
   }
 
