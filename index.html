@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy"
- content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data:;">
+ content="default-src 'self'; script-src 'self' https://dapi.kakao.com https://*.daumcdn.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https://*.daumcdn.net https://dapi.kakao.com; connect-src 'self' https://dapi.kakao.com https://*.daumcdn.net;">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A4%BF</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -244,6 +244,30 @@
     box-shadow:0 6px 10px -8px rgba(20,64,94,.25);
   }
   .detail-sticky > *:last-child{margin-bottom:0;}
+
+  .restroom-card{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:12px 16px;margin-bottom:16px;
+  }
+  .restroom-info{display:flex;align-items:center;gap:10px;flex:1;min-width:0;}
+  .restroom-icon{font-size:20px;flex:none;line-height:1;}
+  .restroom-text{display:flex;flex-direction:column;gap:2px;min-width:0;}
+  .restroom-name{font-size:13.5px;font-weight:600;}
+  .restroom-addr{
+    font-size:12px;color:var(--text-mute);
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .restroom-map-btn{
+    border:1px solid var(--accent);color:var(--accent-strong);
+    background:#fff;border-radius:7px;padding:6px 14px;
+    font-size:12.5px;cursor:pointer;font-weight:500;white-space:nowrap;flex:none;
+  }
+  .restroom-map-btn:hover{background:var(--accent);color:#fff;}
+  .restroom-map{
+    flex-basis:100%;width:100%;height:200px;border-radius:8px;
+    margin-top:4px;border:1px solid var(--line);
+  }
 
   .week-tabs{display:flex;gap:8px;margin-bottom:16px;}
   .week-tab{

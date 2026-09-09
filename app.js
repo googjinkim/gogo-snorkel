@@ -375,6 +375,7 @@
       shortName: shortNameOf(point),
       area: point.area,
       hasKhoaMapping: Boolean(point.hasKhoaMapping),
+      restroom: point.restroom || null,
       weeks: weeks
     };
   }
@@ -624,6 +625,83 @@
     return "tier-low";
   }
 
+  /* ---------- 화장실 정보 카드 + 카카오맵 임베드 ----------
+   * lib/restrooms.js(사람 확인 전 자동 매칭 결과)가 scored.json 생성 시
+   * build-score.js를 통해 각 포인트의 restroom 필드로 이미 포함되어 있다.
+   * 지도는 카카오맵 JS SDK를 최초 클릭 시점에 1회만 로드해서 재사용한다.
+   * JavaScript 키는 도메인 제한이 걸려 있어 클라이언트 코드에 그대로 두어도 된다. */
+  var KAKAO_JS_KEY = "c93b786c0ea166db993fd5f4fc7ff7be";
+  var kakaoMapsReadyPromise = null;
+
+  function loadKakaoMaps(){
+    if (window.kakao && window.kakao.maps && window.kakao.maps.LatLng) {
+      return Promise.resolve();
+    }
+    if (!kakaoMapsReadyPromise) {
+      kakaoMapsReadyPromise = new Promise(function(resolve, reject){
+        var script = document.createElement("script");
+        script.src = "https://dapi.kakao.com/v2/maps/sdk.js?appkey=" + KAKAO_JS_KEY + "&autoload=false";
+        script.onload = function(){
+          window.kakao.maps.load(function(){ resolve(); });
+        };
+        script.onerror = function(){ reject(new Error("카카오맵 SDK 로드 실패")); };
+        document.head.appendChild(script);
+      });
+    }
+    return kakaoMapsReadyPromise;
+  }
+
+  function restroomCardHtml(restroom){
+    if (!restroom) return "";
+    var addr = restroom.roadAddr || restroom.lotAddr || "";
+    var distText = (restroom.distanceKm === null || typeof restroom.distanceKm === "undefined")
+      ? "" : restroom.distanceKm.toFixed(2) + "km";
+    return '<div class="restroom-card">' +
+      '<div class="restroom-info">' +
+      '<span class="restroom-icon" aria-hidden="true">🚻</span>' +
+      '<div class="restroom-text">' +
+      '<span class="restroom-name">' + esc(restroom.name || "인근 화장실") + '</span>' +
+      '<span class="restroom-addr">' + esc(addr) + (distText ? ' · ' + distText : '') + '</span>' +
+      '</div></div>' +
+      '<button class="restroom-map-btn" id="restroomMapBtn" type="button">지도 보기</button>' +
+      '<div class="restroom-map" id="restroomMap" hidden></div>' +
+      '</div>';
+  }
+
+  function bindRestroomCard(restroom){
+    var btn = document.getElementById("restroomMapBtn");
+    if (!btn || !restroom) return;
+    var mapEl = document.getElementById("restroomMap");
+    var mapInstance = null;
+
+    btn.addEventListener("click", function(){
+      if (!mapEl.hidden) {
+        mapEl.hidden = true;
+        btn.textContent = "지도 보기";
+        return;
+      }
+      if (restroom.lat === null || typeof restroom.lat === "undefined" ||
+          restroom.lon === null || typeof restroom.lon === "undefined") {
+        console.error("[restroom] 좌표 정보가 없어 지도를 표시할 수 없습니다.");
+        return;
+      }
+      mapEl.hidden = false;
+      btn.textContent = "지도 접기";
+      loadKakaoMaps().then(function(){
+        var center = new kakao.maps.LatLng(restroom.lat, restroom.lon);
+        if (!mapInstance) {
+          mapInstance = new kakao.maps.Map(mapEl, { center: center, level: 4 });
+          new kakao.maps.Marker({ position: center, map: mapInstance });
+        } else {
+          kakao.maps.event.trigger(mapInstance, "resize");
+          mapInstance.setCenter(center);
+        }
+      }).catch(function(err){
+        console.error("[restroom] 지도 로드 실패:", err.message);
+      });
+    });
+  }
+
   function renderDetailView(data, activeWeekIndex, returnFn){
     var html = '<div class="detail-sticky">' +
       '<button class="back-link" id="backBtn">← 목록으로</button>' +
@@ -644,6 +722,8 @@
     }
 
     html += '</div>';
+
+    html += restroomCardHtml(data.restroom);
 
     var activeWeek = data.weeks[activeWeekIndex] || data.weeks[0];
     var mobile = isMobileView();
@@ -692,6 +772,8 @@
         renderDetailView(data, Number(btn.getAttribute("data-week-index")), returnFn);
       });
     });
+
+    bindRestroomCard(data.restroom);
   }
 
   function bindDetailButtons(returnFn){

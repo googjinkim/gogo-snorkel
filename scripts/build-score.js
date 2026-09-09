@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const { getAllPoints } = require("../lib/points");
 const { calculateScore } = require("../lib/scoring");
+const { RESTROOMS } = require("../lib/restrooms");
 
 const OPENMETEO_RAW_PATH = path.join(__dirname, "..", "data", "openmeteo-raw.json");
 const KHOA_RAW_PATH = path.join(__dirname, "..", "data", "khoa-raw.json");
@@ -86,6 +87,7 @@ async function buildScore() {
       name: point.name,
       area: point.area,
       hasKhoaMapping: point.hasKhoaMapping,
+      restroom: RESTROOMS[point.id] || null,
       hourly,
     };
   });

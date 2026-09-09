@@ -10,7 +10,9 @@
   "scripts": {
     "collect:openmeteo": "node scripts/collect-openmeteo.js",
     "collect:khoa": "node scripts/collect-khoa.js",
-    "build:score": "node scripts/build-score.js"
+    "build:score": "node scripts/build-score.js",
+    "audit:restrooms": "node scripts/audit-restrooms.js",
+    "find:restrooms": "node scripts/find-restrooms.js"
   },
   "dependencies": {},
   "devDependencies": {}
