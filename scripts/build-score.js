@@ -7,6 +7,7 @@ const path = require("path");
 const { getAllPoints } = require("../lib/points");
 const { calculateScore } = require("../lib/scoring");
 const { RESTROOMS } = require("../lib/restrooms");
+const { BEACH_RESTROOMS } = require("../lib/beachRestrooms");
 
 const OPENMETEO_RAW_PATH = path.join(__dirname, "..", "data", "openmeteo-raw.json");
 const KHOA_RAW_PATH = path.join(__dirname, "..", "data", "khoa-raw.json");
@@ -118,6 +119,7 @@ async function buildScore() {
   const scored = {
     generatedAt: new Date().toISOString(),
     points,
+    beachRestrooms: BEACH_RESTROOMS,
   };
 
   fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });

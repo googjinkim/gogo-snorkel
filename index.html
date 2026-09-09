@@ -136,6 +136,15 @@
   }
   .side-item small{color:var(--panel-text-dim);font-size:11px;}
 
+  .side-divider{
+    border:none;border-top:1px solid var(--panel-line);
+    margin:10px 20px;flex-shrink:0;
+  }
+  .side-section-label{
+    padding:9px 12px 5px 20px;font-size:13px;font-weight:500;
+    color:var(--panel-text);letter-spacing:.02em;flex-shrink:0;
+  }
+
   .side-photo{
     flex:1;min-height:140px;position:relative;overflow:hidden;
     background:var(--panel);
@@ -276,6 +285,15 @@
     flex-basis:100%;width:100%;height:200px;border-radius:8px;
     margin-top:4px;border:1px solid var(--line);
   }
+
+  .beach-region-section{margin-bottom:8px;}
+  .beach-region-title{
+    font-size:16px;font-weight:700;color:var(--panel-text);
+    margin:24px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--panel-line);
+  }
+  .beach-region-section:first-child .beach-region-title{margin-top:0;}
+  .beach-block{margin-bottom:18px;}
+  .beach-name{font-size:14px;font-weight:600;color:var(--text);margin:0 0 8px;}
 
   .week-tabs{display:flex;gap:8px;margin-bottom:16px;}
   .week-tab{
@@ -432,6 +450,9 @@
       <div class="side-item" data-region="samcheok">삼척</div>
       <div class="side-item" data-region="uljin">울진</div>
     </div>
+    <div class="side-divider"></div>
+    <div class="side-section-label">화장실 정보</div>
+    <div class="side-item" data-region="__BEACH_RESTROOMS__">🚻 동해바다 화장실 정보</div>
     <div class="side-photo"><img src="assets/diving.jpg" alt=""></div>
   </aside>
 

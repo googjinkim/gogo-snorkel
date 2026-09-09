@@ -408,6 +408,8 @@
         closeSidebar();
         if (regionId === "__ALL__") {
           renderHome();
+        } else if (regionId === "__BEACH_RESTROOMS__") {
+          renderBeachRestrooms();
         } else {
           loadRegion(regionId);
         }
@@ -550,6 +552,72 @@
       var regionName = REGION_NAMES[regionId] || regionId;
       var data = buildRegionResults(regionName);
       renderResultsPage(regionName, "이번 주 데이터 (오늘 포함, 4시간 단위)", data.results);
+    });
+  }
+
+  /* ---------- 동해바다 화장실 정보 (지도 없이 이름/주소/운영시간만) ----------
+   * lib/beachRestrooms.js(사람 확인 완료된 결과)가 scored.json 생성 시
+   * build-score.js를 통해 최상위 beachRestrooms 필드로 이미 포함되어 있다. */
+  function renderBeachRestrooms(){
+    state.view = "beachRestrooms";
+    document.getElementById("main").innerHTML = '<div class="loading">화장실 정보를 불러오는 중…</div>';
+    loadScoredData(function(){
+      drawBeachRestrooms();
+    });
+  }
+
+  function beachRestroomCardHtml(restroom){
+    var addr = restroom.roadAddr || restroom.lotAddr || "";
+    var hoursHtml = restroom.openHours
+      ? '<span class="restroom-hours">🕐 ' + esc(restroom.openHours) + '</span>'
+      : "";
+    return '<div class="restroom-card">' +
+      '<div class="restroom-info">' +
+      '<span class="restroom-icon" aria-hidden="true">🚻</span>' +
+      '<div class="restroom-text">' +
+      '<span class="restroom-name">' + esc(restroom.name || "인근 화장실") + '</span>' +
+      '<span class="restroom-addr">' + esc(addr) + '</span>' +
+      hoursHtml +
+      '</div></div>' +
+      '</div>';
+  }
+
+  function beachBlockHtml(beach){
+    return '<div class="beach-block">' +
+      '<h3 class="beach-name">' + esc(beach.beachName) + '</h3>' +
+      '<div class="restroom-cards">' +
+      (beach.restrooms || []).map(beachRestroomCardHtml).join("") +
+      '</div></div>';
+  }
+
+  function drawBeachRestrooms(){
+    state.view = "beachRestrooms";
+    var data = SCORED_DATA.beachRestrooms || {};
+    var totalBeaches = REGION_ORDER.reduce(function(sum, regionId){
+      return sum + ((data[REGION_NAMES[regionId]] || []).length);
+    }, 0);
+
+    var html = '<div class="detail-sticky">' +
+      '<button class="back-link" id="beachBackBtn">← 목록으로</button>' +
+      '<div class="page-title"><h1>동해안 화장실 정보</h1>' +
+      '<span class="count">총 ' + totalBeaches + '개 해변</span></div>' +
+      '</div>';
+
+    REGION_ORDER.forEach(function(regionId){
+      var areaName = REGION_NAMES[regionId];
+      var beaches = data[areaName] || [];
+      if (!beaches.length) return;
+      html += '<div class="beach-region-section">' +
+        '<h2 class="beach-region-title">' + esc(areaName) + '</h2>' +
+        beaches.map(beachBlockHtml).join("") +
+        '</div>';
+    });
+
+    document.getElementById("main").innerHTML = html;
+    document.getElementById("beachBackBtn").addEventListener("click", function(){
+      setActiveSide("__ALL__");
+      renderHome();
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     });
   }
 
