@@ -87,7 +87,7 @@ async function buildScore() {
       name: point.name,
       area: point.area,
       hasKhoaMapping: point.hasKhoaMapping,
-      restroom: RESTROOMS[point.id] || null,
+      restrooms: RESTROOMS[point.id] || [],
       hourly,
     };
   });
