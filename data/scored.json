@@ -1,11 +1,21 @@
 {
-  "generatedAt": "2026-09-09T02:41:03.814Z",
+  "generatedAt": "2026-09-09T05:04:44.659Z",
   "points": [
     {
       "id": "bongpo",
       "name": "고성 봉포",
       "area": "고성",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "봉포해변",
+        "roadAddr": "",
+        "lotAddr": "강원특별자치도 고성군 토성면 봉포리 180-1 인근",
+        "openHours": "상시",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.36,
+        "lat": 38.2525012543165,
+        "lon": 128.56578627371
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -2510,6 +2520,16 @@
       "name": "고성 아야진",
       "area": "고성",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "아야진졸음쉼터",
+        "roadAddr": "",
+        "lotAddr": "강원특별자치도 고성군 토성면 아야진리 산62-5",
+        "openHours": "상시",
+        "hasEmergencyBell": false,
+        "distanceKm": 0.42,
+        "lat": 38.2787599920606,
+        "lon": 128.549139833487
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -5014,6 +5034,16 @@
       "name": "속초 속초해변",
       "area": "속초",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "속초해변(남문)",
+        "roadAddr": "강원특별자치도 속초시 해오름로 140 (조양동)",
+        "lotAddr": "강원특별자치도 속초시 조양동 1469",
+        "openHours": "상시",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.13,
+        "lat": 38.1869568973036,
+        "lon": 128.605460648403
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -7518,6 +7548,16 @@
       "name": "속초 외옹치",
       "area": "속초",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "외옹치 해수욕장",
+        "roadAddr": "강원특별자치도 속초시 해오름로 86-1",
+        "lotAddr": "강원특별자치도 속초시 대포동 594-2",
+        "openHours": "상시",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.1,
+        "lat": 38.1827018435324,
+        "lon": 128.608622577612
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -10022,6 +10062,16 @@
       "name": "양양 하조대",
       "area": "양양",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "하조대 주차장 화장실",
+        "roadAddr": "강원특별자치도 양양군 현북면 하조대2길 51",
+        "lotAddr": "강원특별자치도 양양군 현북면 하광정리 627-4",
+        "openHours": "정시 (24시간)",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.23,
+        "lat": 38.0211306367142,
+        "lon": 128.725981389477
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -12526,6 +12576,16 @@
       "name": "양양 남애3리",
       "area": "양양",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "남애3리(신) 해수욕장 화장실",
+        "roadAddr": "강원특별자치도 양양군 현남면 매바위길 167",
+        "lotAddr": "강원특별자치도 양양군 현남면 남애리 6-2",
+        "openHours": "정시 (24시간)",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.08,
+        "lat": 37.9456402241649,
+        "lon": 128.784477043973
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -15030,6 +15090,16 @@
       "name": "경포대",
       "area": "강릉",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "경포대주차장",
+        "roadAddr": "강원특별자치도 강릉시 경포로371번길 12",
+        "lotAddr": "강원특별자치도 강릉시 저동 125-1",
+        "openHours": "상시",
+        "hasEmergencyBell": true,
+        "distanceKm": 1.42,
+        "lat": 37.796343817338,
+        "lon": 128.896786427298
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -17534,6 +17604,16 @@
       "name": "사천",
       "area": "강릉",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "강릉사천농협하나로마트",
+        "roadAddr": "강원특별자치도 강릉시 미노길 78-7",
+        "lotAddr": "강원특별자치도 강릉시 사천면 미노리 493",
+        "openHours": "정시 (09:00~22:00)",
+        "hasEmergencyBell": false,
+        "distanceKm": 2.55,
+        "lat": 37.8237926891566,
+        "lon": 128.850054898369
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -20038,6 +20118,16 @@
       "name": "안목",
       "area": "강릉",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "안목해변화장실",
+        "roadAddr": "강원특별자치도 강릉시  창해로14번길3",
+        "lotAddr": "강원특별자치도 강릉시 견소동286-8",
+        "openHours": "상시",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.05,
+        "lat": 37.7736793416587,
+        "lon": 128.94597372918
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -22542,6 +22632,16 @@
       "name": "주문진",
       "area": "강릉",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "원마트 주문진점",
+        "roadAddr": "강원특별자치도 강릉시 주문진읍 장성로 51",
+        "lotAddr": "강원특별자치도 강릉시 주문진읍 교항리 176",
+        "openHours": "정시 (10:00~22:00)",
+        "hasEmergencyBell": false,
+        "distanceKm": 0.52,
+        "lat": 37.8882746157519,
+        "lon": 128.826357497938
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -25046,6 +25146,16 @@
       "name": "동해 망상",
       "area": "동해",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "고객사랑주유소",
+        "roadAddr": "강원특별자치도 동해시 동해대로 6121 ?(망상동)",
+        "lotAddr": "",
+        "openHours": "정시 (06:30 ~ 20:00)",
+        "hasEmergencyBell": false,
+        "distanceKm": 1.45,
+        "lat": 37.5831291109589,
+        "lon": 129.099795855843
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -27550,6 +27660,16 @@
       "name": "동해 어달",
       "area": "동해",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "어달해변",
+        "roadAddr": "강원특별자치도 동해시 일출로 284",
+        "lotAddr": "",
+        "openHours": "상시",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.16,
+        "lat": 37.5670299320576,
+        "lon": 129.119274203368
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -30054,6 +30174,16 @@
       "name": "동해 추암",
       "area": "동해",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "추암캠핑장",
+        "roadAddr": "강원특별자치도 동해시 촛대바위길 28",
+        "lotAddr": "",
+        "openHours": "상시",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.21,
+        "lat": 37.47708927522,
+        "lon": 129.15920194843
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -32558,6 +32688,16 @@
       "name": "삼척 삼척해변",
       "area": "삼척",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "삼척해수욕장C",
+        "roadAddr": "강원특별자치도 삼척시 테마타운길 108",
+        "lotAddr": "강원특별자치도 삼척시 갈천동 14-5",
+        "openHours": "상시",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.15,
+        "lat": 37.4701501180049,
+        "lon": 129.166642858262
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -35062,6 +35202,16 @@
       "name": "삼척 장호",
       "area": "삼척",
       "hasKhoaMapping": false,
+      "restroom": {
+        "name": "삼척해상케이블카 장호역",
+        "roadAddr": "강원특별자치도 삼척시 근덕면 장호항길 12-10",
+        "lotAddr": "강원특별자치도 삼척시 근덕면 장호리 3-9",
+        "openHours": "정시 (9시간)",
+        "hasEmergencyBell": false,
+        "distanceKm": 0.26,
+        "lat": 37.2879687862925,
+        "lon": 129.318607136022
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -37566,6 +37716,16 @@
       "name": "삼척 용화",
       "area": "삼척",
       "hasKhoaMapping": false,
+      "restroom": {
+        "name": "해양레일바이크 용화역",
+        "roadAddr": "강원특별자치도 삼척시 근덕면 용화해변길 2",
+        "lotAddr": "강원특별자치도 삼척시 근덕면 용화리 14-5",
+        "openHours": "정시 (9시간)",
+        "hasEmergencyBell": false,
+        "distanceKm": 0.05,
+        "lat": 37.2896039674962,
+        "lon": 129.305291356327
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -40070,6 +40230,16 @@
       "name": "울진 나곡해수욕장",
       "area": "울진",
       "hasKhoaMapping": false,
+      "restroom": {
+        "name": "나곡해수욕장",
+        "roadAddr": "",
+        "lotAddr": "경상북도 울진군 북면 나곡리 707-1",
+        "openHours": "상시",
+        "hasEmergencyBell": true,
+        "distanceKm": 0.02,
+        "lat": 37.1258986663944,
+        "lon": 129.370971671354
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -42574,6 +42744,16 @@
       "name": "울진 봉평해수욕장",
       "area": "울진",
       "hasKhoaMapping": false,
+      "restroom": {
+        "name": "봉평해수욕장",
+        "roadAddr": "경상북도 울진군 죽변면 울진북로 1180",
+        "lotAddr": "경상북도 울진군 죽변면 봉평리 97-2",
+        "openHours": "상시",
+        "hasEmergencyBell": false,
+        "distanceKm": 0,
+        "lat": 37.0438370797731,
+        "lon": 129.412852812216
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -45078,6 +45258,16 @@
       "name": "울진 구산해수욕장",
       "area": "울진",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "구산보건진료소",
+        "roadAddr": "경상북도 울진군 기성면 구산길 186",
+        "lotAddr": "",
+        "openHours": "정시 (평일 정시(09:00~18:00))",
+        "hasEmergencyBell": false,
+        "distanceKm": 0.88,
+        "lat": 36.7611579471578,
+        "lon": 129.467632820201
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
@@ -47582,6 +47772,16 @@
       "name": "울진 후포해수욕장",
       "area": "울진",
       "hasKhoaMapping": true,
+      "restroom": {
+        "name": "후포면사무소",
+        "roadAddr": "",
+        "lotAddr": "경상북도 울진군 후포면 삼율로 7-20",
+        "openHours": "정시 (09:00-21:00)",
+        "hasEmergencyBell": false,
+        "distanceKm": 0.47,
+        "lat": 36.6786146471475,
+        "lon": 129.43909118014
+      },
       "hourly": [
         {
           "time": "2026-09-09 00:00",
