@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T19:02:44.804Z",
+  "generatedAt": "2026-09-09T22:10:04.067Z",
   "points": [
     {
       "id": "bongpo",
@@ -34,12 +34,12 @@
           "forecastWave": 1.48,
           "swellWave": 1.46,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -47,12 +47,12 @@
           "forecastWave": 1.44,
           "swellWave": 1.42,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -60,12 +60,12 @@
           "forecastWave": 1.38,
           "swellWave": 1.38,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -73,12 +73,12 @@
           "forecastWave": 1.34,
           "swellWave": 1.34,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -86,12 +86,12 @@
           "forecastWave": 1.32,
           "swellWave": 1.32,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -99,12 +99,12 @@
           "forecastWave": 1.28,
           "swellWave": 1.28,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.1,
+          "maxObservedWave": 1.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -112,12 +112,12 @@
           "forecastWave": 1.26,
           "swellWave": 1.26,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.6,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -1496,7 +1496,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 17:00",
@@ -1509,7 +1509,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 18:00",
@@ -1522,7 +1522,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 19:00",
@@ -1535,7 +1535,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 20:00",
@@ -1548,7 +1548,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 21:00",
@@ -1561,7 +1561,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 22:00",
@@ -1574,7 +1574,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -1587,7 +1587,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -1600,7 +1600,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -1613,7 +1613,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -1626,7 +1626,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -1639,7 +1639,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -1652,7 +1652,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 05:00",
@@ -1665,7 +1665,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 06:00",
@@ -1678,7 +1678,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 07:00",
@@ -1730,7 +1730,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 11:00",
@@ -1743,7 +1743,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 12:00",
@@ -1756,7 +1756,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 13:00",
@@ -1769,7 +1769,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 14:00",
@@ -1782,7 +1782,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 15:00",
@@ -1795,7 +1795,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 16:00",
@@ -1808,7 +1808,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -1821,7 +1821,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -1834,7 +1834,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -1847,7 +1847,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -1860,7 +1860,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -1873,7 +1873,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -2560,12 +2560,12 @@
           "forecastWave": 1.48,
           "swellWave": 1.46,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -2573,12 +2573,12 @@
           "forecastWave": 1.44,
           "swellWave": 1.42,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -2586,12 +2586,12 @@
           "forecastWave": 1.38,
           "swellWave": 1.38,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -2599,12 +2599,12 @@
           "forecastWave": 1.34,
           "swellWave": 1.34,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -2612,12 +2612,12 @@
           "forecastWave": 1.32,
           "swellWave": 1.32,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -2625,12 +2625,12 @@
           "forecastWave": 1.28,
           "swellWave": 1.28,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.1,
+          "maxObservedWave": 1.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -2638,12 +2638,12 @@
           "forecastWave": 1.26,
           "swellWave": 1.26,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.6,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -4022,7 +4022,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 17:00",
@@ -4035,7 +4035,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 18:00",
@@ -4048,7 +4048,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 19:00",
@@ -4061,7 +4061,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 20:00",
@@ -4074,7 +4074,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 21:00",
@@ -4087,7 +4087,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 22:00",
@@ -4100,7 +4100,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -4113,7 +4113,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -4126,7 +4126,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -4139,7 +4139,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -4152,7 +4152,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -4165,7 +4165,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -4178,7 +4178,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 05:00",
@@ -4191,7 +4191,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 06:00",
@@ -4204,7 +4204,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 07:00",
@@ -4256,7 +4256,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 11:00",
@@ -4269,7 +4269,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 12:00",
@@ -4282,7 +4282,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 13:00",
@@ -4295,7 +4295,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 14:00",
@@ -4308,7 +4308,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 15:00",
@@ -4321,7 +4321,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 16:00",
@@ -4334,7 +4334,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -4347,7 +4347,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -4360,7 +4360,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -4373,7 +4373,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -4386,7 +4386,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -4399,7 +4399,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -5086,12 +5086,12 @@
           "forecastWave": 1.48,
           "swellWave": 1.46,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -5099,12 +5099,12 @@
           "forecastWave": 1.44,
           "swellWave": 1.42,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -5112,12 +5112,12 @@
           "forecastWave": 1.38,
           "swellWave": 1.38,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -5125,12 +5125,12 @@
           "forecastWave": 1.34,
           "swellWave": 1.34,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -5138,12 +5138,12 @@
           "forecastWave": 1.32,
           "swellWave": 1.32,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -5151,12 +5151,12 @@
           "forecastWave": 1.28,
           "swellWave": 1.28,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.1,
+          "maxObservedWave": 1.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -5164,12 +5164,12 @@
           "forecastWave": 1.26,
           "swellWave": 1.26,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.6,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -6548,7 +6548,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 17:00",
@@ -6561,7 +6561,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 18:00",
@@ -6574,7 +6574,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 19:00",
@@ -6587,7 +6587,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 20:00",
@@ -6600,7 +6600,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 21:00",
@@ -6613,7 +6613,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 22:00",
@@ -6626,7 +6626,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -6639,7 +6639,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -6652,7 +6652,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -6665,7 +6665,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -6678,7 +6678,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -6691,7 +6691,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -6704,7 +6704,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 05:00",
@@ -6717,7 +6717,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 06:00",
@@ -6730,7 +6730,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 07:00",
@@ -6782,7 +6782,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 11:00",
@@ -6795,7 +6795,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 12:00",
@@ -6808,7 +6808,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 13:00",
@@ -6821,7 +6821,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 14:00",
@@ -6834,7 +6834,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 15:00",
@@ -6847,7 +6847,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 16:00",
@@ -6860,7 +6860,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -6873,7 +6873,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -6886,7 +6886,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -6899,7 +6899,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -6912,7 +6912,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -6925,7 +6925,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -7612,12 +7612,12 @@
           "forecastWave": 1.48,
           "swellWave": 1.46,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -7625,12 +7625,12 @@
           "forecastWave": 1.44,
           "swellWave": 1.42,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -7638,12 +7638,12 @@
           "forecastWave": 1.38,
           "swellWave": 1.38,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -7651,12 +7651,12 @@
           "forecastWave": 1.34,
           "swellWave": 1.34,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -7664,12 +7664,12 @@
           "forecastWave": 1.32,
           "swellWave": 1.32,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -7677,12 +7677,12 @@
           "forecastWave": 1.28,
           "swellWave": 1.28,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.1,
+          "maxObservedWave": 1.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -7690,12 +7690,12 @@
           "forecastWave": 1.26,
           "swellWave": 1.26,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.6,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -9074,7 +9074,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 17:00",
@@ -9087,7 +9087,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 18:00",
@@ -9100,7 +9100,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 19:00",
@@ -9113,7 +9113,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 20:00",
@@ -9126,7 +9126,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 21:00",
@@ -9139,7 +9139,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 53
         },
         {
           "time": "2026-09-14 22:00",
@@ -9152,7 +9152,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -9165,7 +9165,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -9178,7 +9178,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -9191,7 +9191,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -9204,7 +9204,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -9217,7 +9217,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -9230,7 +9230,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 05:00",
@@ -9243,7 +9243,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 06:00",
@@ -9256,7 +9256,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 07:00",
@@ -9308,7 +9308,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 11:00",
@@ -9321,7 +9321,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 12:00",
@@ -9334,7 +9334,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 13:00",
@@ -9347,7 +9347,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 14:00",
@@ -9360,7 +9360,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 15:00",
@@ -9373,7 +9373,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 16:00",
@@ -9386,7 +9386,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -9399,7 +9399,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -9412,7 +9412,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -9425,7 +9425,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -9438,7 +9438,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -9451,7 +9451,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -10138,12 +10138,12 @@
           "forecastWave": 1.38,
           "swellWave": 1.38,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -10151,12 +10151,12 @@
           "forecastWave": 1.34,
           "swellWave": 1.34,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.1,
+          "maxObservedWave": 1.3,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -10164,12 +10164,12 @@
           "forecastWave": 1.3,
           "swellWave": 1.3,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.2,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -10177,12 +10177,12 @@
           "forecastWave": 1.26,
           "swellWave": 1.26,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.1,
+          "maxObservedWave": 1.4,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -10190,12 +10190,12 @@
           "forecastWave": 1.24,
           "swellWave": 1.22,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -10203,12 +10203,12 @@
           "forecastWave": 1.2,
           "swellWave": 1.2,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.3,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -10216,12 +10216,12 @@
           "forecastWave": 1.18,
           "swellWave": 1.16,
           "waterTemp": 23.7,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.3,
+          "maxObservedWave": 1.6,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -11184,7 +11184,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-13 09:00",
@@ -11197,7 +11197,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-13 10:00",
@@ -11210,7 +11210,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 53
         },
         {
           "time": "2026-09-13 11:00",
@@ -11223,7 +11223,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-13 12:00",
@@ -11600,7 +11600,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 17:00",
@@ -11613,7 +11613,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 18:00",
@@ -11626,7 +11626,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 19:00",
@@ -11639,7 +11639,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 20:00",
@@ -11652,7 +11652,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 21:00",
@@ -11665,7 +11665,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 22:00",
@@ -11678,7 +11678,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -11691,7 +11691,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -11704,7 +11704,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -11717,7 +11717,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -11730,7 +11730,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -11743,7 +11743,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -11795,7 +11795,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -11808,7 +11808,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -11821,7 +11821,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -11834,7 +11834,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 3
         },
         {
           "time": "2026-09-15 11:00",
@@ -11847,7 +11847,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 3
         },
         {
           "time": "2026-09-15 12:00",
@@ -11860,7 +11860,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 13:00",
@@ -11873,7 +11873,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 14:00",
@@ -11886,7 +11886,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 15:00",
@@ -11899,7 +11899,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 16:00",
@@ -11912,7 +11912,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -11925,7 +11925,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -11938,7 +11938,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -11951,7 +11951,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -11964,7 +11964,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -11977,7 +11977,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -12664,12 +12664,12 @@
           "forecastWave": 1.46,
           "swellWave": 1.46,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.9,
+          "maxObservedWave": 2.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -12677,12 +12677,12 @@
           "forecastWave": 1.42,
           "swellWave": 1.42,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -12690,12 +12690,12 @@
           "forecastWave": 1.36,
           "swellWave": 1.36,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.8,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -12703,12 +12703,12 @@
           "forecastWave": 1.32,
           "swellWave": 1.32,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.9,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -12716,12 +12716,12 @@
           "forecastWave": 1.3,
           "swellWave": 1.3,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -12729,12 +12729,12 @@
           "forecastWave": 1.26,
           "swellWave": 1.26,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.8,
+          "maxObservedWave": 2.4,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -12742,12 +12742,12 @@
           "forecastWave": 1.24,
           "swellWave": 1.24,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -13684,7 +13684,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-13 07:00",
@@ -13697,7 +13697,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-13 08:00",
@@ -13710,7 +13710,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-13 09:00",
@@ -14126,7 +14126,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 17:00",
@@ -14139,7 +14139,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 18:00",
@@ -14152,7 +14152,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 19:00",
@@ -14165,7 +14165,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 20:00",
@@ -14178,7 +14178,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 21:00",
@@ -14191,7 +14191,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 22:00",
@@ -14204,7 +14204,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -14217,7 +14217,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -14230,7 +14230,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -14243,7 +14243,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -14256,7 +14256,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 0
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -14269,7 +14269,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -14282,7 +14282,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 05:00",
@@ -14295,7 +14295,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 06:00",
@@ -14308,7 +14308,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 3
         },
         {
           "time": "2026-09-15 07:00",
@@ -14321,7 +14321,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -14334,7 +14334,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -14347,7 +14347,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -14360,7 +14360,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 11:00",
@@ -14373,7 +14373,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 12:00",
@@ -14386,7 +14386,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 13:00",
@@ -14399,7 +14399,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 14:00",
@@ -14412,7 +14412,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 15:00",
@@ -14425,7 +14425,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 16:00",
@@ -14438,7 +14438,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -14451,7 +14451,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -14464,7 +14464,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -14477,7 +14477,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -14490,7 +14490,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -14503,7 +14503,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -15180,12 +15180,12 @@
           "forecastWave": 1.46,
           "swellWave": 1.46,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.9,
+          "maxObservedWave": 2.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -15193,12 +15193,12 @@
           "forecastWave": 1.42,
           "swellWave": 1.42,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -15206,12 +15206,12 @@
           "forecastWave": 1.36,
           "swellWave": 1.36,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.8,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -15219,12 +15219,12 @@
           "forecastWave": 1.32,
           "swellWave": 1.32,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.9,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -15232,12 +15232,12 @@
           "forecastWave": 1.3,
           "swellWave": 1.3,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -15245,12 +15245,12 @@
           "forecastWave": 1.26,
           "swellWave": 1.26,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.8,
+          "maxObservedWave": 2.4,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -15258,12 +15258,12 @@
           "forecastWave": 1.24,
           "swellWave": 1.24,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -16642,7 +16642,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 17:00",
@@ -16655,7 +16655,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 18:00",
@@ -16668,7 +16668,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 19:00",
@@ -16681,7 +16681,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 20:00",
@@ -16694,7 +16694,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 21:00",
@@ -16707,7 +16707,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 22:00",
@@ -16720,7 +16720,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -16733,7 +16733,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -16746,7 +16746,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -16759,7 +16759,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -16772,7 +16772,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -16785,7 +16785,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -16915,7 +16915,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 14:00",
@@ -16928,7 +16928,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 15:00",
@@ -16941,7 +16941,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 16:00",
@@ -16954,7 +16954,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 17:00",
@@ -16967,7 +16967,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -16980,7 +16980,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -16993,7 +16993,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -17006,7 +17006,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -17019,7 +17019,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -17706,12 +17706,12 @@
           "forecastWave": 1.46,
           "swellWave": 1.46,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.9,
+          "maxObservedWave": 2.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -17719,12 +17719,12 @@
           "forecastWave": 1.42,
           "swellWave": 1.42,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -17732,12 +17732,12 @@
           "forecastWave": 1.36,
           "swellWave": 1.36,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.8,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -17745,12 +17745,12 @@
           "forecastWave": 1.32,
           "swellWave": 1.32,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.9,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -17758,12 +17758,12 @@
           "forecastWave": 1.3,
           "swellWave": 1.3,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -17771,12 +17771,12 @@
           "forecastWave": 1.26,
           "swellWave": 1.26,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.8,
+          "maxObservedWave": 2.4,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -17784,12 +17784,12 @@
           "forecastWave": 1.24,
           "swellWave": 1.24,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -19168,7 +19168,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 17:00",
@@ -19181,7 +19181,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 18:00",
@@ -19194,7 +19194,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 19:00",
@@ -19207,7 +19207,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 20:00",
@@ -19220,7 +19220,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 21:00",
@@ -19233,7 +19233,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 22:00",
@@ -19246,7 +19246,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -19259,7 +19259,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -19272,7 +19272,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -19285,7 +19285,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -19298,7 +19298,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -19311,7 +19311,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -19363,7 +19363,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -19376,7 +19376,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -19389,7 +19389,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -19402,7 +19402,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 11:00",
@@ -19415,7 +19415,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 12:00",
@@ -19428,7 +19428,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 13:00",
@@ -19441,7 +19441,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 14:00",
@@ -19454,7 +19454,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 15:00",
@@ -19467,7 +19467,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 16:00",
@@ -19480,7 +19480,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -19493,7 +19493,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -19506,7 +19506,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -19519,7 +19519,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -19532,7 +19532,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -19545,7 +19545,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -20222,12 +20222,12 @@
           "forecastWave": 1.62,
           "swellWave": 1.62,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.9,
+          "maxObservedWave": 2.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -20235,12 +20235,12 @@
           "forecastWave": 1.56,
           "swellWave": 1.56,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -20248,12 +20248,12 @@
           "forecastWave": 1.52,
           "swellWave": 1.52,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.8,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -20261,12 +20261,12 @@
           "forecastWave": 1.46,
           "swellWave": 1.46,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.9,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -20274,12 +20274,12 @@
           "forecastWave": 1.42,
           "swellWave": 1.42,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -20287,12 +20287,12 @@
           "forecastWave": 1.4,
           "swellWave": 1.4,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.8,
+          "maxObservedWave": 2.4,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -20300,12 +20300,12 @@
           "forecastWave": 1.36,
           "swellWave": 1.36,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.6,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -21684,7 +21684,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 17:00",
@@ -21697,7 +21697,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 18:00",
@@ -21710,7 +21710,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 19:00",
@@ -21723,7 +21723,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 20:00",
@@ -21736,7 +21736,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 21:00",
@@ -21749,7 +21749,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 22:00",
@@ -21762,7 +21762,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -21775,7 +21775,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -21788,7 +21788,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -21801,7 +21801,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -21814,7 +21814,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -21827,7 +21827,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -21957,7 +21957,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 14:00",
@@ -21970,7 +21970,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 15:00",
@@ -21983,7 +21983,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 16:00",
@@ -21996,7 +21996,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 17:00",
@@ -22009,7 +22009,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -22022,7 +22022,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -22035,7 +22035,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -22048,7 +22048,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -22061,7 +22061,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -22748,12 +22748,12 @@
           "forecastWave": 1.46,
           "swellWave": 1.46,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.9,
+          "maxObservedWave": 2.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -22761,12 +22761,12 @@
           "forecastWave": 1.42,
           "swellWave": 1.42,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -22774,12 +22774,12 @@
           "forecastWave": 1.36,
           "swellWave": 1.36,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.8,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -22787,12 +22787,12 @@
           "forecastWave": 1.32,
           "swellWave": 1.32,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.9,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -22800,12 +22800,12 @@
           "forecastWave": 1.3,
           "swellWave": 1.3,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.7,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -22813,12 +22813,12 @@
           "forecastWave": 1.26,
           "swellWave": 1.26,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.8,
+          "maxObservedWave": 2.4,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -22826,12 +22826,12 @@
           "forecastWave": 1.24,
           "swellWave": 1.24,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -24210,7 +24210,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 17:00",
@@ -24223,7 +24223,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 18:00",
@@ -24236,7 +24236,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 19:00",
@@ -24249,7 +24249,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 20:00",
@@ -24262,7 +24262,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 21:00",
@@ -24275,7 +24275,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 22:00",
@@ -24288,7 +24288,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -24301,7 +24301,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -24314,7 +24314,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -24327,7 +24327,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -24340,7 +24340,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -24353,7 +24353,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -24405,7 +24405,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -24418,7 +24418,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -24431,7 +24431,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -24444,7 +24444,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 11:00",
@@ -24457,7 +24457,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 12:00",
@@ -24470,7 +24470,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 13:00",
@@ -24483,7 +24483,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 14:00",
@@ -24496,7 +24496,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 15:00",
@@ -24509,7 +24509,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 16:00",
@@ -24522,7 +24522,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -24535,7 +24535,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -24548,7 +24548,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -24561,7 +24561,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -24574,7 +24574,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -24587,7 +24587,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -25274,12 +25274,12 @@
           "forecastWave": 1.66,
           "swellWave": 1.66,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 2,
+          "maxObservedWave": 2.3,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -25287,12 +25287,12 @@
           "forecastWave": 1.6,
           "swellWave": 1.6,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -25300,12 +25300,12 @@
           "forecastWave": 1.56,
           "swellWave": 1.56,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.9,
+          "maxObservedWave": 3.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -25313,12 +25313,12 @@
           "forecastWave": 1.5,
           "swellWave": 1.5,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.9,
+          "maxObservedWave": 2.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -25326,12 +25326,12 @@
           "forecastWave": 1.46,
           "swellWave": 1.46,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 2.3,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -25339,12 +25339,12 @@
           "forecastWave": 1.44,
           "swellWave": 1.42,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.6,
+          "maxObservedWave": 1.9,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -25352,12 +25352,12 @@
           "forecastWave": 1.4,
           "swellWave": 1.38,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.3,
+          "maxObservedWave": 2.1,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -26775,7 +26775,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 20:00",
@@ -26788,7 +26788,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 21:00",
@@ -26801,7 +26801,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 22:00",
@@ -26814,7 +26814,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -26827,7 +26827,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -26840,7 +26840,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -26853,7 +26853,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -26866,7 +26866,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -26879,7 +26879,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -26892,7 +26892,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 05:00",
@@ -26905,7 +26905,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 06:00",
@@ -26918,7 +26918,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 07:00",
@@ -26970,7 +26970,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 11:00",
@@ -26983,7 +26983,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 12:00",
@@ -26996,7 +26996,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 13:00",
@@ -27048,7 +27048,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -27061,7 +27061,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -27074,7 +27074,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -27087,7 +27087,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -27100,7 +27100,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -27113,7 +27113,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -27282,7 +27282,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -27295,7 +27295,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -27308,7 +27308,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -27321,7 +27321,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -27334,7 +27334,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -27347,7 +27347,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
@@ -27800,12 +27800,12 @@
           "forecastWave": 1.66,
           "swellWave": 1.66,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 2,
+          "maxObservedWave": 2.3,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -27813,12 +27813,12 @@
           "forecastWave": 1.6,
           "swellWave": 1.6,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -27826,12 +27826,12 @@
           "forecastWave": 1.56,
           "swellWave": 1.56,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.9,
+          "maxObservedWave": 3.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -27839,12 +27839,12 @@
           "forecastWave": 1.5,
           "swellWave": 1.5,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.9,
+          "maxObservedWave": 2.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -27852,12 +27852,12 @@
           "forecastWave": 1.46,
           "swellWave": 1.46,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.6,
+          "maxObservedWave": 2.3,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -27865,12 +27865,12 @@
           "forecastWave": 1.44,
           "swellWave": 1.42,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.6,
+          "maxObservedWave": 1.9,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -27878,12 +27878,12 @@
           "forecastWave": 1.4,
           "swellWave": 1.38,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.3,
+          "maxObservedWave": 2.1,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -29301,7 +29301,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 20:00",
@@ -29314,7 +29314,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 21:00",
@@ -29327,7 +29327,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 22:00",
@@ -29340,7 +29340,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -29353,7 +29353,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -29366,7 +29366,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -29379,7 +29379,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -29392,7 +29392,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -29405,7 +29405,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -29418,7 +29418,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 05:00",
@@ -29431,7 +29431,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 06:00",
@@ -29444,7 +29444,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 07:00",
@@ -29496,7 +29496,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 11:00",
@@ -29509,7 +29509,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 12:00",
@@ -29522,7 +29522,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 13:00",
@@ -29574,7 +29574,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -29587,7 +29587,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -29600,7 +29600,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -29613,7 +29613,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -29626,7 +29626,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -29639,7 +29639,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -29808,7 +29808,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -29821,7 +29821,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -29834,7 +29834,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -29847,7 +29847,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -29860,7 +29860,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -29873,7 +29873,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
@@ -30316,12 +30316,12 @@
           "forecastWave": 1.74,
           "swellWave": 1.7,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 2,
+          "maxObservedWave": 2.3,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -30329,12 +30329,12 @@
           "forecastWave": 1.68,
           "swellWave": 1.66,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -30342,12 +30342,12 @@
           "forecastWave": 1.64,
           "swellWave": 1.6,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.9,
+          "maxObservedWave": 3.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -30355,12 +30355,12 @@
           "forecastWave": 1.58,
           "swellWave": 1.56,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.9,
+          "maxObservedWave": 2.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -30368,12 +30368,12 @@
           "forecastWave": 1.54,
           "swellWave": 1.52,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.6,
+          "maxObservedWave": 2.3,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -30381,12 +30381,12 @@
           "forecastWave": 1.52,
           "swellWave": 1.5,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.6,
+          "maxObservedWave": 1.9,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -30394,12 +30394,12 @@
           "forecastWave": 1.48,
           "swellWave": 1.46,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.3,
+          "maxObservedWave": 2.1,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -31856,7 +31856,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -31869,7 +31869,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -31882,7 +31882,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -31934,7 +31934,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 05:00",
@@ -31947,7 +31947,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 06:00",
@@ -31960,7 +31960,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 07:00",
@@ -31973,7 +31973,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -31986,7 +31986,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -31999,7 +31999,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -32012,7 +32012,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 11:00",
@@ -32025,7 +32025,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 12:00",
@@ -32038,7 +32038,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 13:00",
@@ -32051,7 +32051,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 14:00",
@@ -32064,7 +32064,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 15:00",
@@ -32077,7 +32077,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 16:00",
@@ -32324,7 +32324,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -32337,7 +32337,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -32350,7 +32350,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -32363,7 +32363,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -32376,7 +32376,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -32389,7 +32389,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
@@ -32842,12 +32842,12 @@
           "forecastWave": 1.74,
           "swellWave": 1.7,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 2,
+          "maxObservedWave": 2.3,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -32855,12 +32855,12 @@
           "forecastWave": 1.68,
           "swellWave": 1.66,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -32868,12 +32868,12 @@
           "forecastWave": 1.64,
           "swellWave": 1.6,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.9,
+          "maxObservedWave": 3.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 0
         },
         {
@@ -32881,12 +32881,12 @@
           "forecastWave": 1.58,
           "swellWave": 1.56,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.9,
+          "maxObservedWave": 2.5,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -32894,12 +32894,12 @@
           "forecastWave": 1.54,
           "swellWave": 1.52,
           "waterTemp": 24.2,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.6,
+          "maxObservedWave": 2.3,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -32907,12 +32907,12 @@
           "forecastWave": 1.52,
           "swellWave": 1.5,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.6,
+          "maxObservedWave": 1.9,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 2
         },
         {
@@ -32920,12 +32920,12 @@
           "forecastWave": 1.48,
           "swellWave": 1.46,
           "waterTemp": 24.1,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 5,
+          "observedWave": 1.3,
+          "maxObservedWave": 2.1,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 양호",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 양호",
           "weatherCode": 1
         },
         {
@@ -34382,7 +34382,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -34395,7 +34395,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -34408,7 +34408,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -34460,7 +34460,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 05:00",
@@ -34473,7 +34473,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 1
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 06:00",
@@ -34486,7 +34486,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 07:00",
@@ -34499,7 +34499,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -34512,7 +34512,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -34525,7 +34525,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -34538,7 +34538,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 11:00",
@@ -34551,7 +34551,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 12:00",
@@ -34564,7 +34564,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 53
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 13:00",
@@ -34577,7 +34577,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 14:00",
@@ -34590,7 +34590,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 15:00",
@@ -34603,7 +34603,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 16:00",
@@ -34850,7 +34850,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -34863,7 +34863,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -34876,7 +34876,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -34889,7 +34889,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -34902,7 +34902,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -34915,7 +34915,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
@@ -36908,7 +36908,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -36921,7 +36921,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -36934,7 +36934,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -36947,7 +36947,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -36960,7 +36960,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -36973,7 +36973,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -37025,7 +37025,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -37038,7 +37038,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -37051,7 +37051,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -37142,7 +37142,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -37155,7 +37155,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -37168,7 +37168,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -37181,7 +37181,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -37194,7 +37194,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -37207,7 +37207,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -37376,7 +37376,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -37389,7 +37389,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -37402,7 +37402,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -37415,7 +37415,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -37428,7 +37428,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -37441,7 +37441,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
@@ -39434,7 +39434,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-14 23:00",
@@ -39447,7 +39447,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 00:00",
@@ -39460,7 +39460,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 01:00",
@@ -39473,7 +39473,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 02:00",
@@ -39486,7 +39486,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 03:00",
@@ -39499,7 +39499,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 04:00",
@@ -39551,7 +39551,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -39564,7 +39564,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -39577,7 +39577,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 적정",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -39668,7 +39668,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 17:00",
@@ -39681,7 +39681,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -39694,7 +39694,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -39707,7 +39707,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 20:00",
@@ -39720,7 +39720,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 21:00",
@@ -39733,7 +39733,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 22:00",
@@ -39902,7 +39902,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -39915,7 +39915,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -39928,7 +39928,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -39941,7 +39941,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -39954,7 +39954,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -39967,7 +39967,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
@@ -42145,7 +42145,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 14:00",
@@ -42158,7 +42158,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 15:00",
@@ -42171,7 +42171,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 16:00",
@@ -42184,7 +42184,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 17:00",
@@ -42197,7 +42197,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -42210,7 +42210,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -42223,7 +42223,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 20:00",
@@ -42236,7 +42236,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 21:00",
@@ -42249,7 +42249,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 22:00",
@@ -42418,7 +42418,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -42431,7 +42431,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -42444,7 +42444,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -42457,7 +42457,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -42470,7 +42470,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -42483,7 +42483,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
@@ -44671,7 +44671,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 양호, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 14:00",
@@ -44684,7 +44684,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 15:00",
@@ -44697,7 +44697,7 @@
           "grade": "★★★☆☆",
           "recommendation": "보통",
           "reason": "예보파고 다소 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 16:00",
@@ -44710,7 +44710,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 17:00",
@@ -44723,7 +44723,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 18:00",
@@ -44736,7 +44736,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-15 19:00",
@@ -44749,7 +44749,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 20:00",
@@ -44762,7 +44762,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 21:00",
@@ -44775,7 +44775,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-15 22:00",
@@ -44944,7 +44944,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 적정",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -44957,7 +44957,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -44970,7 +44970,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -44983,7 +44983,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -44996,7 +44996,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -45009,7 +45009,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
@@ -45452,12 +45452,12 @@
           "forecastWave": 1.64,
           "swellWave": 1.56,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.4,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -45465,12 +45465,12 @@
           "forecastWave": 1.62,
           "swellWave": 1.52,
           "waterTemp": 24,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -45478,12 +45478,12 @@
           "forecastWave": 1.58,
           "swellWave": 1.5,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -45491,12 +45491,12 @@
           "forecastWave": 1.56,
           "swellWave": 1.46,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2.1,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -45504,12 +45504,12 @@
           "forecastWave": 1.52,
           "swellWave": 1.44,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -45517,12 +45517,12 @@
           "forecastWave": 1.5,
           "swellWave": 1.4,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -45530,12 +45530,12 @@
           "forecastWave": 1.46,
           "swellWave": 1.38,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -47070,7 +47070,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 매우 잔잔, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 05:00",
@@ -47083,7 +47083,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 06:00",
@@ -47096,7 +47096,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 07:00",
@@ -47109,7 +47109,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -47122,7 +47122,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -47135,7 +47135,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 양호",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -47304,7 +47304,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 23:00",
@@ -47317,7 +47317,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-16 00:00",
@@ -47330,7 +47330,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-16 01:00",
@@ -47343,7 +47343,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-16 02:00",
@@ -47356,7 +47356,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-16 03:00",
@@ -47369,7 +47369,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 04:00",
@@ -47460,7 +47460,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -47473,7 +47473,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -47486,7 +47486,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -47499,7 +47499,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -47512,7 +47512,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -47525,7 +47525,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
@@ -47968,12 +47968,12 @@
           "forecastWave": 2.2,
           "swellWave": 1.88,
           "waterTemp": 23.9,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.4,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 0
         },
         {
@@ -47981,12 +47981,12 @@
           "forecastWave": 2.14,
           "swellWave": 1.84,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -47994,12 +47994,12 @@
           "forecastWave": 2.1,
           "swellWave": 1.78,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.7,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -48007,12 +48007,12 @@
           "forecastWave": 2.04,
           "swellWave": 1.74,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 2.1,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -48020,12 +48020,12 @@
           "forecastWave": 2,
           "swellWave": 1.7,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 2.2,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -48033,12 +48033,12 @@
           "forecastWave": 1.94,
           "swellWave": 1.66,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.4,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -48046,12 +48046,12 @@
           "forecastWave": 1.9,
           "swellWave": 1.62,
           "waterTemp": 23.8,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 10,
+          "observedWave": 1.5,
+          "maxObservedWave": 1.8,
+          "score": 0,
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
-          "reason": "예보파고 매우 높음, 너울 높음, 수온 적정",
+          "reason": "예보파고 매우 높음, 너울 높음, 실측파고 매우 높음, 최대파고 높음, 수온 적정",
           "weatherCode": 1
         },
         {
@@ -49586,7 +49586,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 05:00",
@@ -49599,7 +49599,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 06:00",
@@ -49612,7 +49612,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 양호, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 07:00",
@@ -49625,7 +49625,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 다소 높음, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 08:00",
@@ -49638,7 +49638,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 다소 높음, 너울 매우 양호, 수온 양호",
-          "weatherCode": 3
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 09:00",
@@ -49651,7 +49651,7 @@
           "grade": "★★★★★",
           "recommendation": "강력추천",
           "reason": "예보파고 다소 높음, 너울 매우 양호, 수온 양호",
-          "weatherCode": 2
+          "weatherCode": 51
         },
         {
           "time": "2026-09-15 10:00",
@@ -49820,7 +49820,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-15 23:00",
@@ -49833,7 +49833,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 2
         },
         {
           "time": "2026-09-16 00:00",
@@ -49846,7 +49846,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-16 01:00",
@@ -49859,7 +49859,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-16 02:00",
@@ -49872,7 +49872,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 1
         },
         {
           "time": "2026-09-16 03:00",
@@ -49885,7 +49885,7 @@
           "grade": "★☆☆☆☆",
           "recommendation": "비추천",
           "reason": "예보파고 높음, 너울 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 04:00",
@@ -49976,7 +49976,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 11:00",
@@ -49989,7 +49989,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 12:00",
@@ -50002,7 +50002,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 13:00",
@@ -50015,7 +50015,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 14:00",
@@ -50028,7 +50028,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 15:00",
@@ -50041,7 +50041,7 @@
           "grade": "★★☆☆☆",
           "recommendation": "주의",
           "reason": "예보파고 높음, 너울 다소 높음, 수온 양호",
-          "weatherCode": 51
+          "weatherCode": 0
         },
         {
           "time": "2026-09-16 16:00",
