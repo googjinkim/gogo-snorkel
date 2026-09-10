@@ -522,6 +522,7 @@
     var data = lastResultsData;
     if (!data) return;
     state.view = "results";
+    pendingBeachRestroomMaps = [];
 
     var beaches = data.beaches || [];
 
@@ -562,6 +563,7 @@
     if (data.results.length) {
       if (isMobileView()) { bindSummaryRows("results"); } else { bindDetailButtons(drawResults); }
     }
+    if (beaches.length) { bindBeachRestroomMaps(); }
   }
 
   function loadSearch(query){
@@ -592,11 +594,27 @@
     });
   }
 
+  /* beachRestroomCardHtml은 여러 해변 블록에 걸쳐 반복 호출되므로(동해바다
+   * 화장실 정보 전용 페이지, 검색 결과의 화장실 섹션 둘 다), 좌표가 있는
+   * 항목마다 페이지 전체 기준으로 겹치지 않는 id를 붙여야 한다. pendingBeach
+   * RestroomMaps가 렌더링 순서 그대로 대상 restroom을 쌓아두고, innerHTML
+   * 반영 후 bindBeachRestroomMaps()가 같은 순서로 클릭 핸들러를 붙인다. */
+  var pendingBeachRestroomMaps = [];
+
   function beachRestroomCardHtml(restroom){
     var addr = restroom.roadAddr || restroom.lotAddr || "";
     var hoursHtml = restroom.openHours
       ? '<span class="restroom-hours">🕐 ' + esc(restroom.openHours) + '</span>'
       : "";
+    var hasCoords = restroom.lat !== null && typeof restroom.lat !== "undefined" &&
+      restroom.lon !== null && typeof restroom.lon !== "undefined";
+    var mapHtml = "";
+    if (hasCoords) {
+      var uid = pendingBeachRestroomMaps.length;
+      pendingBeachRestroomMaps.push(restroom);
+      mapHtml = '<button class="restroom-map-btn" id="beachRestroomMapBtn' + uid + '" type="button">지도 보기</button>' +
+        '<div class="restroom-map" id="beachRestroomMap' + uid + '" hidden></div>';
+    }
     return '<div class="restroom-card">' +
       '<div class="restroom-info">' +
       '<span class="restroom-icon" aria-hidden="true">🚻</span>' +
@@ -605,7 +623,17 @@
       '<span class="restroom-addr">' + esc(addr) + '</span>' +
       hoursHtml +
       '</div></div>' +
+      mapHtml +
       '</div>';
+  }
+
+  /* innerHTML 대입 직후 호출: beachRestroomCardHtml이 쌓아둔 순서 그대로
+   * 각 카드의 지도 토글을 bindRestroomMapToggle로 연결하고 목록을 비운다. */
+  function bindBeachRestroomMaps(){
+    pendingBeachRestroomMaps.forEach(function(restroom, uid){
+      bindRestroomMapToggle("beachRestroomMapBtn" + uid, "beachRestroomMap" + uid, restroom);
+    });
+    pendingBeachRestroomMaps = [];
   }
 
   function beachBlockHtml(beach){
@@ -618,6 +646,7 @@
 
   function drawBeachRestrooms(){
     state.view = "beachRestrooms";
+    pendingBeachRestroomMaps = [];
     var data = SCORED_DATA.beachRestrooms || {};
     var totalBeaches = REGION_ORDER.reduce(function(sum, regionId){
       return sum + ((data[REGION_NAMES[regionId]] || []).length);
@@ -645,6 +674,7 @@
       renderHome();
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     });
+    bindBeachRestroomMaps();
   }
 
   /* ---------- 모바일 요약 → 확장(오늘/이번주 블록) ---------- */
@@ -772,40 +802,48 @@
       '</div>';
   }
 
+  /* 화장실 카드 하나의 "지도 보기" 버튼/컨테이너를 토글에 연결한다. 20개
+   * 포인트 카드(restroomCardHtml)와 동해바다 화장실 전체 목록/검색 결과의
+   * 화장실 카드(beachRestroomCardHtml)가 이 함수 하나를 공유한다 — 카드
+   * 종류별로 id만 다르게 붙이고 동작은 완전히 동일하다. */
+  function bindRestroomMapToggle(btnId, mapId, restroom){
+    var btn = document.getElementById(btnId);
+    if (!btn) return;
+    var mapEl = document.getElementById(mapId);
+    var mapInstance = null;
+
+    btn.addEventListener("click", function(){
+      if (!mapEl.hidden) {
+        mapEl.hidden = true;
+        btn.textContent = "지도 보기";
+        return;
+      }
+      if (restroom.lat === null || typeof restroom.lat === "undefined" ||
+          restroom.lon === null || typeof restroom.lon === "undefined") {
+        console.error("[restroom] 좌표 정보가 없어 지도를 표시할 수 없습니다.");
+        return;
+      }
+      mapEl.hidden = false;
+      btn.textContent = "지도 접기";
+      loadKakaoMaps().then(function(){
+        var center = new kakao.maps.LatLng(restroom.lat, restroom.lon);
+        if (!mapInstance) {
+          mapInstance = new kakao.maps.Map(mapEl, { center: center, level: 4 });
+          new kakao.maps.Marker({ position: center, map: mapInstance });
+        } else {
+          kakao.maps.event.trigger(mapInstance, "resize");
+          mapInstance.setCenter(center);
+        }
+      }).catch(function(err){
+        console.error("[restroom] 지도 로드 실패:", err.message);
+      });
+    });
+  }
+
   /* 카드마다 독립된 지도 인스턴스/토글 상태를 갖도록 idx로 구분해서 바인딩한다. */
   function bindRestroomCard(restrooms){
     (restrooms || []).forEach(function(restroom, idx){
-      var btn = document.getElementById("restroomMapBtn" + idx);
-      if (!btn) return;
-      var mapEl = document.getElementById("restroomMap" + idx);
-      var mapInstance = null;
-
-      btn.addEventListener("click", function(){
-        if (!mapEl.hidden) {
-          mapEl.hidden = true;
-          btn.textContent = "지도 보기";
-          return;
-        }
-        if (restroom.lat === null || typeof restroom.lat === "undefined" ||
-            restroom.lon === null || typeof restroom.lon === "undefined") {
-          console.error("[restroom] 좌표 정보가 없어 지도를 표시할 수 없습니다.");
-          return;
-        }
-        mapEl.hidden = false;
-        btn.textContent = "지도 접기";
-        loadKakaoMaps().then(function(){
-          var center = new kakao.maps.LatLng(restroom.lat, restroom.lon);
-          if (!mapInstance) {
-            mapInstance = new kakao.maps.Map(mapEl, { center: center, level: 4 });
-            new kakao.maps.Marker({ position: center, map: mapInstance });
-          } else {
-            kakao.maps.event.trigger(mapInstance, "resize");
-            mapInstance.setCenter(center);
-          }
-        }).catch(function(err){
-          console.error("[restroom] 지도 로드 실패:", err.message);
-        });
-      });
+      bindRestroomMapToggle("restroomMapBtn" + idx, "restroomMap" + idx, restroom);
     });
   }
 
