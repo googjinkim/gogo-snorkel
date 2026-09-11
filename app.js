@@ -1003,26 +1003,32 @@
   }
 
   function slotHtml(b){
-    var timeHtml = '<div class="t">' + esc((b.dateLabel ? b.dateLabel + " " : "") + b.startHour + '~' + b.endHour + '시') + '</div>';
+    var timeText = (b.dateLabel ? b.dateLabel + " " : "") + b.startHour + '~' + b.endHour + '시';
+    var timeHtml = '<div class="t">' + esc(timeText) + '</div>';
+
+    var airTempText = (b.airTemp === null || typeof b.airTemp === "undefined") ? "" : esc(b.airTemp + "°C");
 
     if (isMobileView()) {
-      return '<div class="slot">' +
-        timeHtml +
-        '<div class="row1"><span class="score ' + scoreClass(b.score) + '">' + esc(b.scoreIcon) + ' ' + esc(b.score === null ? "-" : b.score) + '</span>' +
-        '<span>' + esc(b.weatherIcon) + '</span></div>' +
-        '<div class="metrics mono"><span>↗' + esc(b.wave === null ? "-" : b.wave) + 'm</span>' +
-        '<span>💧' + esc(b.temp === null ? "-" : b.temp) + '℃</span></div>' +
+      return '<div class="slot slot-full">' +
+        '<div class="row1">' +
+        '<span class="t-inline">' + esc(timeText) + '</span>' +
+        '<span class="score mono ' + scoreClass(b.score) + '">' + esc(b.scoreIcon) + ' ' + esc(b.score === null ? "-" : b.score) + '</span>' +
+        '<span class="mono">↗' + esc(b.wave === null ? "-" : b.wave) + 'm</span>' +
+        '<span class="mono">💧' + esc(b.temp === null ? "-" : b.temp) + '℃</span>' +
+        '<span class="weather-inline"><span class="weather-icon-box">' + esc(b.weatherIcon) + '</span>' +
+          '<span class="weather-temp-box mono">' + airTempText + '</span></span>' +
+        '</div>' +
         '</div>';
     }
 
-    var airTempText = (b.airTemp === null || typeof b.airTemp === "undefined") ? "" : esc(b.airTemp + "°C");
     return '<div class="slot slot-compact">' +
       timeHtml +
       '<div class="row1 mono">' +
       '<span class="score ' + scoreClass(b.score) + '">' + esc(b.scoreIcon) + ' ' + esc(b.score === null ? "-" : b.score) + '</span>' +
       '<span>↗' + esc(b.wave === null ? "-" : b.wave) + 'm</span>' +
       '<span>💧' + esc(b.temp === null ? "-" : b.temp) + '℃</span>' +
-      '<span class="weather-inline">' + esc(b.weatherIcon) + airTempText + '</span>' +
+      '<span class="weather-inline"><span class="weather-icon-box">' + esc(b.weatherIcon) + '</span>' +
+        '<span class="weather-temp-box">' + airTempText + '</span></span>' +
       '</div>' +
       '</div>';
   }

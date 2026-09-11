@@ -248,7 +248,28 @@
   .slot-compact{flex:0 0 auto;min-width:0;}
   .slot-compact .row1{justify-content:flex-start;gap:10px;font-size:12.5px;white-space:nowrap;}
   .slot-compact .row1 .score{font-size:13.5px;}
-  .slot-compact .weather-inline{color:var(--text-mute);}
+  /* 아이콘 글리프 자체의 폭이 이모지마다 달라서(맑음↔흐림) 아이콘 바로 뒤에
+     기온을 붙이면 간격이 들쭉날쭉해 보인다. 아이콘을 고정폭 박스에 넣고
+     기온과의 간격은 gap으로 고정해 아이콘 종류와 무관하게 일정해 보이게 한다. */
+  .slot-compact .weather-inline{
+    color:var(--text-mute);
+    display:inline-flex;align-items:center;gap:7px;
+  }
+  .slot-compact .weather-icon-box{display:inline-block;width:18px;text-align:center;}
+
+  /* 모바일 확장 카드(홈에서 포인트 탭 → 6개 시간대 카드): 2칸 그리드 대신
+     한 줄 전체 폭으로 쌓고, 카드 내용을 한 줄에 나열한다(좁으면 자연스럽게
+     줄바꿈되도록 flex-wrap). 데스크톱 slot-compact와는 완전히 별개 클래스라
+     서로 영향 없다. */
+  .slot-full{flex:1 1 100%;min-width:0;}
+  .slot-full .row1{
+    justify-content:flex-start;flex-wrap:wrap;
+    row-gap:6px;column-gap:10px;font-size:12.5px;
+  }
+  .slot-full .row1 .score{font-size:13px;}
+  .slot-full .t-inline{color:var(--text-mute);}
+  .slot-full .weather-inline{display:inline-flex;align-items:center;gap:7px;color:var(--text-mute);}
+  .slot-full .weather-icon-box{display:inline-block;width:18px;text-align:center;}
 
   /* ---------- detail view ---------- */
   .back-link{
