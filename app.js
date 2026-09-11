@@ -963,7 +963,7 @@
     return '<div class="legend">' +
       '<span>🟢 최고(90+)</span><span>🔵 좋음(80+)</span><span>🟡 보통(65+)</span>' +
       '<span>🟠 주의(50+)</span><span>🔴 비추천</span>' +
-      (withRestroomBadge ? '<span class="legend-restroom-badge">🚻 화장실 정보는 자세히 보기에서</span>' : '') +
+      (withRestroomBadge ? '<span class="legend-restroom-badge">🚻 화장실 정보는 [이번주 자세히] 보기에서</span>' : '') +
       '</div>';
   }
 
