@@ -94,6 +94,7 @@ async function buildScore() {
         recommendation,
         reason,
         weatherCode: raw.weatherCode,
+        airTemp: raw.airTemp,
       };
     });
 

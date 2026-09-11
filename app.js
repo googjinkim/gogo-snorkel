@@ -178,12 +178,13 @@
 
       var key = start.getTime();
       if (!map[key]) {
-        map[key] = { start: start, end: end, scores: [], waves: [], temps: [], weatherCodes: [] };
+        map[key] = { start: start, end: end, scores: [], waves: [], temps: [], airTemps: [], weatherCodes: [] };
       }
 
       if (h.score !== null && typeof h.score !== "undefined") map[key].scores.push(h.score);
       if (h.forecastWave !== null && typeof h.forecastWave !== "undefined") map[key].waves.push(h.forecastWave);
       if (h.waterTemp !== null && typeof h.waterTemp !== "undefined") map[key].temps.push(h.waterTemp);
+      if (h.airTemp !== null && typeof h.airTemp !== "undefined") map[key].airTemps.push(h.airTemp);
       if (h.weatherCode !== null && typeof h.weatherCode !== "undefined") map[key].weatherCodes.push(h.weatherCode);
     });
 
@@ -194,6 +195,7 @@
         var avgScore = avg(g.scores);
         var avgWave = avg(g.waves);
         var avgTemp = avg(g.temps);
+        var avgAirTemp = avg(g.airTemps);
         var weatherCode = mostCommon(g.weatherCodes);
 
         return {
@@ -204,6 +206,7 @@
           score: avgScore === null ? null : Math.round(avgScore),
           wave: avgWave === null ? null : Number(avgWave.toFixed(2)),
           temp: avgTemp === null ? null : Number(avgTemp.toFixed(1)),
+          airTemp: avgAirTemp === null ? null : Number(avgAirTemp.toFixed(1)),
           weatherCode: weatherCode,
           scoreIcon: scoreIcon(avgScore),
           weatherIcon: weatherIcon(weatherCode)
@@ -347,6 +350,7 @@
         wave: h.forecastWave === null || typeof h.forecastWave === "undefined" ? null : h.forecastWave,
         swell: h.swellWave === null || typeof h.swellWave === "undefined" ? null : h.swellWave,
         temp: h.waterTemp === null || typeof h.waterTemp === "undefined" ? null : h.waterTemp,
+        airTemp: h.airTemp === null || typeof h.airTemp === "undefined" ? null : h.airTemp,
         observedStation: "",
         observedWave: h.observedWave === null || typeof h.observedWave === "undefined" ? null : h.observedWave,
         observedMaxWave: h.maxObservedWave === null || typeof h.maxObservedWave === "undefined" ? null : h.maxObservedWave,
@@ -898,7 +902,8 @@
             '<td class="mono">' + esc(h.wave === null ? "-" : h.wave + "m") + '</td>' +
             '<td class="mono">' + esc(h.swell === null ? "-" : h.swell + "m") + '</td>' +
             '<td class="mono">' + esc(h.temp === null ? "-" : h.temp + "℃") + '</td>' +
-            '<td>' + esc(h.weatherIcon) + '</td>' +
+            '<td class="weather-cell mono">' + esc(h.weatherIcon) +
+              (h.airTemp === null ? "" : esc(Math.round(h.airTemp) + "°C")) + '</td>' +
             (mobile ? '' : '<td class="reason-cell">' + esc(h.reason) + '</td>') +
             '</tr>';
         }).join("") +
@@ -998,12 +1003,27 @@
   }
 
   function slotHtml(b){
-    return '<div class="slot">' +
-      '<div class="t">' + esc((b.dateLabel ? b.dateLabel + " " : "") + b.startHour + '~' + b.endHour + '시') + '</div>' +
-      '<div class="row1"><span class="score ' + scoreClass(b.score) + '">' + esc(b.scoreIcon) + ' ' + esc(b.score === null ? "-" : b.score) + '</span>' +
-      '<span>' + esc(b.weatherIcon) + '</span></div>' +
-      '<div class="metrics mono"><span>↗' + esc(b.wave === null ? "-" : b.wave) + 'm</span>' +
-      '<span>💧' + esc(b.temp === null ? "-" : b.temp) + '℃</span></div>' +
+    var timeHtml = '<div class="t">' + esc((b.dateLabel ? b.dateLabel + " " : "") + b.startHour + '~' + b.endHour + '시') + '</div>';
+
+    if (isMobileView()) {
+      return '<div class="slot">' +
+        timeHtml +
+        '<div class="row1"><span class="score ' + scoreClass(b.score) + '">' + esc(b.scoreIcon) + ' ' + esc(b.score === null ? "-" : b.score) + '</span>' +
+        '<span>' + esc(b.weatherIcon) + '</span></div>' +
+        '<div class="metrics mono"><span>↗' + esc(b.wave === null ? "-" : b.wave) + 'm</span>' +
+        '<span>💧' + esc(b.temp === null ? "-" : b.temp) + '℃</span></div>' +
+        '</div>';
+    }
+
+    var airTempText = (b.airTemp === null || typeof b.airTemp === "undefined") ? "" : esc(b.airTemp + "°C");
+    return '<div class="slot slot-compact">' +
+      timeHtml +
+      '<div class="row1 mono">' +
+      '<span class="score ' + scoreClass(b.score) + '">' + esc(b.scoreIcon) + ' ' + esc(b.score === null ? "-" : b.score) + '</span>' +
+      '<span>↗' + esc(b.wave === null ? "-" : b.wave) + 'm</span>' +
+      '<span>💧' + esc(b.temp === null ? "-" : b.temp) + '℃</span>' +
+      '<span class="weather-inline">' + esc(b.weatherIcon) + airTempText + '</span>' +
+      '</div>' +
       '</div>';
   }
 

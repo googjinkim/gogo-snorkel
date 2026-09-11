@@ -29,7 +29,7 @@ function marineUrl(lat, lon) {
 }
 
 function weatherUrl(lat, lon) {
-  return `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=weather_code&timezone=Asia%2FSeoul&forecast_days=${FORECAST_DAYS}`;
+  return `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=weather_code,temperature_2m&timezone=Asia%2FSeoul&forecast_days=${FORECAST_DAYS}`;
 }
 
 /** Open-Meteo의 "yyyy-MM-ddTHH:mm" 형식을 "yyyy-MM-dd HH:mm"으로 정규화한다. */
@@ -57,10 +57,13 @@ async function collectPoint(point) {
   ]);
 
   const weatherCodeByTime = new Map();
+  const airTempByTime = new Map();
   const weatherTimes = weather.hourly?.time || [];
   const weatherCodes = weather.hourly?.weather_code || [];
+  const airTemps = weather.hourly?.temperature_2m || [];
   weatherTimes.forEach((time, i) => {
     weatherCodeByTime.set(time, weatherCodes[i]);
+    airTempByTime.set(time, airTemps[i]);
   });
 
   const marineHourly = marine.hourly || {};
@@ -77,6 +80,7 @@ async function collectPoint(point) {
     seaLevel: marineHourly.sea_level_height_msl?.[i] ?? null,
     waterTemp: marineHourly.sea_surface_temperature?.[i] ?? null,
     weatherCode: weatherCodeByTime.has(time) ? weatherCodeByTime.get(time) : null,
+    airTemp: airTempByTime.has(time) ? airTempByTime.get(time) ?? null : null,
   }));
 }
 

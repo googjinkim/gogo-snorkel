@@ -243,6 +243,13 @@
   }
   .slot.empty{color:var(--text-mute);font-size:12px;display:flex;align-items:center;justify-content:center;}
 
+  /* 데스크톱 전용 한 줄 요약 카드: 내용 길이만큼만 폭을 차지하도록 flex-grow를
+     끈다(모바일은 slotHtml이 이 클래스를 아예 안 붙이므로 영향 없음). */
+  .slot-compact{flex:0 0 auto;min-width:0;}
+  .slot-compact .row1{justify-content:flex-start;gap:10px;font-size:12.5px;white-space:nowrap;}
+  .slot-compact .row1 .score{font-size:13.5px;}
+  .slot-compact .weather-inline{color:var(--text-mute);}
+
   /* ---------- detail view ---------- */
   .back-link{
     display:inline-flex;align-items:center;gap:6px;
@@ -340,6 +347,20 @@
   }
   table.hours tr:last-child td{border-bottom:none;}
   .reason-cell{color:var(--text-mute);font-size:12px;}
+  .weather-cell{white-space:nowrap;}
+
+  /* table-layout:auto(기본값)면 같은 화면 안 날짜별 표들이 각자 내용(특히
+     코멘트 길이)에 따라 컬럼 폭을 독자적으로 계산해서 표끼리 컬럼이 어긋나
+     보인다. 고정 비율 폭으로 모든 표가 같은 컬럼 폭을 갖게 한다. 모바일은
+     아래 미디어 쿼리가 6컬럼 폭으로 다시 덮어쓴다. */
+  table.hours{table-layout:fixed;}
+  table.hours th:nth-child(1),table.hours td:nth-child(1){width:9%;}
+  table.hours th:nth-child(2),table.hours td:nth-child(2){width:11%;}
+  table.hours th:nth-child(3),table.hours td:nth-child(3){width:10%;}
+  table.hours th:nth-child(4),table.hours td:nth-child(4){width:10%;}
+  table.hours th:nth-child(5),table.hours td:nth-child(5){width:10%;}
+  table.hours th:nth-child(6),table.hours td:nth-child(6){width:14%;}
+  table.hours th:nth-child(7),table.hours td:nth-child(7){width:36%;}
 
   /* ---------- states ---------- */
   .empty-state{
@@ -424,6 +445,9 @@
     table.hours th:nth-child(4),table.hours td:nth-child(4){width:18%;}
     table.hours th:nth-child(5),table.hours td:nth-child(5){width:18%;}
     table.hours th:nth-child(6),table.hours td:nth-child(6){width:14%;}
+    /* 좁은 화면에서 아이콘+기온이 14% 컬럼 폭 안에 한 줄로 들어가도록 이
+       셀만 별도로 축소한다(다른 컬럼 폭/레이아웃은 그대로 유지). */
+    table.hours td.weather-cell{font-size:10px;}
   }
 </style>
 </head>
