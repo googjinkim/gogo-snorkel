@@ -18,6 +18,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { BEACH_RESTROOMS: EXISTING_BEACH_RESTROOMS } = require("../lib/beachRestrooms");
 
 const API_BASE = "https://apis.data.go.kr/1741000/public_restroom_info_v2/info_v2";
 const KAKAO_GEOCODE_URL = "https://dapi.kakao.com/v2/local/search/address.json";
@@ -37,8 +38,11 @@ const AREA_ADMIN_NAMES = {
   동해: "동해시",
   삼척: "삼척시",
   울진: "울진군",
+  영덕: "영덕군",
+  포항: "포항시",
 };
-const AREA_ORDER = ["고성", "속초", "양양", "강릉", "동해", "삼척", "울진"];
+// 출력 시(lib/beachRestrooms.js) 지역 순서. 기존 7개 + 신규 2개.
+const AREA_ORDER = ["고성", "속초", "양양", "강릉", "동해", "삼척", "울진", "영덕", "포항"];
 
 const BEACH_KEYWORDS = ["해수욕장", "해변"];
 // 그룹 내 1순위 후보의 거리 + 이 값(km) 이내에 다른 후보가 있으면 2번째 후보로도 채택한다.
@@ -100,26 +104,26 @@ function addrMatches(item, keyword) {
  * 전체 페이지네이션 + 클라이언트 필터로 7개 행정구역별 전체 화장실 목록을 모은다.
  * (find-restrooms.js의 collectByFullScan과 동일한 방식.)
  */
-async function collectAllByArea(serviceKey, totalCount) {
-  const byArea = new Map(AREA_ORDER.map((area) => [area, []]));
+async function collectAllByArea(serviceKey, totalCount, areas) {
+  const byArea = new Map(areas.map((area) => [area, []]));
   const numOfRows = 1000;
   const totalPages = Math.ceil(totalCount / numOfRows);
   console.log(`\n[find-all-beach-restrooms] 전체 페이지네이션 시작 (numOfRows=${numOfRows}, 예상 ${totalPages}페이지)`);
   console.log(
-    `[find-all-beach-restrooms] 행정구역명 필터: ${AREA_ORDER.map((a) => `${a}→${AREA_ADMIN_NAMES[a]}`).join(", ")}`
+    `[find-all-beach-restrooms] 행정구역명 필터: ${areas.map((a) => `${a}→${AREA_ADMIN_NAMES[a]}`).join(", ")}`
   );
 
   for (let pageNo = 1; pageNo <= totalPages; pageNo += 1) {
     const { items } = await fetchPage(serviceKey, pageNo, numOfRows);
     for (const item of items) {
-      for (const area of AREA_ORDER) {
+      for (const area of areas) {
         if (addrMatches(item, AREA_ADMIN_NAMES[area])) {
           byArea.get(area).push(item);
         }
       }
     }
     if (pageNo % 5 === 0 || pageNo === totalPages) {
-      const matched = AREA_ORDER.reduce((sum, a) => sum + byArea.get(a).length, 0);
+      const matched = areas.reduce((sum, a) => sum + byArea.get(a).length, 0);
       console.log(`[find-all-beach-restrooms] 진행 ${pageNo}/${totalPages}페이지, 누적 매칭 ${matched}건`);
     }
     await sleep(150);
@@ -329,12 +333,18 @@ function avg(values) {
 
 function toRestroomEntry(entry, distanceKm) {
   const item = entry.item;
+  const geocode = entry.geocode || null;
   return {
     name: item.RSTRM_NM || null,
     roadAddr: item[ADDR_FIELDS[1]] || null,
     lotAddr: item[ADDR_FIELDS[0]] || null,
     openHours: formatOpenHours(item),
     distanceKm: distanceKm === null || distanceKm === undefined ? null : Number(distanceKm.toFixed(2)),
+    // lib/beachRestrooms.js는 이후 지도 보기 기능 추가 시 좌표를 함께 저장하도록
+    // 스키마가 바뀌었다(scripts/add-beach-restroom-coords.js 참고). 이 스크립트도
+    // 그 스키마에 맞춰 지오코딩 단계에서 이미 얻은 좌표를 함께 저장한다.
+    lat: geocode ? geocode.lat : null,
+    lon: geocode ? geocode.lon : null,
   };
 }
 
@@ -392,6 +402,11 @@ function writeBeachRestroomsFile(byAreaResult) {
   lines.push("// 그룹별 화장실 후보(최대 2건)를 채운 결과다. 그룹핑이 애매했던 항목은");
   lines.push("// 이 파일에 포함되지 않고 스크립트 실행 시 콘솔에 \"미분류\"로만 출력된다.");
   lines.push("// 실제로 쓰기 전에 콘솔 출력(지역별 요약, 미분류 목록)을 사람이 검토해야 한다.");
+  lines.push("//");
+  lines.push("// lat/lon은 지도 보기 버튼용 좌표다. 이 스크립트가 지오코딩 단계에서 얻은");
+  lines.push("// 값을 직접 채우며, 정확한 주소·축약 주소 모두 지오코딩이 끝내 실패한 항목");
+  lines.push("// (예: 양양 북분리)은 lat/lon이 null이고 프런트엔드는 이 경우 지도 버튼");
+  lines.push("// 자체를 표시하지 않는다.");
   lines.push("");
   lines.push("const BEACH_RESTROOMS = {");
   AREA_ORDER.forEach((area) => {
@@ -409,6 +424,8 @@ function writeBeachRestroomsFile(byAreaResult) {
         lines.push(`          lotAddr: ${JSON.stringify(r.lotAddr)},`);
         lines.push(`          openHours: ${JSON.stringify(r.openHours)},`);
         lines.push(`          distanceKm: ${JSON.stringify(r.distanceKm)},`);
+        lines.push(`          lat: ${JSON.stringify(r.lat === undefined ? null : r.lat)},`);
+        lines.push(`          lon: ${JSON.stringify(r.lon === undefined ? null : r.lon)},`);
         lines.push("        },");
       });
       lines.push("      ],");
@@ -454,18 +471,27 @@ async function findAllBeachRestrooms() {
   }
   console.log(`[find-all-beach-restrooms] 전체 totalCount=${baseline.totalCount}`);
 
-  const byArea = await collectAllByArea(serviceKey, baseline.totalCount);
+  // 이미 lib/beachRestrooms.js에 있는 지역(기존 7개)은 재조사하지 않는다.
+  // 아직 없는 지역(현재는 영덕/포항)만 새로 수집한다.
+  const newAreas = AREA_ORDER.filter((area) => !(area in EXISTING_BEACH_RESTROOMS));
+  if (newAreas.length === 0) {
+    console.log("[find-all-beach-restrooms] lib/beachRestrooms.js에 아직 없는 신규 지역이 없습니다. 할 일 없음.");
+    return;
+  }
+  console.log(`[find-all-beach-restrooms] 신규 지역만 조사합니다: ${newAreas.join(", ")}`);
+
+  const byArea = await collectAllByArea(serviceKey, baseline.totalCount, newAreas);
 
   console.log("\n========================================");
   console.log("지역별 해변 화장실 그룹핑 결과");
   console.log("========================================");
 
-  const byAreaResult = new Map(AREA_ORDER.map((area) => [area, []]));
+  const byAreaResult = new Map(newAreas.map((area) => [area, []]));
   const unclassified = [];
   let totalBeaches = 0;
   let totalRestrooms = 0;
 
-  for (const area of AREA_ORDER) {
+  for (const area of newAreas) {
     const areaItems = byArea.get(area) || [];
     const beachItems = areaItems.filter(isBeachItem);
     console.log(`\n▶ ${area} (${AREA_ADMIN_NAMES[area]}) — 전체 ${areaItems.length}건 중 해변 관련 ${beachItems.length}건`);
@@ -536,9 +562,9 @@ async function findAllBeachRestrooms() {
   }
 
   console.log("\n========================================");
-  console.log("전체 요약");
+  console.log("전체 요약 (신규 지역만)");
   console.log("========================================");
-  AREA_ORDER.forEach((area) => {
+  newAreas.forEach((area) => {
     console.log(`  ${area}: 해변 ${byAreaResult.get(area).length}곳`);
   });
   console.log(`  총 해변 개수: ${totalBeaches}곳`);
@@ -550,7 +576,11 @@ async function findAllBeachRestrooms() {
     u.candidates.forEach((c) => console.log(`        - ${c}`));
   });
 
-  writeBeachRestroomsFile(byAreaResult);
+  // 기존 7개 지역은 그대로 보존하고, 새로 조사한 지역만 뒤에 합쳐서 쓴다.
+  const mergedResult = new Map(
+    AREA_ORDER.map((area) => [area, byAreaResult.has(area) ? byAreaResult.get(area) : EXISTING_BEACH_RESTROOMS[area] || []])
+  );
+  writeBeachRestroomsFile(mergedResult);
 }
 
 if (require.main === module) {

@@ -18,6 +18,7 @@
 const fs = require("fs");
 const path = require("path");
 const { getAllPoints } = require("../lib/points");
+const { RESTROOMS: EXISTING_RESTROOMS } = require("../lib/restrooms");
 
 const API_BASE = "https://apis.data.go.kr/1741000/public_restroom_info_v2/info_v2";
 const KAKAO_GEOCODE_URL = "https://dapi.kakao.com/v2/local/search/address.json";
@@ -37,6 +38,8 @@ const AREA_ADMIN_NAMES = {
   동해: "동해시",
   삼척: "삼척시",
   울진: "울진군",
+  영덕: "영덕군",
+  포항: "포항시",
 };
 
 const MAX_CANDIDATES_PER_POINT = 3;
@@ -456,7 +459,18 @@ async function findRestrooms() {
     return;
   }
 
-  const points = getAllPoints();
+  // 이미 lib/restrooms.js에 항목이 있는 포인트(기존 20개)는 재조사하지 않는다.
+  // 새로 추가된 포인트(현재는 영덕/포항 11개)만 골라서 처리한다 — 하드코딩된
+  // id 목록 대신 "기존 파일에 없는 포인트"로 판단하므로 나중에 포인트가 더
+  // 추가돼도 이 스크립트를 그대로 재사용할 수 있다.
+  const points = getAllPoints().filter((p) => !(p.id in EXISTING_RESTROOMS));
+  if (points.length === 0) {
+    console.log("[find-restrooms] lib/restrooms.js에 아직 없는 신규 포인트가 없습니다. 할 일 없음.");
+    return;
+  }
+  console.log(
+    `[find-restrooms] 신규 포인트 ${points.length}개만 조사합니다: ${points.map((p) => p.id).join(", ")}`
+  );
   const areaNames = [...new Set(points.map((p) => p.area))];
 
   let baseline;
@@ -521,7 +535,9 @@ async function findRestrooms() {
     );
   }
 
-  writeRestroomsFile(pointEntries);
+  // 기존 20개 포인트 항목은 그대로 보존하고, 새로 조사한 포인트만 뒤에 합친다.
+  const mergedEntries = { ...EXISTING_RESTROOMS, ...pointEntries };
+  writeRestroomsFile(mergedEntries);
 }
 
 if (require.main === module) {
