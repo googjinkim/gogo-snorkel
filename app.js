@@ -26,8 +26,8 @@
 
   var state = { view: "home", regionId: "__ALL__" };
 
-  /* ---------- 지역 상수 (7개, 사이드바 data-region 값 → area명) ---------- */
-  var REGION_ORDER = ["gosung", "sokcho", "yangyang", "gangneung", "donghae", "samcheok", "uljin"];
+  /* ---------- 지역 상수 (9개, 사이드바 data-region 값 → area명) ---------- */
+  var REGION_ORDER = ["gosung", "sokcho", "yangyang", "gangneung", "donghae", "samcheok", "uljin", "yeongdeok", "pohang"];
   var REGION_NAMES = {
     gosung: "고성",
     sokcho: "속초",
@@ -35,7 +35,9 @@
     gangneung: "강릉",
     donghae: "동해",
     samcheok: "삼척",
-    uljin: "울진"
+    uljin: "울진",
+    yeongdeok: "영덕",
+    pohang: "포항"
   };
 
   function esc(s){
