@@ -12,7 +12,7 @@
 > GitHub 기반으로 완전히 이전한 버전입니다. Apps Script 버전(텔레그램 봇 포함)은
 > 별도 저장소에 예비용으로 남아 있으며, 이 저장소와는 코드/데이터를 공유하지
 > 않는 완전히 독립된 프로젝트입니다.
-> Apps Script 저장소: `TODO: 저장소 URL 기입`
+> Apps Script 저장소: https://github.com/googjinkim/OceanInsight-V2
 
 배포 URL: https://googjinkim.github.io/gogo-snorkel/
 
