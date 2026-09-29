@@ -22,6 +22,7 @@ const { RESTROOMS: EXISTING_RESTROOMS } = require("../lib/restrooms");
 
 const API_BASE = "https://apis.data.go.kr/1741000/public_restroom_info_v2/info_v2";
 const KAKAO_GEOCODE_URL = "https://dapi.kakao.com/v2/local/search/address.json";
+const KAKAO_KEYWORD_URL = "https://dapi.kakao.com/v2/local/search/keyword.json";
 const OUTPUT_PATH = path.join(__dirname, "..", "lib", "restrooms.js");
 
 // API 스펙에서 확정된 주소 필드. 순서: [지번주소, 도로명주소].
@@ -45,6 +46,11 @@ const AREA_ADMIN_NAMES = {
 const MAX_CANDIDATES_PER_POINT = 3;
 // 가장 가까운 후보의 거리 + 이 값(km) 이내에 다른 후보가 있으면 2번째 후보로도 채택한다.
 const NEARBY_THRESHOLD_KM = 0.5;
+// 기존에 확정된 lib/restrooms.js 항목들의 distanceKm 최댓값(2.66km)을 참고한
+// 값. 핵심어 매칭이 없어 행정구역 전체를 대상으로 거리순 선택(mode: "full")할
+// 때, 가장 가까운 후보조차 이 거리를 넘으면 "실제로 가까운 화장실이 없다"는
+// 뜻으로 보고 억지로 채택하지 않고 후보 없음으로 처리한다.
+const MAX_REASONABLE_DISTANCE_KM = 3;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -185,10 +191,13 @@ async function collectByFullScan(serviceKey, areaNames, totalCount) {
   return byArea;
 }
 
-/** 포인트 이름에서 지역명 접두어와 흔한 접미어(해수욕장/해변)를 제거해 핵심 키워드를 얻는다. */
+/** 포인트 이름에서 지역명 접두어와 흔한 접미어(해수욕장/해변/방파제/항)를 제거해
+ * 핵심 키워드를 얻는다. 항구/방파제류 포인트(갈남항/축산항/대부방파제 등)는
+ * 정식 화장실 명칭이 "항"/"방파제"까지 포함하지 않는 경우가 많아, 해수욕장류와
+ * 동일하게 접미어를 떼어낸다(예: "갈남항" → "갈남", "대부방파제" → "대부"). */
 function coreKeyword(point) {
   const withoutArea = point.name.replace(new RegExp("^" + point.area + "\\s*"), "").trim();
-  const withoutSuffix = withoutArea.replace(/(해수욕장|해변)$/, "").trim();
+  const withoutSuffix = withoutArea.replace(/(해수욕장|해변|방파제|항)$/, "").trim();
   return withoutSuffix || point.area;
 }
 
@@ -274,8 +283,32 @@ async function kakaoGeocode(kakaoKey, address) {
   return { lat, lon };
 }
 
-/** 도로명주소로 먼저 시도하고, 없거나 실패하면 지번주소로 재시도한다. */
-async function geocodeCandidateAddress(kakaoKey, item) {
+/** 카카오 키워드 장소검색(주소 지오코딩이 전부 실패했을 때의 최후 폴백). */
+async function kakaoKeywordSearch(kakaoKey, query) {
+  const url = `${KAKAO_KEYWORD_URL}?query=${encodeURIComponent(query)}`;
+  const res = await fetch(url, { headers: { Authorization: `KakaoAK ${kakaoKey}` } });
+  const text = await res.text();
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}: ${text.slice(0, 200)}`);
+  }
+  let json;
+  try {
+    json = JSON.parse(text);
+  } catch (err) {
+    throw new Error(`JSON 파싱 실패: ${err.message}`);
+  }
+  const doc = json?.documents?.[0];
+  if (!doc) return null;
+  const lat = Number(doc.y);
+  const lon = Number(doc.x);
+  if (Number.isNaN(lat) || Number.isNaN(lon)) return null;
+  return { lat, lon };
+}
+
+/** 도로명주소 → 지번주소 순으로 지오코딩을 시도하고, 둘 다 실패하면 마지막으로
+ * 화장실 이름 + 행정구역명을 카카오 키워드 검색으로 시도한다(주소 문자열
+ * 자체가 지오코딩 API에서 인식되지 않는 경우가 있어 추가한 폴백). */
+async function geocodeCandidateAddress(kakaoKey, item, adminName) {
   const lotAddr = item[ADDR_FIELDS[0]];
   const roadAddr = item[ADDR_FIELDS[1]];
 
@@ -295,6 +328,16 @@ async function geocodeCandidateAddress(kakaoKey, item) {
       console.log(`        (지번주소 지오코딩 실패: ${err.message})`);
     }
   }
+  const name = guessField(item, ["RSTRM_NM"]);
+  if (name) {
+    const query = adminName ? `${adminName} ${name}` : name;
+    try {
+      const result = await kakaoKeywordSearch(kakaoKey, query);
+      if (result) return { ...result, usedAddr: query, usedField: "keyword" };
+    } catch (err) {
+      console.log(`        (키워드 검색 폴백 실패: ${err.message})`);
+    }
+  }
   return null;
 }
 
@@ -304,12 +347,13 @@ async function geocodeCandidateAddress(kakaoKey, item) {
  * 로그로 남긴다 — 기존처럼 소수(핵심어 매칭 최대 3건)만 지오코딩하는 경우엔
  * 로그가 늘어나지 않아 기존 18개 포인트의 출력이 그대로 유지된다. */
 async function enrichCandidatesWithDistance(kakaoKey, point, candidates) {
+  const adminName = AREA_ADMIN_NAMES[point.area] || point.area;
   const total = candidates.length;
   const logProgress = total > 10;
   const enriched = [];
   for (let i = 0; i < candidates.length; i += 1) {
     const item = candidates[i];
-    const geocode = await geocodeCandidateAddress(kakaoKey, item);
+    const geocode = await geocodeCandidateAddress(kakaoKey, item, adminName);
     const distanceKm = geocode ? haversineKm(point.lat, point.lon, geocode.lat, geocode.lon) : null;
     enriched.push({ item, geocode, distanceKm });
     if (logProgress && ((i + 1) % 25 === 0 || i + 1 === total)) {
@@ -524,8 +568,24 @@ async function findRestrooms() {
     const enriched = dedupeEnriched(enrichedSliced);
     enriched.forEach(printEnrichedCandidate);
 
-    const finalPicks = pickFinalEntries(enriched);
-    if (finalPicks.length > 1) {
+    let finalPicks = pickFinalEntries(enriched);
+    // mode "full"(핵심어로 못 좁혀 행정구역 전체를 뒤진 경우)인데 그마저도
+    // 1순위 후보가 비합리적으로 멀면(기존 데이터 최대 거리 2.66km 대비) 실제로는
+    // "근처에 화장실이 없다"는 뜻이므로 억지로 채택하지 않고 후보 없음 처리한다.
+    if (
+      mode === "full" &&
+      finalPicks.length > 0 &&
+      finalPicks[0].distanceKm !== null &&
+      finalPicks[0].distanceKm > MAX_REASONABLE_DISTANCE_KM
+    ) {
+      console.log(
+        `    → 1순위조차 ${finalPicks[0].distanceKm.toFixed(2)}km로 너무 멀어(기준 ${MAX_REASONABLE_DISTANCE_KM}km) 억지로 채택하지 않음 → 후보 없음 처리`
+      );
+      finalPicks = [];
+    }
+    if (finalPicks.length === 0) {
+      console.log("    → 최종: 후보 없음");
+    } else if (finalPicks.length > 1) {
       console.log(
         `    → 2순위 후보도 1순위 거리 + ${NEARBY_THRESHOLD_KM}km 이내라 함께 채택 (배열 2건)`
       );
