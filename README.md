@@ -1,8 +1,9 @@
 # Ocean Insight (gogo-snorkel)
 
-동해안 스노클링 지점의 파고/스웰/수온 예보(Open-Meteo)와 KHOA 실측 파랑 데이터를
-결합해, 지점별·시간대별 스노클링 적합도 점수/등급/추천 문구를 계산하고 정적
-웹페이지로 보여주는 프로젝트입니다.
+동해안 스노클링 지점의 파고/스웰/수온/기온 예보(Open-Meteo)와 KHOA 실측 파랑
+데이터를 결합해, 지점별·시간대별 스노클링 적합도 점수/등급/추천 문구를
+계산하고 정적 웹페이지로 보여주는 프로젝트입니다. 각 지점 및 동해안 전체
+해변의 화장실 위치 정보도 함께 제공합니다.
 
 **GitHub Actions(데이터 수집·스코어링) + GitHub Pages(정적 대시보드)** 조합으로만
 동작하며, 별도 서버나 데이터베이스가 없습니다.
@@ -11,19 +12,22 @@
 > GitHub 기반으로 완전히 이전한 버전입니다. Apps Script 버전(텔레그램 봇 포함)은
 > 별도 저장소에 예비용으로 남아 있으며, 이 저장소와는 코드/데이터를 공유하지
 > 않는 완전히 독립된 프로젝트입니다.
-> Apps Script 저장소: https://github.com/googjinkim/OceanInsight-V2
+> Apps Script 저장소: `TODO: 저장소 URL 기입`
+
+배포 URL: https://googjinkim.github.io/gogo-snorkel/
 
 ## 1. 아키텍처
 
 ```
-lib/points.js (정본 20개 포인트: id/좌표/지역/KHOA 관측소 매핑)
+lib/points.js (정본 37개 포인트: id/좌표/지역/KHOA 관측소 매핑)
         │
         ▼
-scripts/collect-openmeteo.js ──▶ data/openmeteo-raw.json   (20개 포인트, 8일치 예보)
-scripts/collect-khoa.js      ──▶ data/khoa-raw.json        (KHOA 매핑된 16개 포인트만)
+scripts/collect-openmeteo.js ──▶ data/openmeteo-raw.json (파고/스웰/수온/기온, 8일치)
+scripts/collect-khoa.js      ──▶ data/khoa-raw.json      (KHOA 매핑된 포인트만)
         │
         ▼
-scripts/build-score.js (lib/scoring.js로 점수 계산, 두 raw 데이터 join)
+scripts/build-score.js (lib/scoring.js 점수 계산, lib/restrooms.js·
+                         lib/beachRestrooms.js 화장실 정보 병합)
         │
         ▼
 data/scored.json  ← 최종 산출물, 프런트엔드가 fetch하는 유일한 데이터 파일
@@ -34,49 +38,63 @@ index.html + app.js (정적 프런트엔드, 서버 계산 없이 scored.json만
 
 GitHub Actions(`.github/workflows/ocean-collect.yml`)가 **4시간마다(cron)** 위
 파이프라인 전체를 실행하고, 변경된 `data/scored.json`을 자동으로 커밋합니다.
-GitHub Pages는 `main` 브랜치 루트를 그대로 정적 호스팅합니다 — 방문자가 페이지를
-열 때마다 서버가 계산하지 않고, 이미 계산되어 커밋된 JSON 파일을 CDN에서
-그대로 내려받기만 하므로 응답이 빠릅니다.
 
-## 2. 폴더 구조
+## 2. 지역 구성 (9개 지역, 37개 포인트)
+
+| 지역 | 포인트 수 | 비고 |
+|---|---|---|
+| 고성 | 2 | |
+| 속초 | 2 | |
+| 양양 | 2 | |
+| 강릉 | 4 | |
+| 동해 | 3 | |
+| 삼척 | 3 | |
+| 울진 | 7 | 기존 4곳 + 비공식 스노클 포인트 3곳(갈남항/하트해변/진복리) |
+| 영덕 | 6 | 고래불/대진/장사(공식 해변) + 축산항/대부방파제/석동방파제(비공식) |
+| 포항 | 8 | 전부 공식 해수욕장(영일대/칠포/월포/화진/구룡포/도구/송도/신창) |
+
+**비공식 스노클 포인트(해수욕장 아님)**: 항구·방파제·기암 등 실제 스노클링
+커뮤니티(블로그/유튜브)에서 소개되는 숨은 명소들로, 정식 해수욕장 목록에는
+없지만 좌표는 카카오 장소검색으로 확보하고 KHOA 매핑은 동일한 절차(거리
+계산 + 실제 API 호출 검증)로 확인했습니다.
+
+## 3. 폴더 구조
 
 | 경로 | 역할 |
 | --- | --- |
-| `lib/points.js` | 정본 20개 스노클링 포인트 목록(좌표, 지역, KHOA 관측소 매핑) |
+| `lib/points.js` | 정본 37개 스노클링 포인트 목록(좌표, 지역, KHOA 관측소 매핑) |
 | `lib/scoring.js` | 스노클링 적합도 점수 계산 순수 함수 (`calculateScore`) |
-| `scripts/collect-openmeteo.js` | Open-Meteo Marine/Weather API 수집 (20개 포인트 전체) |
-| `scripts/collect-khoa.js` | KHOA 실측 파랑 API 수집 (KHOA 매핑된 16개 포인트만) |
-| `scripts/build-score.js` | raw 데이터 join + 점수 계산 → `data/scored.json` 생성 |
+| `lib/restrooms.js` | 포인트별 최인접 화장실 정보(이름/주소/거리/좌표), 최대 2건 |
+| `lib/beachRestrooms.js` | 동해안 전체 해변(이름에 "해수욕장"/"해변" 포함) 화장실 목록 |
+| `scripts/collect-openmeteo.js` | Open-Meteo Marine/Weather API 수집 (파고/스웰/수온/기온) |
+| `scripts/collect-khoa.js` | KHOA 실측 파랑 API 수집 (KHOA 매핑된 포인트만) |
+| `scripts/build-score.js` | raw 데이터 join + 점수 계산 + 화장실 정보 병합 |
+| `scripts/find-restrooms.js` | (1회성 조사) 포인트별 화장실 후보 탐색, 이미 있는 포인트는 자동 스킵 |
+| `scripts/find-all-beach-restrooms.js` | (1회성 조사) 전체 해변 화장실 목록 조사 |
+| `scripts/audit-*.js` | (1회성 조사) 신규 포인트 좌표/KHOA 매핑 검증용 스크립트들 |
 | `data/scored.json` | 최종 산출물. **git 추적 대상**, Actions가 자동 커밋 |
 | `data/openmeteo-raw.json`, `data/khoa-raw.json` | 중간 산출물. `.gitignore` 대상 |
-| `index.html` | 정적 프런트엔드 마크업/스타일 (검색, 지역별 목록, 상세보기, sticky 헤더 등) |
-| `app.js` | 프런트엔드 렌더링 로직 (데이터 fetch, 화면별 렌더 함수, 이벤트 바인딩) |
+| `index.html`, `app.js` | 정적 프런트엔드 |
 | `.github/workflows/ocean-collect.yml` | 수집·스코어링·자동 커밋 파이프라인 (cron + 수동 실행) |
 
-## 3. 데이터 스키마: `data/scored.json`
+## 4. 데이터 스키마: `data/scored.json`
 
 ```json
 {
   "generatedAt": "ISO8601",
   "points": [
     {
-      "id": "string",
-      "name": "string",
-      "area": "string",
+      "id": "string", "name": "string", "area": "string",
       "hasKhoaMapping": true,
+      "restrooms": [ { "name": "string", "roadAddr": "string", "lotAddr": "string",
+                        "distanceKm": 0, "lat": 0, "lon": 0, "openHours": "string" } ],
       "hourly": [
         {
           "time": "yyyy-MM-dd HH:mm",
-          "forecastWave": 0,
-          "swellWave": 0,
-          "waterTemp": 0,
-          "observedWave": null,
-          "maxObservedWave": null,
-          "score": 0,
-          "grade": "string",
-          "recommendation": "string",
-          "reason": "string",
-          "weatherCode": 0
+          "forecastWave": 0, "swellWave": 0, "waterTemp": 0, "airTemp": 0,
+          "observedWave": null, "maxObservedWave": null,
+          "score": 0, "grade": "string", "recommendation": "string",
+          "reason": "string", "weatherCode": 0
         }
       ]
     }
@@ -84,124 +102,113 @@ GitHub Pages는 `main` 브랜치 루트를 그대로 정적 호스팅합니다 �
 }
 ```
 
-| 필드 | 타입 | 설명 |
-| --- | --- | --- |
-| `generatedAt` | string (ISO8601) | scored.json 생성 시각 |
-| `points[].id` | string | 지점 고유 ID |
-| `points[].name` | string | 지점명 |
-| `points[].area` | string | 지역명 |
-| `points[].hasKhoaMapping` | boolean | 매핑된 KHOA 관측소 유무 |
-| `points[].hourly[].time` | string | 시간대 (`yyyy-MM-dd HH:mm`) |
-| `points[].hourly[].forecastWave` | number \| null | 예보 파고 (Open-Meteo) |
-| `points[].hourly[].swellWave` | number \| null | 예보 너울 파고 (Open-Meteo) |
-| `points[].hourly[].waterTemp` | number \| null | 예보 수온 (Open-Meteo) |
-| `points[].hourly[].observedWave` | number \| null | 실측 파고 (KHOA, 매핑 없거나 미래 시점이면 null) |
-| `points[].hourly[].maxObservedWave` | number \| null | 실측 최대 파고 (KHOA) |
-| `points[].hourly[].score` | number | 스노클링 적합도 점수 (0~100) |
-| `points[].hourly[].grade` | string | 등급 (`★☆☆☆☆` ~ `★★★★★`, 50점 미만/80점/90점 등 5구간) |
-| `points[].hourly[].recommendation` | string | 추천 문구 (`비추천` ~ `강력추천`) |
-| `points[].hourly[].reason` | string | 점수 산정 사유 (최대 5개, `", "`로 join) |
-| `points[].hourly[].weatherCode` | number | 날씨 코드 (Open-Meteo) |
+`restrooms`는 후보가 없으면 빈 배열(`[]`). `airTemp`는 Open-Meteo Weather
+API의 `temperature_2m`(지상 2m 기온)을 그대로 사용하며, 점수 계산에는
+영향을 주지 않는 표시 전용 필드입니다.
 
-> `forecast_days`는 **8일**로 설정되어 있습니다. Open-Meteo Marine API의 실제
-> 파고 예보 신뢰 구간이 ~9.4일 정도라, 이보다 늘리면 `forecastWave` 등 파고
-> 관련 필드가 null로 채워지는 시간대가 생겨(수온/날씨코드는 더 오래 유지됨)
-> 8일로 유지하고 있습니다 (`scripts/collect-openmeteo.js` 주석 참고).
+## 5. KHOA 관측소 매핑 현황
 
-## 4. KHOA 관측소 매핑 현황
+| 관측소 코드 | 관측소명 | 매핑된 포인트 |
+|---|---|---|
+| TW_0089 | 경포대해수욕장 | 강릉 일부, 양양 남애3리 |
+| TW_0091 | 낙산해수욕장 | 양양 하조대 |
+| TW_0092 | 임랑해수욕장 | (검증 시 후보로만 확인, 미채택) |
+| TW_0093 | 속초해수욕장 | 고성·속초 전체 |
+| TW_0094 | 망상해수욕장 | 동해 일부, 울진 갈남항 |
+| TW_0095 | 고래불해수욕장(영덕) | 삼척 일부, 울진 대부분, 영덕 전체, 포항 일부(주의 등급) |
 
-20개 포인트 중 **16개는 KHOA 실측 파랑 관측소에 매핑**되어 있고, 나머지
-**4개(`jangho`, `yonghwa`, `nagok_beach`, `bongpyeong_beach`)는 예보(Open-Meteo)만
-사용하는 "예보-only" 포인트**입니다 (`lib/points.js`에서 `khoaObsCode: ""`로
-표시). 이 4곳은 두 가지 다른 사정으로 매핑이 안 되어 있습니다:
+매핑 없는 포인트(예보-only): 삼척 장호·용화, 울진 나곡·봉평·진복리, 영덕
+축산항, 포항 구룡포·도구·송도·신창 등 — 관측소가 없거나(거리 60km 초과),
+지리적으로 가까운 한수원(HB_) 부이는 KHOA `noonWave` API가 코드 체계 자체를
+지원하지 않아(`INVALID_REQUEST_PARAMETER_ERROR`, 실제 호출로 확인됨) 매핑
+불가로 처리했습니다.
 
-- `jangho`(장호)·`yonghwa`(용화): 인근에 이 프로젝트가 쓰는 KHOA 관측소
-  후보 자체가 없어 애초에 매핑 대상이 아니었습니다.
-- `nagok_beach`(나곡)·`bongpyeong_beach`(봉평): 지리적으로 가까운 한수원 연계
-  관측소(`HB_0008`, `HB_0009`)가 후보로 존재해 Apps Script 버전의 관측소 감사
-  스크립트에서 테스트된 적은 있지만, 최종적으로 이 프로젝트가 쓰는 `noonWave`
-  API 경로로는 채택되지 않아 예보 전용으로 남아 있습니다.
+## 6. 화장실 정보
 
-매핑 정보(좌표, 관측소 코드)는 전부 `lib/points.js`에 정적으로 하드코딩되어
-있으며, 거리 계산으로 최적 관측소를 찾는 로직은 Apps Script 버전에서 이미
-검증이 끝난 결과를 그대로 이식한 것이라 이 저장소에는 포함되어 있지 않습니다.
+- 데이터 출처: 행정안전부 공중화장실정보 조회서비스
+  (`https://apis.data.go.kr/1741000/public_restroom_info_v2/info_v2`,
+  `returnType=json` 파라미터 필수)
+- 좌표(위도/경도) 미제공(2025년 2월 정책 변경) → 카카오 주소 검색/키워드
+  검색 API로 지오코딩 + Haversine 거리 계산으로 보완
+- **포인트별 화장실**(`lib/restrooms.js`): 37개 포인트 중 화장실 후보가 있는
+  곳은 "자세히 보기" 화면에 카드(최대 2건, 500m 이내)로 표시. 갈남항은
+  3km 이내 합리적인 후보가 없어 "후보 없음"으로 의도적으로 비워둠
+- **전체 해변 목록**(`lib/beachRestrooms.js`, "동해바다 화장실 정보" 메뉴,
+  총 103개 해변): 화장실 시설명에 "해수욕장"/"해변"이 포함된 것만 자동
+  스캔하여 그룹핑하므로, 항구·방파제 이름의 비공식 포인트 6곳(갈남항·
+  하트해변·진복리·축산항·대부방파제·석동방파제)은 이 목록에 포함되지
+  않음(의도된 설계). "하트해변"도 이름에 "해변"이 들어가지만 실제 화장실
+  시설명(드라마세트장, 죽변등대공원)에는 "해변"이 없어 자동 스캔에서
+  잡히지 않으며, 아직 수동으로도 추가하지 않은 상태 — 이 6곳은 각 포인트의
+  "자세히 보기" 카드(`lib/restrooms.js`)로만 접근 가능
+- 두 화면 모두 "지도 보기" 클릭 시에만 카카오맵 SDK를 지연 로드(카드별 독립
+  토글, 페이지 진입 시 지도 요청 0건)
 
-## 5. 로컬 개발
+## 7. 카카오 API 사용
+
+| 키 | 용도 | 사용 위치 | 보안 |
+| --- | --- | --- | --- |
+| REST API 키 | 주소 → 좌표 지오코딩 | 로컬/CLI 조사 스크립트 | `KAKAO_REST_API_KEY` 환경변수로만 참조 |
+| JavaScript 키 | 지도 임베드 SDK | 브라우저(app.js) | 코드에 노출 정상. 카카오 개발자센터에 등록된 도메인(`https://googjinkim.github.io`)만 허용 |
+
+카카오맵 무료 쿼터(지도 SDK 일 30만 건, 주소 검색 일 10만 건)는 개발자 계정
+기준 "첫 번째로 활성화한 앱"에만 제공됨(2026-07-21 정책 변경) — 현재 앱이
+해당되어 정상 사용 중.
+
+## 8. 로컬 개발
 
 ```bash
 npm install
-
-# Open-Meteo 수집 (API 키 불필요)
 npm run collect:openmeteo
-
-# KHOA 수집 (서비스 키 필요, 하드코딩 금지 — 매번 환경변수로 주입)
-# macOS/Linux
-KHOA_SERVICE_KEY=발급받은키 npm run collect:khoa
-# Windows PowerShell
-$env:KHOA_SERVICE_KEY="발급받은키"; npm run collect:khoa
-
-# 위 두 raw 데이터를 join해서 scored.json 생성
+# KHOA_SERVICE_KEY=키 npm run collect:khoa  (또는 PowerShell: $env:KHOA_SERVICE_KEY="키")
 npm run build:score
+
+# 신규 포인트/화장실 재조사가 필요할 때만 (기존 데이터는 자동 스킵됨)
+# PUBLIC_DATA_SERVICE_KEY=키 KAKAO_REST_API_KEY=키 npm run find:restrooms
 ```
 
-`data/openmeteo-raw.json`, `data/khoa-raw.json`, `data/scored.json`은 로컬
-테스트로 새로 만들어져도 **커밋 대상이 아닙니다** (raw 2개는 `.gitignore`,
-`scored.json`은 실제 운영 데이터를 Actions가 관리하므로 로컬 산출물은
-`git checkout -- data/scored.json`으로 되돌리고 코드만 커밋하는 것을 권장합니다).
+로컬 산출물(`data/*.json`)은 커밋 대상이 아닙니다. 커밋 전
+`git checkout -- data/scored.json`으로 원복하세요.
 
-## 6. GitHub Actions
+## 9. GitHub Actions
 
-- **자동 실행**: 4시간마다(cron, UTC 기준 `0 */4 * * *` → KST로는 01/05/09/13/17/21시)
-  전체 파이프라인(수집 → 점수 계산 → `scored.json` 커밋)을 자동 실행합니다.
-- **수동 실행**: 저장소 Actions 탭 → `Ocean Data Collect & Score` → `Run workflow`
-- 커밋은 `github-actions[bot]` 명의로 이루어지며, 변경사항이 없으면 커밋을
-  건너뜁니다. 커밋 메시지에는 `[skip ci]`가 포함되어 재귀적으로 워크플로가
-  다시 실행되지 않습니다.
-- 필요 권한: workflow에 `permissions: contents: write`가 설정되어 있어야
-  `scored.json` 자동 커밋/푸시가 가능합니다.
+- **자동 실행**: 4시간마다(cron, UTC `0 */4 * * *` → KST 01/05/09/13/17/21시)
+- **수동 실행**: `gh workflow run ocean-collect.yml`
+- `actions/checkout`, `actions/setup-node` v7, Node.js 24
+- 참고: `ubuntu-latest` 러너가 2026-10-19부터 Ubuntu 26으로 전환 예정(GitHub
+  공지) — 통상 자동 전환되며 별도 조치 불필요, 문제 발생 시 재확인
 
-## 7. GitHub Pages 배포
+## 10. GitHub Pages 배포
 
-`main` 브랜치 루트를 그대로 배포합니다 (Settings → Pages → Source: Deploy from
-a branch → `main` / `(root)`). 별도 빌드 단계가 없으므로 `main`에 새 커밋이
-생기면(코드 변경이든 Actions의 자동 데이터 갱신이든) GitHub Pages가 자동으로
-재배포합니다.
+`main` 브랜치 루트를 그대로 배포합니다. 응답에 CDN 캐시(10분)가 걸려 있어
+배포 직후 일시적으로 이전 버전이 보일 수 있습니다(강력 새로고침/시크릿
+모드로 확인).
 
-## 8. 프런트엔드 (`index.html` + `app.js`)
+## 11. 보안
 
-프레임워크·빌드 단계 없는 순수 HTML/CSS/JS이며, `data/scored.json` 하나만
-fetch해서 아래 화면을 전부 클라이언트에서 계산·렌더링합니다. 마크업/스타일은
-`index.html`에, 렌더링 로직은 `app.js`에 있습니다(CSP `script-src 'self'`가
-인라인 스크립트 없이도 동작하도록 분리, 9장 참고).
+- `KHOA_SERVICE_KEY`, `PUBLIC_DATA_SERVICE_KEY`(data.go.kr 계정 공용 키),
+  `KAKAO_REST_API_KEY`는 전부 GitHub Secrets로만 관리
+- 이 사이트는 로그인/서버 사이드 로직/DB가 없는 정적 페이지이므로 WAF나
+  로드밸런서 불필요
 
-- 메인 홈: 오늘 20개 포인트, 4시간 단위 요약
-- 검색 / 지역별 목록: 이번 주 데이터, 4시간 단위, 날짜별 그룹
-- 상세보기: 이번주/다음주 탭, 1시간 단위, 날짜별 베스트 시간 배지(1위 왕관 표시)
-- 데스크톱: 좌측 사이드바 + 상단 정보 영역 + 상세보기 헤더가 스크롤 시 고정(sticky)
-- 모바일: 코멘트 컬럼 생략(가독성), 검색창 축약 placeholder 등 반응형 별도 처리
+## 12. 브랜치 전략
 
-## 9. 보안
+- `main`: 실서비스(액티브)
+- `dev`: 실험/백업용 (스테이징 배포 파이프라인은 아직 미착수)
 
-- `KHOA_SERVICE_KEY`는 코드에 하드코딩하지 않고 GitHub 저장소 **Secrets**로만
-  관리하며, workflow가 환경변수로 주입합니다.
-- 저장소 Settings → Code security의 **Secret scanning**, **Push protection**,
-  **Dependabot alerts** 전부 활성화되어 있습니다 (확인 완료).
-- 사용자 입력(검색어)과 외부 데이터(scored.json의 문자열 필드)를 화면에 표시할
-  때는 전부 `esc()`로 이스케이프 처리합니다 — 현재 데이터 소스는 우리가 직접
-  만들지만, 나중에 오염되더라도 화면에서 그대로 실행되지 않도록 방어적으로
-  전수 적용했습니다.
-- `index.html`에 `Content-Security-Policy` 메타 태그를 적용해, 스크립트가
-  주입되더라도 브라우저가 실행 자체를 차단하도록 했습니다(`script-src 'self'`,
-  인라인 스크립트 불허 — 그래서 렌더링 로직이 `app.js`로 분리되어 있습니다).
-- CDN에서 불러오는 정적 리소스(Tabler Icons)에는 SRI(`integrity`/`crossorigin`)를
-  적용했습니다. Google Fonts는 응답이 UA별로 달라져 SRI를 공식 지원하지 않아
-  예외입니다.
-- 이 사이트는 로그인/서버 사이드 로직/DB가 없는 순수 정적 페이지이므로, 별도의
-  WAF나 로드밸런서 없이 GitHub의 CDN 인프라만으로 충분합니다.
+## 13. 작업 원칙 (참고)
 
-## 10. 다음에 고려할 것
+- API 필드명/파라미터/관측소 코드는 절대 추측하지 않고 실제 호출/공식
+  데이터셋으로 확인 후 반영
+- 데이터 확장 시 재실행 전후 기존 값이 그대로인지 diff로 확인(round-trip
+  테스트)하는 습관으로 여러 사고를 사전에 예방함
+- 모바일/데스크톱이 별도 렌더링 함수를 쓰는 경우가 많아 한쪽만 수정하지
+  않고 항상 양쪽 확인
+- 스키마가 바뀌거나 배포 데이터 갱신이 필요한 변경은 push 후
+  `gh workflow run ocean-collect.yml`까지 실행
 
-- `dev` 브랜치 기반 스테이징 배포 (실 서비스에 영향 없이 UI 변경 미리 검증)
-- KHOA API 응답 지연 체감 사례가 있어, 재시도/타임아웃 처리 여지가 있는지 검토
-  (현재 코드에 별도 타임아웃 로직은 없음 — 확인 필요)
-- 텔레그램 봇 재도입 여부 (현재는 완전히 배제, 필요 시 별도 서버리스로 검토)
+## 14. 다음에 고려할 것
+
+- KHOA API 응답 지연(최대 ~3분) 최적화
+- dev 브랜치 기반 실제 스테이징 배포 파이프라인 구축
+- 2026-10-19 Ubuntu 26 러너 전환 이후 워크플로 정상 동작 재확인
